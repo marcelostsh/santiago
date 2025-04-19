@@ -4,9 +4,9 @@
 
 <template>
   <!-- Header & Hero Section -->
-  <header class="hero-bg text-white py-24 px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Cocodrilos em Santiago</h1>
-    <p class="text-xl sm:text-2xl mb-8">Roteiro de Viagem Chile 2025</p>
+  <header class="hero-bg text-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Cocodrilos em Santiago</h1>
+    <p class="text-lg sm:text-xl lg:text-2xl mb-8">Roteiro de Viagem Chile 2025</p>
     <div class="inline-flex bg-white text-blue-900 font-bold rounded-full px-6 py-2">
       <span class="mr-2"><i class="fas fa-calendar-alt"></i></span>
       06 a 13 de Maio de 2025
@@ -14,38 +14,38 @@
   </header>
 
   <!-- Navigation Menu -->
-  <nav class="sticky-nav bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8 mb-12">
+  <nav class="sticky-nav bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8 mb-12 overflow-x-auto">
     <div class="container mx-auto">
-      <ul class="flex flex-wrap justify-center -mx-2">
+      <ul class="flex flex-nowrap justify-start sm:justify-center -mx-2 min-w-max">
         <li><a href="#visao-geral"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Visão
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Visão
             Geral</a></li>
         <li><a href="#dia1"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             1</a></li>
         <li><a href="#dia2"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             2</a></li>
         <li><a href="#dia3"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             3</a></li>
         <li><a href="#dia4"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             4</a></li>
         <li><a href="#dia5"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             5</a></li>
         <li><a href="#dia6"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             6</a></li>
         <li><a href="#dia7"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             7</a></li>
         <li><a href="#dia8"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
             8</a></li>
         <li><a href="#dicas"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dicas</a>
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dicas</a>
         </li>
       </ul>
     </div>
@@ -59,7 +59,7 @@
       <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
         <p class="text-lg mb-4">Este roteiro inclui 8 dias no Chile, com base em Santiago, combinando
           experiências incríveis:</p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
           <li class="flex items-start">
             <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
               <i class="fas fa-snowflake"></i>
@@ -106,17 +106,17 @@
 
     <!-- Day 1 -->
     <section id="dia1" class="mb-20">
-      <div class="flex items-center mb-6">
-        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 1 - Chegada a Santiago</h2>
-        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Terça-feira, 06/05/2025</div>
-        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+      <div class="flex flex-wrap items-center mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">Dia 1 - Chegada a Santiago</h2>
+        <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">Terça-feira, 06/05/2025</div>
+        <div class="w-full sm:w-auto sm:ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm mt-2 sm:mt-0">Probabilidade de Neve:
           Média</div>
       </div>
 
       <div class="day-divider mb-8"></div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div class="photo-container h-80">
+        <div class="photo-container h-60 sm:h-80">
           <img src="https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
             alt="Hotel Panamericano" class="w-full h-full object-cover rounded-lg shadow-md">
         </div>
@@ -170,17 +170,17 @@
 
     <!-- Day 2 -->
     <section id="dia2" class="mb-20">
-      <div class="flex items-center mb-6">
-        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 2 - Valle Nevado Sunset</h2>
-        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Quarta-feira, 07/05/2025</div>
-        <div class="ml-auto px-4 py-1 probability-high text-white rounded-full text-sm">Probabilidade de Neve:
+      <div class="flex flex-wrap items-center mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">Dia 2 - Valle Nevado Sunset</h2>
+        <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">Quarta-feira, 07/05/2025</div>
+        <div class="w-full sm:w-auto sm:ml-auto px-4 py-1 probability-high text-white rounded-full text-sm mt-2 sm:mt-0">Probabilidade de Neve:
           Alta</div>
       </div>
 
       <div class="day-divider mb-8"></div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div class="photo-container h-80">
+        <div class="photo-container h-60 sm:h-80">
           <img src="https://www.vallenevado.com/wp-content/uploads/2020/05/SnowRace-Valle-Nevado-Ski-Resort-Chile-Andes-Mountains-7.jpg"
             alt="Valle Nevado Sunset" class="w-full h-full object-cover rounded-lg shadow-md">
         </div>
@@ -228,17 +228,17 @@
 
     <!-- Day 3 -->
     <section id="dia3" class="mb-20">
-      <div class="flex items-center mb-6">
-        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 3 - Portillo e Laguna del Inca</h2>
-        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Quinta-feira, 08/05/2025</div>
-        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+      <div class="flex flex-wrap items-center mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">Dia 3 - Portillo e Laguna del Inca</h2>
+        <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">Quinta-feira, 08/05/2025</div>
+        <div class="w-full sm:w-auto sm:ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm mt-2 sm:mt-0">Probabilidade de Neve:
           Média</div>
       </div>
 
       <div class="day-divider mb-8"></div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div class="photo-container h-80">
+        <div class="photo-container h-60 sm:h-80">
           <img src="https://skiportillo.com/wp-content/uploads/2018/10/APORTADA-1024x683.jpg"
             alt="Portillo Ski Resort e Laguna del Inca"
             class="w-full h-full object-cover rounded-lg shadow-md">
@@ -292,25 +292,25 @@
 
     <!-- Day 4 -->
     <section id="dia4" class="mb-20">
-      <div class="flex items-center mb-6">
-        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 4 - Vinícola e City Tour</h2>
-        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Sexta-feira, 09/05/2025</div>
-        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+      <div class="flex flex-wrap items-center mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">Dia 4 - Vinícola e City Tour</h2>
+        <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">Sexta-feira, 09/05/2025</div>
+        <div class="w-full sm:w-auto sm:ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm mt-2 sm:mt-0">Probabilidade de Neve:
           Média</div>
       </div>
 
       <div class="day-divider mb-8"></div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <div class="photo-container h-60 lg:h-80">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="photo-container h-60">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Vi%C3%B1a_Concha_y_Toro%2C_Chile.jpg"
             alt="Vinícola Concha y Toro" class="w-full h-full object-cover rounded-lg shadow-md">
         </div>
-        <div class="photo-container h-60 lg:h-80">
+        <div class="photo-container h-60">
           <img src="https://chile.travel/wp-content/uploads/2016/04/Santiago-Enrique-Torrejon-1024x683.jpg"
             alt="City Tour Santiago" class="w-full h-full object-cover rounded-lg shadow-md">
         </div>
-        <div class="photo-container h-60 lg:h-80">
+        <div class="photo-container h-60">
           <img src="https://www.skycostanera.cl/wp-content/uploads/2022/07/atardecer-costanera-center-min.jpg"
             alt="Sky Costanera" class="w-full h-full object-cover rounded-lg shadow-md">
         </div>
@@ -884,6 +884,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   background-color: #f8f9fa;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .hero-bg {
@@ -917,7 +920,7 @@ body {
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -972,6 +975,49 @@ body {
 
 .probability-low {
   background-color: #48bb78;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Impedir rolagem horizontal */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
 }
 
 @media print {
