@@ -3,6 +3,7 @@
 import Header from './components/header/header.vue'
 import NavigationMenu from './components/navigationmenu/navigationmenu.vue'
 import TripOverview from './components/overview/TripOverview.vue'
+import FooterSection from './components/footer/FooterSection.vue'
 </script>
 
 <template>
@@ -767,26 +768,8 @@ import TripOverview from './components/overview/TripOverview.vue'
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-xl font-bold mb-4">Cocodrilos em Santiago</h3>
-          <p class="mb-4">Roteiro de Viagem Chile 2025</p>
-          <p>06 a 13 de Maio de 2025</p>
-        </div>
-        <div class="md:text-right">
-          <h3 class="text-xl font-bold mb-4">Contatos Importantes</h3>
-          <p class="mb-2">Embaixada do Brasil no Chile: +56 2 2360 7500</p>
-          <p class="mb-2">Emergências: 133 (Polícia), 131 (Ambulância), 132 (Bombeiros)</p>
-        </div>
-      </div>
-      <div class="border-t border-blue-700 mt-8 pt-8 text-center">
-        <p>&copy; 2023 Roteiro de Viagem Chile. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer Component -->
+  <FooterSection />
 </template>
 
 <style>
@@ -875,6 +858,7 @@ body {
   background-color: #48bb78;
 }
 
+/* Container styles needed for the main content */
 .container {
   width: 100%;
   max-width: 100%;

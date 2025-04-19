@@ -55,5 +55,23 @@
 </template>
 
 <style scoped>
-/* Component-specific styles if needed */
+/* These styles are specific to the overview component */
+.activity-item {
+  border-left: 4px solid #3182ce;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3182ce;
+  border-radius: 50%;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 </style> 

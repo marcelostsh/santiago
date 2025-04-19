@@ -1,0 +1,488 @@
+[
+  {
+    "id": "dia1",
+    "titulo": "Chegada a Santiago",
+    "data": "Terça-feira, 06/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+    ],
+    "atividades": [
+      {
+        "titulo": "Check-in no Hotel Panamericano",
+        "descricao": "Hospedagem em região central de Santiago, próximo a pontos turísticos e com fácil acesso ao transporte público.",
+        "position": {
+          "latitude": -33.4372,
+          "longitude": -70.6506
+        }
+      },
+      {
+        "titulo": "Passeio livre pelos arredores",
+        "descricao": "Conheça o bairro onde está hospedado e comece a explorar Santiago.",
+        "position": {
+          "latitude": -33.4369,
+          "longitude": -70.6483
+        }
+      }
+    ],
+    "dicas": [
+      "Após o check-in, você pode visitar o Cerro Santa Lucía ou o Parque Forestal, ambos próximos ao hotel.",
+      "Experimente restaurantes locais no bairro Lastarria para seu primeiro contato com a gastronomia chilena.",
+      "Aproveite para descansar e se adaptar à altitude de Santiago (520m acima do nível do mar)."
+    ],
+    "detalhesAdicionais": [
+      {
+        "titulo": "Detalhes do Hotel",
+        "conteudo": "O Hotel Panamericano está localizado em uma região central de Santiago, próximo a atrações turísticas e estações de metrô. Oferece café da manhã, Wi-Fi gratuito e serviço de concierge para ajudar com reservas de passeios."
+      },
+      {
+        "titulo": "Como chegar do aeroporto",
+        "conteudo": "O Aeroporto Internacional Arturo Merino Benítez fica a aproximadamente 20 km do hotel. Opções de transporte: táxi (30-40 minutos), transfer do hotel (mediante reserva prévia) ou transporte público (aprox. 1 hora)."
+      }
+    ],
+    "sobreLocal": "Santiago, a capital do Chile, é uma cidade moderna cercada pela Cordilheira dos Andes, que combina arquitetura colonial com estruturas contemporâneas. O centro da cidade oferece uma excelente introdução à cultura chilena.",
+    "transporte": "Transfer do aeroporto / Transporte público"
+  },
+  {
+    "id": "dia2",
+    "titulo": "Valle Nevado Sunset",
+    "data": "Quarta-feira, 07/05/2025",
+    "probabilidadeNeve": "alta",
+    "imagens": [
+      "https://www.vallenevado.com/wp-content/uploads/2020/05/SnowRace-Valle-Nevado-Ski-Resort-Chile-Andes-Mountains-7.jpg"
+    ],
+    "atividades": [
+      {
+        "titulo": "Valle Nevado Sunset",
+        "descricao": "Subida à tarde para curtir o pôr do sol na neve, uma experiência inesquecível nos Andes chilenos.",
+        "comAgencia": true,
+        "position": {
+          "latitude": -33.3535,
+          "longitude": -70.2493
+        }
+      },
+      {
+        "titulo": "Passeio com Agência",
+        "descricao": "O transporte será realizado com agência especializada para garantir segurança e conforto.",
+        "comAgencia": true,
+        "position": {
+          "latitude": -33.3535,
+          "longitude": -70.2493
+        }
+      }
+    ],
+    "dicas": [
+      "Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos Andes.",
+      "Leve uma garrafa térmica com bebida quente e alguns snacks para o passeio.",
+      "Não se esqueça da proteção solar - mesmo com tempo nublado, a radiação UV é intensa na altitude.",
+      "Leve sua câmera ou celular com bateria completa para registrar os visuais espetaculares."
+    ],
+    "sobreLocal": "Valle Nevado é um dos principais centros de esqui da América do Sul, localizado a cerca de 60 km a leste de Santiago, na Cordilheira dos Andes. A uma altitude de aproximadamente 3.000 metros, oferece vistas panorâmicas impressionantes. A experiência do pôr do sol em Valle Nevado é considerada uma das mais bonitas da região, com a luz alaranjada refletindo na neve e criando um espetáculo visual único.",
+    "transporte": "Agência de turismo"
+  },
+  {
+    "id": "dia3",
+    "titulo": "Portillo e Laguna del Inca",
+    "data": "Quinta-feira, 08/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://skiportillo.com/wp-content/uploads/2018/10/APORTADA-1024x683.jpg"
+    ],
+    "atividades": [
+      {
+        "titulo": "Passeio em Portillo",
+        "descricao": "Visita a um dos centros de esqui mais antigos e prestigiados da América do Sul.",
+        "comAgencia": true,
+        "position": {
+          "latitude": -32.8372,
+          "longitude": -70.1309
+        }
+      },
+      {
+        "titulo": "Laguna del Inca",
+        "descricao": "Conhecer o lago glacial de águas turquesas cercado por montanhas nevadas.",
+        "comAgencia": true,
+        "position": {
+          "latitude": -32.8358,
+          "longitude": -70.1294
+        }
+      }
+    ],
+    "dicas": [
+      "Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja com bateria completa.",
+      "Use calçados confortáveis e com boa aderência para caminhar em terrenos nevados.",
+      "Leve água e lanches, pois algumas áreas têm opções limitadas de alimentação."
+    ],
+    "detalhesAdicionais": [
+      {
+        "titulo": "A Lenda da Laguna del Inca",
+        "conteudo": "A Laguna del Inca, com suas águas de um azul-esmeralda impressionante, está envolta em uma lenda inca romântica e trágica. Segundo a história, o príncipe inca Illi Yupanqui e sua noiva Kora-Illé viajaram até este local para seu casamento. Tragicamente, Kora-Illé caiu de um penhasco e morreu. O inconsolável príncipe ordenou que o corpo de sua amada fosse depositado no fundo do lago. A lenda diz que as lágrimas do príncipe e os deuses incas transformaram as águas do lago em sua tonalidade turquesa única, em homenagem à beleza da princesa."
+      }
+    ],
+    "sobreLocal": "Portillo é um dos centros de esqui mais tradicionais do Chile, localizado na província de Los Andes, a cerca de 160 km de Santiago. A Laguna del Inca é um lago glacial situado a 2.840 metros de altitude, oferecendo um dos cenários mais espetaculares dos Andes chilenos.",
+    "transporte": "Agência de turismo"
+  },
+  {
+    "id": "dia4",
+    "titulo": "Vinícola e City Tour",
+    "data": "Sexta-feira, 09/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/23/Vi%C3%B1a_Concha_y_Toro%2C_Chile.jpg",
+      "https://chile.travel/wp-content/uploads/2016/04/Santiago-Enrique-Torrejon-1024x683.jpg",
+      "https://www.skycostanera.cl/wp-content/uploads/2022/07/atardecer-costanera-center-min.jpg"
+    ],
+    "periodo": {
+      "manha": [
+        {
+          "titulo": "Tour e degustação na Vinícola Concha y Toro",
+          "descricao": "Uma das vinícolas mais famosas do Chile, com tour guiado e degustação de vinhos premium.",
+          "position": {
+            "latitude": -33.5788,
+            "longitude": -70.6850
+          }
+        }
+      ],
+      "almoco": [
+        {
+          "titulo": "Restaurante na vinícola ou retorno a Santiago",
+          "descricao": "Opção de almoçar no restaurante da vinícola ou em algum local no centro de Santiago.",
+          "position": {
+            "latitude": -33.5788,
+            "longitude": -70.6850
+          }
+        }
+      ],
+      "tarde": [
+        {
+          "titulo": "City Tour Santiago",
+          "descricao": "Visita ao Centro Histórico, Plaza de Armas, Catedral de Santiago e Palácio de La Moneda.",
+          "position": {
+            "latitude": -33.4377,
+            "longitude": -70.6505
+          }
+        }
+      ],
+      "fimDeTarde": [
+        {
+          "titulo": "Sky Costanera (pôr do sol)",
+          "descricao": "Visita ao mirante mais alto da América Latina, com vista 360° da cidade e dos Andes.",
+          "position": {
+            "latitude": -33.4172,
+            "longitude": -70.6068
+          }
+        }
+      ],
+      "noite": [
+        {
+          "titulo": "Jantar e passeio pelo Bairro Bellavista",
+          "descricao": "Zona boêmia de Santiago, com restaurantes, bares e vida noturna animada.",
+          "position": {
+            "latitude": -33.4312,
+            "longitude": -70.6356
+          }
+        }
+      ]
+    },
+    "dicas": [
+      "Reserve o jantar com antecedência se tiver um restaurante específico em mente no Bellavista, especialmente sendo uma sexta-feira.",
+      "Na Concha y Toro, considere adquirir o tour premium que inclui degustação de vinhos especiais.",
+      "O Sky Costanera tem ingressos com horário marcado, então é recomendável comprar antecipadamente para garantir o horário do pôr do sol.",
+      "Leve um casaco leve para o fim do dia, quando as temperaturas caem em Santiago."
+    ],
+    "detalhesAdicionais": [
+      {
+        "titulo": "Sobre a Vinícola Concha y Toro",
+        "conteudo": "Fundada em 1883, a Concha y Toro é uma das maiores produtoras de vinho da América Latina. A propriedade fica a cerca de 30 km de Santiago, no vale do Maipo. O tour inclui uma visita aos jardins da antiga mansão da família, às vinhas e à famosa adega 'Casillero del Diablo', que tem uma lenda interessante sobre como recebeu este nome."
+      },
+      {
+        "titulo": "Sobre o Sky Costanera",
+        "conteudo": "Localizado no topo da Gran Torre Santiago (Costanera Center), a 300 metros de altura, é o mirante mais alto da América Latina. Oferece uma vista incomparável de Santiago, especialmente ao pôr do sol, quando se pode ver a cidade se iluminando enquanto o sol se põe atrás da Cordilheira dos Andes."
+      }
+    ],
+    "sobreLocal": "O vale do Maipo é a região vinícola mais tradicional do Chile, com séculos de tradição na produção de vinhos. O centro de Santiago concentra a história da cidade, com edifícios coloniais e praças históricas.",
+    "transporte": "Transfer / Transporte público"
+  },
+  {
+    "id": "dia5",
+    "titulo": "Valparaíso e Viña del Mar",
+    "data": "Sábado, 10/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://www.goatsontheroad.com/wp-content/uploads/2018/02/colorful-valparaiso-hills-1.jpg",
+      "https://www.atlasobscura.com/uploads/assets/44ae7b0f-90bf-4677-9fa08b55c0e64a0c/reloj.jpg"
+    ],
+    "periodo": {
+      "manha": [
+        {
+          "titulo": "Aluguel de carro e saída cedo de Santiago",
+          "descricao": "Pegar o carro alugado e dirigir rumo ao litoral (aproximadamente 1h30 de viagem).",
+          "position": {
+            "latitude": -33.4372,
+            "longitude": -70.6506
+          }
+        },
+        {
+          "titulo": "Visita a Caleta Portales",
+          "descricao": "Porto de pescadores onde é possível observar leões marinhos em seu habitat natural.",
+          "position": {
+            "latitude": -33.0288,
+            "longitude": -71.6268
+          }
+        }
+      ],
+      "meioDia": [
+        {
+          "titulo": "Passeio por Valparaíso",
+          "descricao": "Explorar os murais, mirantes e funiculares históricos da cidade colorida.",
+          "position": {
+            "latitude": -33.0472,
+            "longitude": -71.6127
+          }
+        },
+        {
+          "titulo": "Almoço em Viña del Mar",
+          "descricao": "Restaurante à beira-mar para degustar frutos do mar frescos.",
+          "position": {
+            "latitude": -33.0153,
+            "longitude": -71.5515
+          }
+        }
+      ],
+      "tarde": [
+        {
+          "titulo": "Passeio pela orla de Viña del Mar",
+          "descricao": "Caminhada pelo calçadão, visita ao Castelo Wulff e ao famoso Relógio de Flores.",
+          "position": {
+            "latitude": -33.0153,
+            "longitude": -71.5515
+          }
+        },
+        {
+          "titulo": "Fim da tarde: Retorno para Santiago",
+          "descricao": "Viagem de volta para a capital (considerar o trânsito de fim de semana).",
+          "position": {
+            "latitude": -33.4372,
+            "longitude": -70.6506
+          }
+        }
+      ]
+    },
+    "dicas": [
+      "Saia bem cedo para aproveitar o dia completo. O ideal é partir de Santiago antes das 8h.",
+      "O trânsito pode ser intenso no retorno a Santiago no fim da tarde de sábado, calcule bem o tempo.",
+      "Em Valparaíso, o melhor jeito de explorar é a pé, pelos Cerros Alegre e Concepción, onde estão as casas coloridas e murais mais famosos.",
+      "Os funiculares (elevadores) de Valparaíso são patrimônio histórico e uma experiência única, não deixe de experimentar.",
+      "Para almoço em Viña del Mar, os restaurantes na área de Caleta Abarca oferecem excelentes frutos do mar com vista para o oceano."
+    ],
+    "detalhesAdicionais": [
+      {
+        "titulo": "Sobre Valparaíso",
+        "conteudo": "Conhecida como a 'Joia do Pacífico', Valparaíso é uma cidade portuária declarada Patrimônio da Humanidade pela UNESCO. Suas casas coloridas construídas em morros íngremes, seus elevadores funiculares do século XIX e a arte urbana que cobre suas paredes fazem desta cidade um museu a céu aberto. Foi também residência do poeta Pablo Neruda, cuja casa-museu, La Sebastiana, é uma das atrações da cidade."
+      },
+      {
+        "titulo": "Sobre Viña del Mar",
+        "conteudo": "Conhecida como 'Cidade Jardim', Viña del Mar é uma elegante estância balneária com belas praias, jardins bem cuidados e uma arquitetura que mescla o moderno com o colonial. Entre suas atrações mais famosas estão o Relógio de Flores, construído em 1962 para a Copa do Mundo de Futebol, e o Castelo Wulff, um casarão do início do século XX construído sobre as rochas à beira-mar."
+      }
+    ],
+    "sobreLocal": "Valparaíso e Viña del Mar são cidades vizinhas na costa do Oceano Pacífico, a cerca de 120 km de Santiago. Enquanto Valparaíso impressiona por sua atmosfera boêmia e arquitetura colorida nos morros, Viña del Mar se destaca por suas praias, jardins e ambiente mais sofisticado.",
+    "transporte": "Carro alugado"
+  },
+  {
+    "id": "dia6",
+    "titulo": "Farellones",
+    "data": "Domingo, 11/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://skifarellones.com/wp-content/uploads/2021/06/Farellones-Day-tours-3.jpg"
+    ],
+    "atividades": [
+      {
+        "titulo": "Passeio a Farellones (SUGESTÃO)",
+        "descricao": "Visita à estância de esqui próxima a Santiago, menos movimentada que Valle Nevado.",
+        "position": {
+          "latitude": -33.3542,
+          "longitude": -70.3275
+        }
+      }
+    ],
+    "dicas": [
+      "Verifique se seu carro alugado tem os equipamentos necessários para dirigir na neve (correntes, pneus adequados).",
+      "A estrada para Farellones tem 40 curvas em ziguezague e requer atenção. Dirija com cautela, especialmente em condições de neve.",
+      "Em Farellones, você pode alugar equipamentos para atividades na neve mesmo sem ser esquiador profissional.",
+      "Este é um bom dia para experimentar a gastronomia de montanha - os restaurantes de Farellones oferecem pratos típicos como fondues e racletttes."
+    ],
+    "sobreLocal": "Farellones é um vilarejo de montanha situado a 36 km a nordeste de Santiago, a uma altitude de aproximadamente 2.340 metros. Fundado na década de 1930, é o centro de esqui mais antigo do Chile e porta de entrada para o complexo Tres Valles, que inclui também El Colorado, La Parva e Valle Nevado. A estância é ideal para famílias e iniciantes na neve, oferecendo atividades como tubing, snowboard, e passeios de snowmobile, além de escolas de esqui com instrutores que falam português.",
+    "transporte": "Carro alugado"
+  },
+  {
+    "id": "dia7",
+    "titulo": "Visita ao Betel do Chile",
+    "data": "Segunda-feira, 12/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://www.jw.org/finder?srcid=jwlps&lank=pub-jiji_1_VIDEO&data=img%7C01_01"
+    ],
+    "atividades": [
+      {
+        "titulo": "Visita ao Betel do Chile (Testemunhas de Jeová)",
+        "descricao": "Visita às instalações administrativas e de impressão das Testemunhas de Jeová no Chile.",
+        "position": {
+          "latitude": -33.5814,
+          "longitude": -70.5794
+        }
+      },
+      {
+        "titulo": "Tarde livre",
+        "descricao": "Tempo disponível para compras ou para revisitar lugares favoritos em Santiago.",
+        "position": {
+          "latitude": -33.4372,
+          "longitude": -70.6506
+        }
+      }
+    ],
+    "dicas": [
+      "Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.",
+      "A sede do Betel fica em Av. Concha y Toro 3456-3540, Puente Alto, Santiago.",
+      "Para o tempo livre, considere visitar algum dos mercados de artesanato de Santiago para comprar lembranças, como o Centro Artesanal Los Dominicos ou o Patio Bellavista."
+    ],
+    "sobreLocal": "O complexo Betel é a sede nacional das Testemunhas de Jeová no Chile. 'Betel' significa 'Casa de Deus' em hebraico. Estas instalações abrigam escritórios administrativos, centros de impressão de literatura bíblica e residência para os trabalhadores voluntários. A visita guiada às instalações permite conhecer como são produzidas e distribuídas as publicações em diversos idiomas, além de observar o funcionamento da organização.",
+    "transporte": "Transporte público"
+  },
+  {
+    "id": "dia8",
+    "titulo": "Despedida de Santiago",
+    "data": "Terça-feira, 13/05/2025",
+    "probabilidadeNeve": "media",
+    "imagens": [
+      "https://www.chile.travel/wp-content/uploads/2016/04/mercado-central-de-santiago-gabriel-iturra-1024x683.jpg"
+    ],
+    "atividades": [
+      {
+        "titulo": "Check-out do hotel",
+        "descricao": "Deixar o hotel e armazenar as bagagens se necessário.",
+        "position": {
+          "latitude": -33.4372,
+          "longitude": -70.6506
+        }
+      },
+      {
+        "titulo": "Ir para o aeroporto",
+        "descricao": "Deslocamento para o Aeroporto Internacional de Santiago.",
+        "position": {
+          "latitude": -33.3898,
+          "longitude": -70.7945
+        }
+      }
+    ],
+    "dicas": [
+      "Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.",
+      "O Parque Bicentenario é uma opção próxima à rota para o aeroporto, ideal para uma última caminhada relaxante.",
+      "Lembre-se de calcular pelo menos 3 horas antes do voo internacional para chegar ao aeroporto."
+    ],
+    "detalhesAdicionais": [
+      {
+        "titulo": "Check-out do Hotel",
+        "conteudo": "O horário padrão de check-out no Hotel Panamericano é às 12h. Caso seu voo seja mais tarde, solicite ao hotel a guarda de bagagens, serviço geralmente disponível sem custo adicional. Não se esqueça de verificar se todos os consumos extras foram incluídos na sua conta final e guarde o comprovante de pagamento."
+      },
+      {
+        "titulo": "Transporte para o Aeroporto",
+        "conteudo": "O Aeroporto Internacional Arturo Merino Benítez fica a aproximadamente 20 km do centro de Santiago. As opções de transporte incluem: Táxi (30-40 minutos, dependendo do trânsito), Transfer do hotel (mediante reserva prévia), Ônibus Centropuerto ou Turbus (opções econômicas com saídas frequentes)."
+      }
+    ],
+    "sobreLocal": "No último dia, aproveite para fazer compras de última hora ou visitar algum lugar que ainda não tenha conhecido. O Mercado Central é um bom lugar para experimentar a culinária local uma última vez antes de partir.",
+    "transporte": "Táxi / Transfer"
+  },
+  {
+    "id": "dicas",
+    "titulo": "Recomendações Adicionais",
+    "recomendacoes": [
+      {
+        "categoria": "Clima e Vestimenta",
+        "itens": [
+          {
+            "titulo": "Santiago (maio)",
+            "descricao": "Temperaturas entre 5°C e 20°C, início do inverno.",
+            "icone": "fas fa-thermometer-half"
+          },
+          {
+            "titulo": "Regiões montanhosas",
+            "descricao": "Temperaturas abaixo de 0°C, especialmente à noite.",
+            "icone": "fas fa-mountain"
+          },
+          {
+            "titulo": "Recomendação",
+            "descricao": "Leve roupas de inverno, principalmente para os passeios à neve. Para a cidade, roupas em camadas funcionam bem, pois durante o dia pode esquentar e à noite esfria bastante.",
+            "icone": "fas fa-tshirt"
+          }
+        ]
+      },
+      {
+        "categoria": "Transporte",
+        "itens": [
+          {
+            "titulo": "Dentro de Santiago",
+            "descricao": "O metrô é eficiente e seguro para se locomover pela cidade.",
+            "icone": "fas fa-subway"
+          },
+          {
+            "titulo": "Para Valle Nevado e Portillo",
+            "descricao": "O transporte com agência é ideal, pois são estradas de montanha que podem ser desafiadoras.",
+            "icone": "fas fa-bus"
+          },
+          {
+            "titulo": "Valparaíso/Viña del Mar",
+            "descricao": "O aluguel de carro oferece flexibilidade, mas também existe a opção de ônibus interurbanos confortáveis.",
+            "icone": "fas fa-car"
+          }
+        ]
+      },
+      {
+        "categoria": "Gastronomia Recomendada",
+        "itens": [
+          {
+            "titulo": "Pratos típicos",
+            "descricao": "Experimente empanadas, pastel de choclo, curanto, e frutos do mar frescos.",
+            "icone": "fas fa-utensils"
+          },
+          {
+            "titulo": "Vinhos",
+            "descricao": "Chile é famoso por seus vinhos, especialmente Carménère, Cabernet Sauvignon e Sauvignon Blanc.",
+            "icone": "fas fa-wine-glass-alt"
+          },
+          {
+            "titulo": "Restaurantes recomendados em Santiago",
+            "descricao": "Boragó (alta gastronomia chilena), Aquí está Coco (frutos do mar), El Mesón Nerudiano (comida tradicional).",
+            "icone": "fas fa-concierge-bell"
+          }
+        ]
+      },
+      {
+        "categoria": "Dicas Práticas",
+        "itens": [
+          {
+            "titulo": "Moeda",
+            "descricao": "Peso chileno (CLP). Recomendo ter algum dinheiro em espécie, especialmente para pequenos comércios.",
+            "icone": "fas fa-dollar-sign"
+          },
+          {
+            "titulo": "Idioma",
+            "descricao": "Espanhol. Inglês é falado principalmente em áreas turísticas e hotéis.",
+            "icone": "fas fa-language"
+          },
+          {
+            "titulo": "Segurança",
+            "descricao": "Santiago é relativamente segura para turistas, mas como em qualquer grande cidade, é recomendável tomar precauções básicas.",
+            "icone": "fas fa-shield-alt"
+          },
+          {
+            "titulo": "Fuso horário",
+            "descricao": "Chile está no fuso GMT-4, uma hora a mais que o horário de Brasília.",
+            "icone": "fas fa-clock"
+          }
+        ]
+      }
+    ],
+    "observacoesFinais": "Seu roteiro está bem equilibrado, combinando natureza, cultura e gastronomia. Você terá a oportunidade de conhecer tanto a movimentada vida urbana de Santiago quanto as paisagens impressionantes dos Andes, o charme das cidades costeiras e a rica tradição vinícola chilena. A única sugestão seria talvez reservar alguns momentos para descanso, especialmente após os dias de passeios à neve, que podem ser fisicamente cansativos. Por fim, mantenha-se flexível. O clima na Cordilheira dos Andes pode mudar rapidamente, então é bom estar preparado para possíveis alterações no roteiro."
+  }
+] 
