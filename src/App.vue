@@ -1,108 +1,21 @@
 <script setup>
 // Roteiro de Viagem Chile 2025
+import Header from './components/header/header.vue'
+import NavigationMenu from './components/navigationmenu/navigationmenu.vue'
+import TripOverview from './components/overview/TripOverview.vue'
 </script>
 
 <template>
-  <!-- Header & Hero Section -->
-  <header class="hero-bg text-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Cocodrilos em Santiago</h1>
-    <p class="text-lg sm:text-xl lg:text-2xl mb-8">Roteiro de Viagem Chile 2025</p>
-    <div class="inline-flex bg-white text-blue-900 font-bold rounded-full px-6 py-2">
-      <span class="mr-2"><i class="fas fa-calendar-alt"></i></span>
-      06 a 13 de Maio de 2025
-    </div>
-  </header>
+  <!-- Header Component -->
+  <Header />
 
   <!-- Navigation Menu -->
-  <nav class="sticky-nav bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8 mb-12 overflow-x-auto">
-    <div class="container mx-auto">
-      <ul class="flex flex-nowrap justify-start sm:justify-center -mx-2 min-w-max">
-        <li><a href="#visao-geral"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Visão
-            Geral</a></li>
-        <li><a href="#dia1"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            1</a></li>
-        <li><a href="#dia2"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            2</a></li>
-        <li><a href="#dia3"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            3</a></li>
-        <li><a href="#dia4"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            4</a></li>
-        <li><a href="#dia5"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            5</a></li>
-        <li><a href="#dia6"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            6</a></li>
-        <li><a href="#dia7"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            7</a></li>
-        <li><a href="#dia8"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            8</a></li>
-        <li><a href="#dicas"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dicas</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <NavigationMenu />
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Overview Section -->
-    <section id="visao-geral" class="mb-20">
-      <h2 class="text-3xl font-bold text-blue-800 mb-6 pb-2 border-b-2 border-blue-300">Visão Geral da Viagem</h2>
-      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <p class="text-lg mb-4">Este roteiro inclui 8 dias no Chile, com base em Santiago, combinando
-          experiências incríveis:</p>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-snowflake"></i>
-            </div>
-            <p>Aventuras na neve (Valle Nevado e Portillo)</p>
-          </li>
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-city"></i>
-            </div>
-            <p>Turismo urbano em Santiago</p>
-          </li>
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-mountain"></i>
-            </div>
-            <p>Passeios a Valparaíso e Viña del Mar</p>
-          </li>
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-wine-glass-alt"></i>
-            </div>
-            <p>Degustação em vinícolas</p>
-          </li>
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-utensils"></i>
-            </div>
-            <p>Experiências gastronômicas</p>
-          </li>
-          <li class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
-              <i class="fas fa-church"></i>
-            </div>
-            <p>Visitas culturais e religiosas</p>
-          </li>
-        </ul>
-        <div class="text-gray-700 italic">
-          <p>A probabilidade de neve em Valle Nevado durante nossa visita é classificada como média a alta, o
-            que promete uma experiência incrível com a neve andina.</p>
-        </div>
-      </div>
-    </section>
+    <TripOverview />
 
     <!-- Day 1 -->
     <section id="dia1" class="mb-20">
@@ -901,21 +814,6 @@ body {
 
 .day-card:hover {
   transform: translateY(-5px);
-}
-
-.nav-item {
-  transition: all 0.3s ease;
-}
-
-.nav-item:hover {
-  background-color: #2b6cb0;
-  color: white !important;
-}
-
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
 }
 
 .photo-gallery {
