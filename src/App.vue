@@ -1,23 +1,986 @@
 <script setup>
-// Componente simplificado Olá Mundo
+// Roteiro de Viagem Chile 2025
 </script>
 
 <template>
-  <div class="container">
-    <h1>Olá Mundo!</h1>
-  </div>
+  <!-- Header & Hero Section -->
+  <header class="hero-bg text-white py-24 px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Cocodrilos em Santiago</h1>
+    <p class="text-xl sm:text-2xl mb-8">Roteiro de Viagem Chile 2025</p>
+    <div class="inline-flex bg-white text-blue-900 font-bold rounded-full px-6 py-2">
+      <span class="mr-2"><i class="fas fa-calendar-alt"></i></span>
+      06 a 13 de Maio de 2025
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav class="sticky-nav bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="container mx-auto">
+      <ul class="flex flex-wrap justify-center -mx-2">
+        <li><a href="#visao-geral"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Visão
+            Geral</a></li>
+        <li><a href="#dia1"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            1</a></li>
+        <li><a href="#dia2"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            2</a></li>
+        <li><a href="#dia3"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            3</a></li>
+        <li><a href="#dia4"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            4</a></li>
+        <li><a href="#dia5"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            5</a></li>
+        <li><a href="#dia6"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            6</a></li>
+        <li><a href="#dia7"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            7</a></li>
+        <li><a href="#dia8"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dia
+            8</a></li>
+        <li><a href="#dicas"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium">Dicas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Overview Section -->
+    <section id="visao-geral" class="mb-20">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6 pb-2 border-b-2 border-blue-300">Visão Geral da Viagem</h2>
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <p class="text-lg mb-4">Este roteiro inclui 8 dias no Chile, com base em Santiago, combinando
+          experiências incríveis:</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-snowflake"></i>
+            </div>
+            <p>Aventuras na neve (Valle Nevado e Portillo)</p>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-city"></i>
+            </div>
+            <p>Turismo urbano em Santiago</p>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <p>Passeios a Valparaíso e Viña del Mar</p>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-wine-glass-alt"></i>
+            </div>
+            <p>Degustação em vinícolas</p>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <p>Experiências gastronômicas</p>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-church"></i>
+            </div>
+            <p>Visitas culturais e religiosas</p>
+          </li>
+        </ul>
+        <div class="text-gray-700 italic">
+          <p>A probabilidade de neve em Valle Nevado durante nossa visita é classificada como média a alta, o
+            que promete uma experiência incrível com a neve andina.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Day 1 -->
+    <section id="dia1" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 1 - Chegada a Santiago</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Terça-feira, 06/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+            alt="Hotel Panamericano" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Check-in no Hotel Panamericano</p>
+            <p class="text-gray-600">Hospedagem em região central de Santiago, próximo a pontos turísticos e
+              com fácil acesso ao transporte público.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Passeio livre pelos arredores</p>
+            <p class="text-gray-600">Conheça o bairro onde está hospedado e comece a explorar Santiago.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 1:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Após o check-in, você pode visitar o Cerro Santa Lucía ou o Parque Forestal, ambos
+                próximos ao hotel.</li>
+              <li>• Experimente restaurantes locais no bairro Lastarria para seu primeiro contato com a
+                gastronomia chilena.</li>
+              <li>• Aproveite para descansar e se adaptar à altitude de Santiago (520m acima do nível do
+                mar).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Detalhes do Hotel</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p class="font-medium">Hotel Panamericano</p>
+            <p class="text-gray-600">Localizado em uma região central de Santiago, próximo a atrações
+              turísticas e estações de metrô.</p>
+            <p class="text-gray-600 mt-2">Oferece café da manhã, Wi-Fi gratuito e serviço de concierge para
+              ajudar com reservas de passeios.</p>
+          </div>
+          <div>
+            <p class="font-medium">Como chegar do aeroporto:</p>
+            <p class="text-gray-600">O Aeroporto Internacional Arturo Merino Benítez fica a aproximadamente
+              20 km do hotel.</p>
+            <p class="text-gray-600 mt-2">Opções de transporte: táxi (30-40 minutos), transfer do hotel
+              (mediante reserva prévia) ou transporte público (aprox. 1 hora).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Day 2 -->
+    <section id="dia2" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 2 - Valle Nevado Sunset</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Quarta-feira, 07/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-high text-white rounded-full text-sm">Probabilidade de Neve:
+          Alta</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://www.vallenevado.com/wp-content/uploads/2020/05/SnowRace-Valle-Nevado-Ski-Resort-Chile-Andes-Mountains-7.jpg"
+            alt="Valle Nevado Sunset" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Valle Nevado Sunset</p>
+            <p class="text-gray-600">Subida à tarde para curtir o pôr do sol na neve, uma experiência
+              inesquecível nos Andes chilenos.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Passeio com Agência</p>
+            <p class="text-gray-600">O transporte será realizado com agência especializada para garantir
+              segurança e conforto.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 2:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos
+                Andes.</li>
+              <li>• Leve uma garrafa térmica com bebida quente e alguns snacks para o passeio.</li>
+              <li>• Não se esqueça da proteção solar - mesmo com tempo nublado, a radiação UV é intensa na
+                altitude.</li>
+              <li>• Leve sua câmera ou celular com bateria completa para registrar os visuais
+                espetaculares.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Sobre Valle Nevado</h3>
+        <p class="text-gray-700 mb-4">Valle Nevado é um dos principais centros de esqui da América do Sul,
+          localizado a cerca de 60 km a leste de Santiago, na Cordilheira dos Andes. A uma altitude de
+          aproximadamente 3.000 metros, oferece vistas panorâmicas impressionantes.</p>
+        <p class="text-gray-700 mb-4">A experiência do pôr do sol em Valle Nevado é considerada uma das mais
+          bonitas da região, com a luz alaranjada refletindo na neve e criando um espetáculo visual único. É
+          um momento mágico que combina a grandiosidade das montanhas com as cores vibrantes do céu.</p>
+        <p class="text-gray-700">Mesmo sem praticar esqui, a visita vale a pena pelo cenário de tirar o fôlego e
+          pela oportunidade de estar em contato com a neve dos Andes.</p>
+      </div>
+    </section>
+
+    <!-- Day 3 -->
+    <section id="dia3" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 3 - Portillo e Laguna del Inca</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Quinta-feira, 08/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://skiportillo.com/wp-content/uploads/2018/10/APORTADA-1024x683.jpg"
+            alt="Portillo Ski Resort e Laguna del Inca"
+            class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Passeio em Portillo</p>
+            <p class="text-gray-600">Visita a um dos centros de esqui mais antigos e prestigiados da América
+              do Sul.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Laguna del Inca</p>
+            <p class="text-gray-600">Conhecer o lago glacial de águas turquesas cercado por montanhas
+              nevadas.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Passeio com Agência</p>
+            <p class="text-gray-600">Transporte e guia especializados para aproveitar ao máximo a
+              experiência.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 3:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja
+                com bateria completa.</li>
+              <li>• Use calçados confortáveis e com boa aderência para caminhar em terrenos nevados.</li>
+              <li>• Leve água e lanches, pois algumas áreas têm opções limitadas de alimentação.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">A Lenda da Laguna del Inca</h3>
+        <p class="text-gray-700 mb-4">A Laguna del Inca, com suas águas de um azul-esmeralda impressionante,
+          está envolta em uma lenda inca romântica e trágica. Segundo a história, o príncipe inca Illi
+          Yupanqui e sua noiva Kora-Illé viajaram até este local para seu casamento. Tragicamente, Kora-Illé
+          caiu de um penhasco e morreu. O inconsolável príncipe ordenou que o corpo de sua amada fosse
+          depositado no fundo do lago.</p>
+        <p class="text-gray-700 mb-4">A lenda diz que as lágrimas do príncipe e os deuses incas transformaram as
+          águas do lago em sua tonalidade turquesa única, em homenagem à beleza da princesa. E que a cor
+          especial da água vem das joias que adornavam o corpo da princesa.</p>
+        <p class="text-gray-700">Este lago de origem glacial, situado a 2.840 metros de altitude, oferece um dos
+          cenários mais espetaculares dos Andes chilenos e é um lugar imperdível para quem visita a região.
+        </p>
+      </div>
+    </section>
+
+    <!-- Day 4 -->
+    <section id="dia4" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 4 - Vinícola e City Tour</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Sexta-feira, 09/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div class="photo-container h-60 lg:h-80">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Vi%C3%B1a_Concha_y_Toro%2C_Chile.jpg"
+            alt="Vinícola Concha y Toro" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="photo-container h-60 lg:h-80">
+          <img src="https://chile.travel/wp-content/uploads/2016/04/Santiago-Enrique-Torrejon-1024x683.jpg"
+            alt="City Tour Santiago" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="photo-container h-60 lg:h-80">
+          <img src="https://www.skycostanera.cl/wp-content/uploads/2022/07/atardecer-costanera-center-min.jpg"
+            alt="Sky Costanera" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Manhã</h4>
+            <div class="activity-item">
+              <p class="font-medium">Tour e degustação na Vinícola Concha y Toro</p>
+              <p class="text-gray-600">Uma das vinícolas mais famosas do Chile, com tour guiado e
+                degustação de vinhos premium.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Almoço</h4>
+            <div class="activity-item">
+              <p class="font-medium">Restaurante na vinícola ou retorno a Santiago</p>
+              <p class="text-gray-600">Opção de almoçar no restaurante da vinícola ou em algum local no
+                centro de Santiago.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Tarde</h4>
+            <div class="activity-item">
+              <p class="font-medium">City Tour Santiago</p>
+              <p class="text-gray-600">Visita ao Centro Histórico, Plaza de Armas, Catedral de Santiago e
+                Palácio de La Moneda.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Fim de tarde</h4>
+            <div class="activity-item">
+              <p class="font-medium">Sky Costanera (pôr do sol)</p>
+              <p class="text-gray-600">Visita ao mirante mais alto da América Latina, com vista 360° da
+                cidade e dos Andes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-blue-600 mb-2">Noite</h4>
+          <div class="activity-item">
+            <p class="font-medium">Jantar e passeio pelo Bairro Bellavista</p>
+            <p class="text-gray-600">Zona boêmia de Santiago, com restaurantes, bares e vida noturna
+              animada.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-lg shadow-md p-6">
+        <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Dicas
+          para o Dia 4:</h4>
+        <ul class="text-gray-700 space-y-2 mb-4">
+          <li>• Reserve o jantar com antecedência se tiver um restaurante específico em mente no Bellavista,
+            especialmente sendo uma sexta-feira.</li>
+          <li>• Na Concha y Toro, considere adquirir o tour premium que inclui degustação de vinhos especiais.
+          </li>
+          <li>• O Sky Costanera tem ingressos com horário marcado, então é recomendável comprar
+            antecipadamente para garantir o horário do pôr do sol.</li>
+          <li>• Leve um casaco leve para o fim do dia, quando as temperaturas caem em Santiago.</li>
+        </ul>
+
+        <h4 class="font-bold text-blue-800 mb-2">Sobre a Vinícola Concha y Toro:</h4>
+        <p class="text-gray-700 mb-4">Fundada em 1883, a Concha y Toro é uma das maiores produtoras de vinho da
+          América Latina. A propriedade fica a cerca de 30 km de Santiago, no vale do Maipo. O tour inclui uma
+          visita aos jardins da antiga mansão da família, às vinhas e à famosa adega "Casillero del Diablo",
+          que tem uma lenda interessante sobre como recebeu este nome.</p>
+
+        <h4 class="font-bold text-blue-800 mb-2">Sobre o Sky Costanera:</h4>
+        <p class="text-gray-700">Localizado no topo da Gran Torre Santiago (Costanera Center), a 300 metros de
+          altura, é o mirante mais alto da América Latina. Oferece uma vista incomparável de Santiago,
+          especialmente ao pôr do sol, quando se pode ver a cidade se iluminando enquanto o sol se põe atrás
+          da Cordilheira dos Andes.</p>
+      </div>
+    </section>
+
+    <!-- Day 5 -->
+    <section id="dia5" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 5 - Valparaíso e Viña del Mar</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Sábado, 10/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://www.goatsontheroad.com/wp-content/uploads/2018/02/colorful-valparaiso-hills-1.jpg"
+            alt="Casas Coloridas de Valparaíso" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="photo-container h-80">
+          <img src="https://www.atlasobscura.com/uploads/assets/44ae7b0f-90bf-4677-9fa08b55c0e64a0c/reloj.jpg"
+            alt="Relógio de Flores em Viña del Mar" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Manhã</h4>
+            <div class="activity-item">
+              <p class="font-medium">Aluguel de carro e saída cedo de Santiago</p>
+              <p class="text-gray-600">Pegar o carro alugado e dirigir rumo ao litoral (aproximadamente
+                1h30 de viagem).</p>
+            </div>
+            <div class="activity-item">
+              <p class="font-medium">Visita a Caleta Portales</p>
+              <p class="text-gray-600">Porto de pescadores onde é possível observar leões marinhos em seu
+                habitat natural.</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Meio-dia</h4>
+            <div class="activity-item">
+              <p class="font-medium">Passeio por Valparaíso</p>
+              <p class="text-gray-600">Explorar os murais, mirantes e funiculares históricos da cidade
+                colorida.</p>
+            </div>
+            <div class="activity-item">
+              <p class="font-medium">Almoço em Viña del Mar</p>
+              <p class="text-gray-600">Restaurante à beira-mar para degustar frutos do mar frescos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-blue-600 mb-2">Tarde</h4>
+          <div class="activity-item">
+            <p class="font-medium">Passeio pela orla de Viña del Mar</p>
+            <p class="text-gray-600">Caminhada pelo calçadão, visita ao Castelo Wulff e ao famoso Relógio de
+              Flores.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Fim da tarde: Retorno para Santiago</p>
+            <p class="text-gray-600">Viagem de volta para a capital (considerar o trânsito de fim de
+              semana).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-lg shadow-md p-6">
+        <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Dicas
+          para o Dia 5:</h4>
+        <ul class="text-gray-700 space-y-2 mb-4">
+          <li>• Saia bem cedo para aproveitar o dia completo. O ideal é partir de Santiago antes das 8h.</li>
+          <li>• O trânsito pode ser intenso no retorno a Santiago no fim da tarde de sábado, calcule bem o
+            tempo.</li>
+          <li>• Em Valparaíso, o melhor jeito de explorar é a pé, pelos Cerros Alegre e Concepción, onde estão
+            as casas coloridas e murais mais famosos.</li>
+          <li>• Os funiculares (elevadores) de Valparaíso são patrimônio histórico e uma experiência única,
+            não deixe de experimentar.</li>
+          <li>• Para almoço em Viña del Mar, os restaurantes na área de Caleta Abarca oferecem excelentes
+            frutos do mar com vista para o oceano.</li>
+        </ul>
+
+        <h4 class="font-bold text-blue-800 mb-2">Sobre Valparaíso:</h4>
+        <p class="text-gray-700 mb-4">Conhecida como a "Joia do Pacífico", Valparaíso é uma cidade portuária
+          declarada Patrimônio da Humanidade pela UNESCO. Suas casas coloridas construídas em morros íngremes,
+          seus elevadores funiculares do século XIX e a arte urbana que cobre suas paredes fazem desta cidade
+          um museu a céu aberto. Foi também residência do poeta Pablo Neruda, cuja casa-museu, La Sebastiana,
+          é uma das atrações da cidade.</p>
+
+        <h4 class="font-bold text-blue-800 mb-2">Sobre Viña del Mar:</h4>
+        <p class="text-gray-700">Conhecida como "Cidade Jardim", Viña del Mar é uma elegante estância balneária
+          com belas praias, jardins bem cuidados e uma arquitetura que mescla o moderno com o colonial. Entre
+          suas atrações mais famosas estão o Relógio de Flores, construído em 1962 para a Copa do Mundo de
+          Futebol, e o Castelo Wulff, um casarão do início do século XX construído sobre as rochas à
+          beira-mar.</p>
+      </div>
+    </section>
+
+    <!-- Day 6 -->
+    <section id="dia6" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 6 - Farellones</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Domingo, 11/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://skifarellones.com/wp-content/uploads/2021/06/Farellones-Day-tours-3.jpg"
+            alt="Farellones Ski Resort" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Passeio a Farellones (SUGESTÃO)</p>
+            <p class="text-gray-600">Visita à estância de esqui próxima a Santiago, menos movimentada que
+              Valle Nevado.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Aproveitar o segundo dia de aluguel do carro</p>
+            <p class="text-gray-600">Utilizar o mesmo carro alugado no dia anterior para economia e
+              conveniência.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 6:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Verifique se seu carro alugado tem os equipamentos necessários para dirigir na neve
+                (correntes, pneus adequados).</li>
+              <li>• A estrada para Farellones tem 40 curvas em ziguezague e requer atenção. Dirija com
+                cautela, especialmente em condições de neve.</li>
+              <li>• Em Farellones, você pode alugar equipamentos para atividades na neve mesmo sem ser
+                esquiador profissional.</li>
+              <li>• Este é um bom dia para experimentar a gastronomia de montanha - os restaurantes de
+                Farellones oferecem pratos típicos como fondues e racletttes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Sobre Farellones</h3>
+        <p class="text-gray-700 mb-4">Farellones é um vilarejo de montanha situado a 36 km a nordeste de
+          Santiago, a uma altitude de aproximadamente 2.340 metros. Fundado na década de 1930, é o centro de
+          esqui mais antigo do Chile e porta de entrada para o complexo Tres Valles, que inclui também El
+          Colorado, La Parva e Valle Nevado.</p>
+        <p class="text-gray-700 mb-4">A estância é ideal para famílias e iniciantes na neve, oferecendo
+          atividades como tubing, snowboard, e passeios de snowmobile, além de escolas de esqui com
+          instrutores que falam português.</p>
+        <p class="text-gray-700">A arquitetura do vilarejo, com chalés de madeira e pedra, cria uma atmosfera
+          aconchegante de vila alpina. No inverno, as montanhas cobertas de neve oferecem um cenário
+          espetacular, enquanto no verão (nosso caso), as mesmas montanhas revelam belas paisagens para
+          caminhadas e mountain bike.</p>
+      </div>
+    </section>
+
+    <!-- Day 7 -->
+    <section id="dia7" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 7 - Visita ao Betel do Chile</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Segunda-feira, 12/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://www.jw.org/finder?srcid=jwlps&lank=pub-jiji_1_VIDEO&data=img%7C01_01"
+            alt="Betel Chile" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Visita ao Betel do Chile (Testemunhas de Jeová)</p>
+            <p class="text-gray-600">Visita às instalações administrativas e de impressão das Testemunhas de
+              Jeová no Chile.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Tarde livre</p>
+            <p class="text-gray-600">Tempo disponível para compras ou para revisitar lugares favoritos em
+              Santiago.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 7:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.
+              </li>
+              <li>• A sede do Betel fica em Av. Concha y Toro 3456-3540, Puente Alto, Santiago.</li>
+              <li>• Para o tempo livre, considere visitar algum dos mercados de artesanato de Santiago
+                para comprar lembranças, como o Centro Artesanal Los Dominicos ou o Patio Bellavista.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Sobre o Betel do Chile</h3>
+        <p class="text-gray-700 mb-4">O complexo Betel é a sede nacional das Testemunhas de Jeová no Chile.
+          "Betel" significa "Casa de Deus" em hebraico. Estas instalações abrigam escritórios administrativos,
+          centros de impressão de literatura bíblica e residência para os trabalhadores voluntários.</p>
+        <p class="text-gray-700 mb-4">A visita guiada às instalações permite conhecer como são produzidas e
+          distribuídas as publicações em diversos idiomas, além de observar o funcionamento da organização.
+        </p>
+        <p class="text-gray-700">As visitas são gratuitas e geralmente incluem uma explicação sobre a história
+          da organização no país e um tour pelas diferentes áreas de trabalho. É uma oportunidade para
+          conhecer mais sobre esta organização religiosa e seu trabalho no Chile e na América do Sul.</p>
+      </div>
+    </section>
+
+    <!-- Day 8 -->
+    <section id="dia8" class="mb-20">
+      <div class="flex items-center mb-6">
+        <h2 class="text-3xl font-bold text-blue-800 mr-4">Dia 8 - Despedida de Santiago</h2>
+        <div class="text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full">Terça-feira, 13/05/2025</div>
+        <div class="ml-auto px-4 py-1 probability-medium text-white rounded-full text-sm">Probabilidade de Neve:
+          Média</div>
+      </div>
+
+      <div class="day-divider mb-8"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div class="photo-container h-80">
+          <img src="https://www.chile.travel/wp-content/uploads/2016/04/mercado-central-de-santiago-gabriel-iturra-1024x683.jpg"
+            alt="Mercado Central de Santiago" class="w-full h-full object-cover rounded-lg shadow-md">
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
+          <div class="activity-item">
+            <p class="font-medium">Check-out do hotel</p>
+            <p class="text-gray-600">Deixar o hotel e armazenar as bagagens se necessário.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Ir para o aeroporto</p>
+            <p class="text-gray-600">Deslocamento para o Aeroporto Internacional de Santiago.</p>
+          </div>
+          <div class="activity-item">
+            <p class="font-medium">Aproveitar algo no caminho se possível</p>
+            <p class="text-gray-600">Dependendo do horário do voo, aproveitar para uma última experiência em
+              Santiago.</p>
+          </div>
+
+          <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Dicas para o Dia 8:</h4>
+            <ul class="text-gray-700 space-y-2">
+              <li>• Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar
+                ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.</li>
+              <li>• O Parque Bicentenario é uma opção próxima à rota para o aeroporto, ideal para uma
+                última caminhada relaxante.</li>
+              <li>• Lembre-se de calcular pelo menos 3 horas antes do voo internacional para chegar ao
+                aeroporto.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Procedimentos Finais</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Check-out do Hotel</h4>
+            <p class="text-gray-700 mb-4">O horário padrão de check-out no Hotel Panamericano é às 12h. Caso
+              seu voo seja mais tarde, solicite ao hotel a guarda de bagagens, serviço geralmente
+              disponível sem custo adicional.</p>
+            <p class="text-gray-700">Não se esqueça de verificar se todos os consumos extras foram incluídos
+              na sua conta final e guarde o comprovante de pagamento.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Transporte para o Aeroporto</h4>
+            <p class="text-gray-700 mb-4">O Aeroporto Internacional Arturo Merino Benítez fica a
+              aproximadamente 20 km do centro de Santiago. As opções de transporte incluem:</p>
+            <ul class="text-gray-700 space-y-1">
+              <li>• Táxi: 30-40 minutos, dependendo do trânsito</li>
+              <li>• Transfer do hotel: mediante reserva prévia</li>
+              <li>• Ônibus Centropuerto ou Turbus: opções econômicas com saídas frequentes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Tips -->
+    <section id="dicas" class="mb-20">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6 pb-2 border-b-2 border-blue-300">Recomendações Adicionais
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Clima e Vestimenta</h3>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-thermometer-half"></i>
+            </div>
+            <div>
+              <p class="font-medium">Santiago (maio)</p>
+              <p class="text-gray-600">Temperaturas entre 5°C e 20°C, início do inverno.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <div>
+              <p class="font-medium">Regiões montanhosas</p>
+              <p class="text-gray-600">Temperaturas abaixo de 0°C, especialmente à noite.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-tshirt"></i>
+            </div>
+            <div>
+              <p class="font-medium">Recomendação</p>
+              <p class="text-gray-600">Leve roupas de inverno, principalmente para os passeios à neve.
+                Para a cidade, roupas em camadas funcionam bem, pois durante o dia pode esquentar e à
+                noite esfria bastante.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Transporte</h3>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-subway"></i>
+            </div>
+            <div>
+              <p class="font-medium">Dentro de Santiago</p>
+              <p class="text-gray-600">O metrô é eficiente e seguro para se locomover pela cidade.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-bus"></i>
+            </div>
+            <div>
+              <p class="font-medium">Para Valle Nevado e Portillo</p>
+              <p class="text-gray-600">O transporte com agência é ideal, pois são estradas de montanha que
+                podem ser desafiadoras.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-car"></i>
+            </div>
+            <div>
+              <p class="font-medium">Valparaíso/Viña del Mar</p>
+              <p class="text-gray-600">O aluguel de carro oferece flexibilidade, mas também existe a opção
+                de ônibus interurbanos confortáveis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Gastronomia Recomendada</h3>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div>
+              <p class="font-medium">Pratos típicos</p>
+              <p class="text-gray-600">Experimente empanadas, pastel de choclo, curanto, e frutos do mar
+                frescos.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-wine-glass-alt"></i>
+            </div>
+            <div>
+              <p class="font-medium">Vinhos</p>
+              <p class="text-gray-600">Chile é famoso por seus vinhos, especialmente Carménère, Cabernet
+                Sauvignon e Sauvignon Blanc.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-concierge-bell"></i>
+            </div>
+            <div>
+              <p class="font-medium">Restaurantes recomendados em Santiago</p>
+              <p class="text-gray-600">Boragó (alta gastronomia chilena), Aquí está Coco (frutos do mar),
+                El Mesón Nerudiano (comida tradicional).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">Dicas Práticas</h3>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div>
+              <p class="font-medium">Moeda</p>
+              <p class="text-gray-600">Peso chileno (CLP). Recomendo ter algum dinheiro em espécie,
+                especialmente para pequenos comércios.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-language"></i>
+            </div>
+            <div>
+              <p class="font-medium">Idioma</p>
+              <p class="text-gray-600">Espanhol. Inglês é falado principalmente em áreas turísticas e
+                hotéis.</p>
+            </div>
+          </div>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div>
+              <p class="font-medium">Segurança</p>
+              <p class="text-gray-600">Santiago é relativamente segura para turistas, mas como em qualquer
+                grande cidade, é recomendável tomar precauções básicas.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-blue-600 mr-2">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <p class="font-medium">Fuso horário</p>
+              <p class="text-gray-600">Chile está no fuso GMT-4, uma hora a mais que o horário de
+                Brasília.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-blue-700 mb-4">Observações Finais</h3>
+        <p class="text-gray-700 mb-4">Seu roteiro está bem equilibrado, combinando natureza, cultura e
+          gastronomia. Você terá a oportunidade de conhecer tanto a movimentada vida urbana de Santiago quanto
+          as paisagens impressionantes dos Andes, o charme das cidades costeiras e a rica tradição vinícola
+          chilena.</p>
+        <p class="text-gray-700 mb-4">A única sugestão seria talvez reservar alguns momentos para descanso,
+          especialmente após os dias de passeios à neve, que podem ser fisicamente cansativos. Considere, por
+          exemplo, programar algumas horas livres no hotel para relaxar ou usufruir das comodidades como
+          piscina ou spa, se disponíveis.</p>
+        <p class="text-gray-700">Por fim, mantenha-se flexível. O clima na Cordilheira dos Andes pode mudar
+          rapidamente, então é bom estar preparado para possíveis alterações no roteiro. Lembre-se também de
+          levar consigo uma cópia dos documentos, seguro viagem e informações de contato do hotel e da
+          embaixada brasileira no Chile.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Cocodrilos em Santiago</h3>
+          <p class="mb-4">Roteiro de Viagem Chile 2025</p>
+          <p>06 a 13 de Maio de 2025</p>
+        </div>
+        <div class="md:text-right">
+          <h3 class="text-xl font-bold mb-4">Contatos Importantes</h3>
+          <p class="mb-2">Embaixada do Brasil no Chile: +56 2 2360 7500</p>
+          <p class="mb-2">Emergências: 133 (Polícia), 131 (Ambulância), 132 (Bombeiros)</p>
+        </div>
+      </div>
+      <div class="border-t border-blue-700 mt-8 pt-8 text-center">
+        <p>&copy; 2023 Roteiro de Viagem Chile. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 </template>
 
-<style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
 }
 
-h1 {
-  font-size: 3rem;
-  color: #42b883;
+.hero-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.chile.travel/wp-content/uploads/2016/04/Santiago-eduardo-macarios-1024x683.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.day-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+}
+
+.nav-item {
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #2b6cb0;
+  color: white !important;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.photo-container {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.photo-container img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-container:hover img {
+  transform: scale(1.05);
+}
+
+.activity-item {
+  border-left: 4px solid #3182ce;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3182ce;
+  border-radius: 50%;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.day-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed, #3182ce);
+  border-radius: 2px;
+}
+
+.probability-high {
+  background-color: #f56565;
+}
+
+.probability-medium {
+  background-color: #ed8936;
+}
+
+.probability-low {
+  background-color: #48bb78;
+}
+
+@media print {
+  .sticky-nav {
+    position: relative;
+  }
+
+  .no-print {
+    display: none;
+  }
 }
 </style>
