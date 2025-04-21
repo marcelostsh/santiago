@@ -16,7 +16,7 @@
 
 <style scoped>
 .hero-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.chile.travel/wp-content/uploads/2016/04/Santiago-eduardo-macarios-1024x683.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRVWt0t9-LHALs_DXLYo680dwECuxhvD_TpnCl68RMM3DL3P1HaIx10QtO7x1ejLg76nYyZrMHBTQ-eY-uFOqbyVCAVEA-c0lArLl2Wjg');
   background-size: cover;
   background-position: center;
 }
