@@ -4,7 +4,7 @@ import { ref } from 'vue'; // Importar ref para a instância do Swiper
 import Header from './components/header/header.vue'
 // import NavigationMenu from './components/navigationmenu/navigationmenu.vue' // Removido
 import TripOverview from './components/overview/TripOverview.vue'
-// import DayMenu from './components/navigation/DayMenu.vue'; // Removido
+import DayMenu from './components/navigation/DayMenu.vue'; // Uncommented
 import FooterSection from './components/footer/FooterSection.vue'
 import DayCard from './components/day/DayCard.vue'
 import Recommendations from './components/recommendation/Recommendations.vue'
@@ -23,15 +23,31 @@ const recommendations = tripData.find(item => item.id === 'dicas')
 
 const modules = [Navigation, Pagination, Controller];
 const mainSwiper = ref(null); // Ref para a instância do Swiper
+const dayMenuSwiper = ref(null); // Ref for the DayMenu Swiper
+const activeDayIndex = ref(0); // Ref to track the active index
 
 const onSwiper = (swiper) => {
   mainSwiper.value = swiper;
+  activeDayIndex.value = swiper.activeIndex; // Set initial index
 };
 
-// Função para ser chamada pelo DayMenu removida
-// const goToDaySlide = (index) => {
-//   mainSwiper.value?.slideTo(index);
-// };
+const onDayMenuSwiper = (swiper) => { // Handler for DayMenu Swiper
+  dayMenuSwiper.value = swiper;
+};
+
+// Função para ser chamada pelo DayMenu
+const goToDaySlide = (index) => {
+  mainSwiper.value?.slideTo(index);
+};
+
+// Handler for main swiper slide change
+const onMainSlideChange = (swiper) => {
+  activeDayIndex.value = swiper.activeIndex; // Update active index
+  // When the main swiper changes, update the day menu swiper
+  if (dayMenuSwiper.value) {
+    dayMenuSwiper.value.slideTo(swiper.activeIndex);
+  }
+};
 
 </script>
 
@@ -47,8 +63,14 @@ const onSwiper = (swiper) => {
   <!-- Main Content -->
   <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Day Navigation Menu removido -->
-    <!-- <DayMenu :days="days" @go-to-day="goToDaySlide" /> -->
+    <!-- Day Navigation Menu -->
+    <DayMenu
+      :days="days"
+      @go-to-day="goToDaySlide"
+      @swiper="onDayMenuSwiper"
+      :controlled-swiper="mainSwiper"
+      :active-index="activeDayIndex" 
+    /> <!-- Pass active index as prop --> <!-- Pass main swiper for control -->
 
     <!-- Swiper para os Dias da Viagem -->
     <swiper
@@ -59,6 +81,7 @@ const onSwiper = (swiper) => {
       :pagination="{ el: '.main-swiper-pagination', clickable: true }"
       :auto-height="true"
       @swiper="onSwiper"
+      @slideChange="onMainSlideChange"
       class="main-day-swiper"
     >
       <swiper-slide v-for="(day, index) in days" :key="day.id">
