@@ -37,8 +37,8 @@ function formatDayText(day) {
     return null;
   };
 
-  // Portuguese month abbreviations
-  const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+  // Portuguese full month names
+  const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
   const eventDate = parseDate(day.data);
   if (!eventDate) {
@@ -59,8 +59,8 @@ function formatDayText(day) {
     dateLabel = 'Amanhã';
   } else {
     const dayOfMonth = eventDate.getDate();
-    const monthAbbr = monthNames[eventDate.getMonth()];
-    dateLabel = `${dayOfMonth} ${monthAbbr}`;
+    const monthName = monthNames[eventDate.getMonth()]; // Use full month name
+    dateLabel = `${dayOfMonth} de ${monthName}`; // Format as "d de Mmmm"
   }
 
   return `Dia ${dayNumber} - ${dateLabel}`;
@@ -81,7 +81,7 @@ const modules = [Controller]; // Add Controller to modules
 </script>
 
 <template>
-  <nav class="day-menu-swiper-container bg-white shadow-md rounded-lg p-4 mb-8 sticky top-0 z-40">
+  <nav class="day-menu-swiper-container bg-[#eaeaea] p-4 sticky top-0 z-40 border-b border-gray-300">
     <!-- Removed h3 title -->
     <swiper
       :modules="modules"
