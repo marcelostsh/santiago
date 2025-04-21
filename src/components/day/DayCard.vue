@@ -204,16 +204,7 @@ const modules = [Navigation, Pagination];
   </section>
 </template>
 
-<style scoped> /* Adicionando 'scoped' para evitar conflitos globais */
-/* Estilos específicos do DayCard */
-.day-card {
-  /* A transição pode ou não ser desejada no card inteiro agora, ajuste se necessário */
-  /* transition: transform 0.3s ease-in-out; */
-}
-
-/* .day-card:hover {
-  transform: translateY(-5px);
-} */
+<style scoped>
 
 .day-divider {
   height: 4px;

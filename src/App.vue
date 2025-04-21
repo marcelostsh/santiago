@@ -4,7 +4,7 @@ import { ref } from 'vue'; // Importar ref para a instância do Swiper
 import Header from './components/header/header.vue'
 // import NavigationMenu from './components/navigationmenu/navigationmenu.vue' // Removido
 import TripOverview from './components/overview/TripOverview.vue'
-import DayMenu from './components/navigation/DayMenu.vue'; // Adicionado
+// import DayMenu from './components/navigation/DayMenu.vue'; // Removido
 import FooterSection from './components/footer/FooterSection.vue'
 import DayCard from './components/day/DayCard.vue'
 import Recommendations from './components/recommendation/Recommendations.vue'
@@ -28,10 +28,10 @@ const onSwiper = (swiper) => {
   mainSwiper.value = swiper;
 };
 
-// Função para ser chamada pelo DayMenu
-const goToDaySlide = (index) => {
-  mainSwiper.value?.slideTo(index);
-};
+// Função para ser chamada pelo DayMenu removida
+// const goToDaySlide = (index) => {
+//   mainSwiper.value?.slideTo(index);
+// };
 
 </script>
 
@@ -45,19 +45,19 @@ const goToDaySlide = (index) => {
   <!-- Navigation Menu removido -->
 
   <!-- Main Content -->
-  <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Day Navigation Menu - Passa a função para controlar o Swiper -->
-    <DayMenu :days="days" @go-to-day="goToDaySlide" />
+    <!-- Day Navigation Menu removido -->
+    <!-- <DayMenu :days="days" @go-to-day="goToDaySlide" /> -->
 
     <!-- Swiper para os Dias da Viagem -->
     <swiper
       :modules="modules"
       :slides-per-view="1"
-      :space-between="50" 
+      :space-between="50"
       :navigation="false"
-      :pagination="{ clickable: true }"
-      :auto-height="true" 
+      :pagination="{ el: '.main-swiper-pagination', clickable: true }"
+      :auto-height="true"
       @swiper="onSwiper"
       class="main-day-swiper"
     >
@@ -65,11 +65,13 @@ const goToDaySlide = (index) => {
         <DayCard :day="day" />
       </swiper-slide>
     </swiper>
-
+    <!-- Container customizado para a paginação -->
+    <div class="main-swiper-pagination"></div>
+  </main>
+  <div class="container">
     <!-- Recomendações Adicionais -->
     <Recommendations :recommendations="recommendations" />
-  </main>
-
+  </div>
   <!-- Footer Component -->
   <FooterSection />
 </template>
@@ -92,6 +94,11 @@ body {
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.container-swiper {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media (min-width: 640px) {
@@ -145,8 +152,21 @@ img {
   background: #eaeaea;
   border: solid 1px #c1c1c1;
   padding: 20px;
-  border-radius: 8px;
   margin-bottom: 40px;
+}
+
+/* Estilo para o container customizado da paginação */
+.main-swiper-pagination {
+    position: relative;
+    text-align: center;
+    top: -95px !important;
+    margin-bottom: 0px;
+    z-index: 99;
+}
+
+/* Ajustar a posição padrão dos bullets */
+.main-swiper-pagination .swiper-pagination-bullet {
+  margin: 0 5px; /* Espaçamento entre bullets */
 }
 
 /* Remover setas */
