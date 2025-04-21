@@ -5,30 +5,14 @@
         <li><a href="#visao-geral"
             class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Visão
             Geral</a></li>
-        <li><a href="#dia1"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            1</a></li>
-        <li><a href="#dia2"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            2</a></li>
-        <li><a href="#dia3"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            3</a></li>
-        <li><a href="#dia4"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            4</a></li>
-        <li><a href="#dia5"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            5</a></li>
-        <li><a href="#dia6"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            6</a></li>
-        <li><a href="#dia7"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            7</a></li>
-        <li><a href="#dia8"
-            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dia
-            8</a></li>
+        <!-- Itens dinâmicos baseados no tripData -->
+        <li v-for="item in days" :key="item.id">
+          <a :href="`#${item.id}`"
+            class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">
+            {{ getDayLabel(item) }}
+          </a>
+        </li>
+        <!-- Item fixo de dicas -->
         <li><a href="#dicas"
             class="nav-item inline-block px-4 py-2 mx-2 rounded-full text-blue-700 hover:text-white font-medium whitespace-nowrap">Dicas</a>
         </li>
@@ -38,7 +22,17 @@
 </template>
 
 <script setup>
-// Navigation menu component for Chile Travel Itinerary
+import { computed } from 'vue';
+import tripData from '../../data/tripData.json';
+
+// Filtra apenas os dias da viagem (excluindo as dicas)
+const days = computed(() => tripData.filter(item => item.id.startsWith('dia')));
+
+// Função para obter o rótulo do dia (Dia 1, Dia 2, etc.)
+const getDayLabel = (item) => {
+  const dayNumber = item.id.replace('dia', '');
+  return `Dia ${dayNumber}`;
+};
 </script>
 
 <style scoped>
