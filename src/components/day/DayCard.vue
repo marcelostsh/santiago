@@ -1,10 +1,18 @@
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 defineProps({
   day: {
     type: Object,
     required: true
   }
 });
+
+const modules = [Navigation, Pagination];
 </script>
 
 <template>
@@ -96,11 +104,29 @@ defineProps({
 
     <!-- Layout para dias com múltiplas imagens -->
     <div v-if="day.imagens && day.imagens.length > 1" class="mb-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <div v-for="(imagem, index) in day.imagens" :key="index" class="photo-container h-60">
-          <img :src="imagem" :alt="`${day.titulo} ${index + 1}`" class="w-full h-full object-cover rounded-lg shadow-md">
-        </div>
-      </div>
+      <swiper
+        :modules="modules"
+        :slides-per-view="3"
+        :space-between="20"
+        :loop="true"
+        :pagination="{ clickable: true }"
+        :navigation="false"
+        class="photo-swiper mb-8"
+        :breakpoints="{
+          // Quando a largura da janela for >= 320px
+          320: { slidesPerView: 1, spaceBetween: 10 },
+          // Quando a largura da janela for >= 768px
+          768: { slidesPerView: 2, spaceBetween: 15 },
+          // Quando a largura da janela for >= 1024px
+          1024: { slidesPerView: 3, spaceBetween: 20 }
+        }"
+      >
+        <swiper-slide v-for="(imagem, index) in day.imagens" :key="index">
+          <div class="photo-container h-60 sm:h-72">
+            <img :src="imagem" :alt="`${day.titulo} ${index + 1}`" class="w-full h-full object-cover rounded-lg shadow-md">
+          </div>
+        </swiper-slide>
+      </swiper>
 
       <div class="bg-white rounded-lg shadow-md p-6 mb-8">
         <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
@@ -176,4 +202,89 @@ defineProps({
       </ul>
     </div>
   </section>
-</template> 
+</template>
+
+<style scoped> /* Adicionando 'scoped' para evitar conflitos globais */
+/* Estilos específicos do DayCard */
+.day-card {
+  /* A transição pode ou não ser desejada no card inteiro agora, ajuste se necessário */
+  /* transition: transform 0.3s ease-in-out; */
+}
+
+/* .day-card:hover {
+  transform: translateY(-5px);
+} */
+
+.day-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed, #3182ce);
+  border-radius: 2px;
+}
+
+.activity-item {
+  border-left: 4px solid #3182ce;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3182ce;
+  border-radius: 50%;
+  left: -8px; /* Ajuste conforme necessário com padding-left */
+  top: 0.6em; /* Ajuste para alinhar melhor com o texto */
+  transform: translateY(-50%);
+}
+
+.probability-high {
+  background-color: #f56565;
+}
+
+.probability-medium {
+  background-color: #ed8936;
+}
+
+.probability-low {
+  background-color: #48bb78;
+}
+
+
+/* Estilos existentes do Swiper e Photo Container */
+
+/* Ajustes para garantir que o Swiper funcione bem com Tailwind/outros estilos */
+.photo-swiper {
+  width: 100%;
+  height: auto; /* Ajusta a altura automaticamente */
+  padding-bottom: 40px; /* Espaço para paginação */
+}
+
+.photo-container {
+  overflow: hidden; /* Mantém o overflow hidden */
+  border-radius: 0.5rem; /* Mantém o border-radius */
+}
+
+/* Talvez seja necessário ajustar estilos dos botões de navegação e paginação do Swiper */
+/* Exemplo: */
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
+  color: #3182ce; /* Cor azul do tema */
+}
+
+:deep(.swiper-pagination-bullet) {
+  width: 20px; /* Largura da linha */
+  height: 4px; /* Altura da linha */
+  border-radius: 2px; /* Bordas levemente arredondadas */
+  background: #a0aec0; /* Cinza para bullets inativos */
+  opacity: 1; /* Garante que a opacidade padrão não interfira */
+  transition: background-color 0.3s ease, width 0.3s ease; /* Transição suave */
+}
+
+:deep(.swiper-pagination-bullet-active) {
+  background: #3182ce; /* Cor azul do tema para o bullet ativo */
+  width: 30px; /* Pode-se aumentar a largura do ativo se desejar */
+}
+</style> 

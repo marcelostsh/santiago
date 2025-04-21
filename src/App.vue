@@ -44,77 +44,15 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   background-color: #f8f9fa;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
+  /* overflow-x: hidden; width: 100%; max-width: 100vw; são cobertos pela regra html, body abaixo */
 }
 
-.day-card {
-  transition: transform 0.3s ease-in-out;
-}
-
-.day-card:hover {
-  transform: translateY(-5px);
-}
-
-.photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.photo-container {
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.photo-container img {
-  transition: transform 0.5s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.photo-container:hover img {
-  transform: scale(1.05);
-}
-
-.activity-item {
-  border-left: 4px solid #3182ce;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.activity-item::before {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: #3182ce;
-  border-radius: 50%;
-  left: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.day-divider {
-  height: 4px;
-  background: linear-gradient(90deg, #3182ce, #63b3ed, #3182ce);
-  border-radius: 2px;
-}
-
-.probability-high {
-  background-color: #f56565;
-}
-
-.probability-medium {
-  background-color: #ed8936;
-}
-
-.probability-low {
-  background-color: #48bb78;
-}
+/* REMOVIDO: .day-card e :hover - Movido para DayCard.vue */
+/* REMOVIDO: .photo-gallery - Inutilizado após Swiper */
+/* REMOVIDO: .photo-container e :hover img - Redundante/Inutilizado */
+/* REMOVIDO: .activity-item e ::before - Movido para DayCard.vue */
+/* REMOVIDO: .day-divider - Movido para DayCard.vue */
+/* REMOVIDO: .probability-* - Movido para DayCard.vue */
 
 /* Container styles needed for the main content */
 .container {
