@@ -1,32 +1,70 @@
 <script setup>
 // Roteiro de Viagem Chile 2025
+import { ref } from 'vue'; // Importar ref para a instância do Swiper
 import Header from './components/header/header.vue'
-import NavigationMenu from './components/navigationmenu/navigationmenu.vue'
+// import NavigationMenu from './components/navigationmenu/navigationmenu.vue' // Removido
 import TripOverview from './components/overview/TripOverview.vue'
+import DayMenu from './components/navigation/DayMenu.vue'; // Adicionado
 import FooterSection from './components/footer/FooterSection.vue'
 import DayCard from './components/day/DayCard.vue'
 import Recommendations from './components/recommendation/Recommendations.vue'
 import tripData from './data/tripData.json'
 
+// Importar Swiper
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Controller } from 'swiper/modules'; // Adicionar Controller se necessário
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Separar os dias regulares das recomendações adicionais
 const days = tripData.filter(item => item.id.startsWith('dia'))
 const recommendations = tripData.find(item => item.id === 'dicas')
+
+const modules = [Navigation, Pagination, Controller];
+const mainSwiper = ref(null); // Ref para a instância do Swiper
+
+const onSwiper = (swiper) => {
+  mainSwiper.value = swiper;
+};
+
+// Função para ser chamada pelo DayMenu
+const goToDaySlide = (index) => {
+  mainSwiper.value?.slideTo(index);
+};
+
 </script>
 
 <template>
   <!-- Header Component -->
   <Header />
 
-  <!-- Navigation Menu -->
-  <NavigationMenu />
+  <!-- Overview Section - Movido para cima -->
+  <TripOverview />
+
+  <!-- Navigation Menu removido -->
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Overview Section -->
-    <TripOverview />
 
-    <!-- Dias da Viagem - Componentes Dinâmicos -->
-    <DayCard v-for="day in days" :key="day.id" :day="day" />
+    <!-- Day Navigation Menu - Passa a função para controlar o Swiper -->
+    <DayMenu :days="days" @go-to-day="goToDaySlide" />
+
+    <!-- Swiper para os Dias da Viagem -->
+    <swiper
+      :modules="modules"
+      :slides-per-view="1"
+      :space-between="50" 
+      :navigation="false"
+      :pagination="{ clickable: true }"
+      :auto-height="true" 
+      @swiper="onSwiper"
+      class="main-day-swiper"
+    >
+      <swiper-slide v-for="(day, index) in days" :key="day.id">
+        <DayCard :day="day" />
+      </swiper-slide>
+    </swiper>
 
     <!-- Recomendações Adicionais -->
     <Recommendations :recommendations="recommendations" />
@@ -44,15 +82,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   background-color: #f8f9fa;
-  /* overflow-x: hidden; width: 100%; max-width: 100vw; são cobertos pela regra html, body abaixo */
 }
-
-/* REMOVIDO: .day-card e :hover - Movido para DayCard.vue */
-/* REMOVIDO: .photo-gallery - Inutilizado após Swiper */
-/* REMOVIDO: .photo-container e :hover img - Redundante/Inutilizado */
-/* REMOVIDO: .activity-item e ::before - Movido para DayCard.vue */
-/* REMOVIDO: .day-divider - Movido para DayCard.vue */
-/* REMOVIDO: .probability-* - Movido para DayCard.vue */
 
 /* Container styles needed for the main content */
 .container {
@@ -106,5 +136,27 @@ img {
   .no-print {
     display: none;
   }
+}
+
+/* Estilos para o Swiper principal */
+.main-day-swiper {
+  width: 100%;
+  padding-bottom: 50px; 
+  background: #eaeaea;
+  border: solid 1px #c1c1c1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+/* Remover setas */
+:deep(.main-day-swiper .swiper-button-next),
+:deep(.main-day-swiper .swiper-button-prev) {
+  display: none; /* Esconder as setas */
+}
+
+/* Garantir que DayCard não tenha margens que interfiram no layout do slide */
+:deep(.main-day-swiper .swiper-slide > section) { /* Seleciona a <section> dentro do DayCard */
+  margin-bottom: 0 !important; /* Remove margem inferior do DayCard dentro do slide */
 }
 </style>

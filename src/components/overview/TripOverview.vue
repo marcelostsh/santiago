@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section id="visao-geral" class="mb-20">
+  <section id="visao-geral" class="p-6">
     <h2 class="text-3xl font-bold text-blue-800 mb-6 pb-2 border-b-2 border-blue-300">Visão Geral da Viagem</h2>
     <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
       <p class="text-lg mb-4">Este roteiro inclui 8 dias no Chile, com base em Santiago, combinando
