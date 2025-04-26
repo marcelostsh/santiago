@@ -1,0 +1,186 @@
+[
+  {
+    "id": "hotel-panamericano",
+    "name": "Hotel Panamericano",
+    "type": "accommodation",
+    "description": "Hospedagem em região central de Santiago, próximo a pontos turísticos e com fácil acesso ao transporte público.",
+    "coordinates": {
+      "latitude": -33.4372,
+      "longitude": -70.6506
+    },
+    "images": [
+      "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+    ],
+    "details": "O Hotel Panamericano está localizado em uma região central de Santiago, próximo a atrações turísticas e estações de metrô. Oferece café da manhã, Wi-Fi gratuito e serviço de concierge para ajudar com reservas de passeios."
+  },
+  {
+    "id": "valle-nevado",
+    "name": "Valle Nevado",
+    "type": "ski-resort",
+    "description": "Um dos principais centros de esqui da América do Sul, localizado a cerca de 60 km a leste de Santiago, na Cordilheira dos Andes.",
+    "coordinates": {
+      "latitude": -33.3535,
+      "longitude": -70.2493
+    },
+    "images": [
+      "https://static.wixstatic.com/media/87b3ef_39fd98a3d363413aa3256efd53ee6b7d~mv2.jpg/v1/fill/w_556,h_418,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state_edited.jpg"
+    ],
+    "details": "Valle Nevado é um dos principais centros de esqui da América do Sul, localizado a cerca de 60 km a leste de Santiago, na Cordilheira dos Andes. A uma altitude de aproximadamente 3.000 metros, oferece vistas panorâmicas impressionantes."
+  },
+  {
+    "id": "portillo",
+    "name": "Portillo",
+    "type": "ski-resort",
+    "description": "Um dos centros de esqui mais tradicionais do Chile, com a impressionante Laguna del Inca.",
+    "coordinates": {
+      "latitude": -32.8372,
+      "longitude": -70.1309
+    },
+    "images": [
+      "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg"
+    ],
+    "details": "Portillo é um dos centros de esqui mais tradicionais do Chile, localizado na província de Los Andes, a cerca de 160 km de Santiago."
+  },
+  {
+    "id": "laguna-del-inca",
+    "name": "Laguna del Inca",
+    "type": "natural-attraction",
+    "description": "Lago glacial de águas turquesas cercado por montanhas nevadas.",
+    "coordinates": {
+      "latitude": -32.8358,
+      "longitude": -70.1294
+    },
+    "images": [
+      "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg"
+    ],
+    "details": "A Laguna del Inca é um lago glacial situado a 2.840 metros de altitude, oferecendo um dos cenários mais espetaculares dos Andes chilenos."
+  },
+  {
+    "id": "vina-concha-y-toro",
+    "name": "Vinícola Concha y Toro",
+    "type": "winery",
+    "description": "Uma das vinícolas mais famosas do Chile, com tour guiado e degustação de vinhos premium.",
+    "coordinates": {
+      "latitude": -33.5788,
+      "longitude": -70.6850
+    },
+    "images": [
+      "https://forbes.com.br/wp-content/uploads/2022/11/Life_Concha-y-Toro-Vinicola.jpg",
+      "https://santiagodochile.com/wp-content/uploads/Casillero-del-Diablo.jpg"
+    ],
+    "details": "Fundada em 1883, a Concha y Toro é uma das maiores produtoras de vinho da América Latina. A propriedade fica a cerca de 30 km de Santiago, no vale do Maipo. O tour inclui uma visita aos jardins da antiga mansão da família, às vinhas e à famosa adega 'Casillero del Diablo'."
+  },
+  {
+    "id": "centro-santiago",
+    "name": "Centro Histórico de Santiago",
+    "type": "historic-site",
+    "description": "Centro histórico com Plaza de Armas, Catedral de Santiago e Palácio de La Moneda.",
+    "coordinates": {
+      "latitude": -33.4377,
+      "longitude": -70.6505
+    },
+    "images": [
+      "https://ciatrip.com/wp-content/uploads/2024/06/WhatsApp-Image-2024-07-20-at-09.49.23.jpeg",
+      "https://www.voltologo.net/wp-content/uploads/2023/02/santiago-city-tours-melhores.jpg"
+    ],
+    "details": "O centro de Santiago concentra a história da cidade, com edifícios coloniais e praças históricas."
+  },
+  {
+    "id": "sky-costanera",
+    "name": "Sky Costanera",
+    "type": "observation-deck",
+    "description": "Mirante mais alto da América Latina, com vista 360° da cidade e dos Andes.",
+    "coordinates": {
+      "latitude": -33.4172,
+      "longitude": -70.6068
+    },
+    "images": [
+      "https://arrumaessamala.com.br/wp-content/uploads/2024/01/sky-costanera-2.jpg"
+    ],
+    "details": "Localizado no topo da Gran Torre Santiago (Costanera Center), a 300 metros de altura, é o mirante mais alto da América Latina. Oferece uma vista incomparável de Santiago, especialmente ao pôr do sol."
+  },
+  {
+    "id": "bellavista",
+    "name": "Bairro Bellavista",
+    "type": "neighborhood",
+    "description": "Zona boêmia de Santiago, com restaurantes, bares e vida noturna animada.",
+    "coordinates": {
+      "latitude": -33.4312,
+      "longitude": -70.6356
+    },
+    "images": [],
+    "details": "Bairro boêmio e artístico com diversos restaurantes, bares e vida noturna."
+  },
+  {
+    "id": "valparaiso",
+    "name": "Valparaíso",
+    "type": "city",
+    "description": "Cidade portuária colorida com casas construídas em morros, declarada Patrimônio da Humanidade pela UNESCO.",
+    "coordinates": {
+      "latitude": -33.0472,
+      "longitude": -71.6127
+    },
+    "images": [
+      "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2015/07/04/foto12.jpg",
+      "https://conexionchile.com.br/images/tours/valparaiso/val-01.png"
+    ],
+    "details": "Conhecida como a 'Joia do Pacífico', Valparaíso é uma cidade portuária declarada Patrimônio da Humanidade pela UNESCO. Suas casas coloridas construídas em morros íngremes, seus elevadores funiculares do século XIX e a arte urbana que cobre suas paredes fazem desta cidade um museu a céu aberto."
+  },
+  {
+    "id": "vina-del-mar",
+    "name": "Viña del Mar",
+    "type": "city",
+    "description": "Estância balneária conhecida como 'Cidade Jardim', com belas praias e jardins bem cuidados.",
+    "coordinates": {
+      "latitude": -33.0153,
+      "longitude": -71.5515
+    },
+    "images": [
+      "https://litoral-verde.s3.sa-east-1.amazonaws.com/wp-content/uploads/2024/08/30180720/Vina-del-Mar.jpg"
+    ],
+    "details": "Conhecida como 'Cidade Jardim', Viña del Mar é uma elegante estância balneária com belas praias, jardins bem cuidados e uma arquitetura que mescla o moderno com o colonial."
+  },
+  {
+    "id": "farellones",
+    "name": "Farellones",
+    "type": "ski-resort",
+    "description": "Vilarejo de montanha e centro de esqui próximo a Santiago, menos movimentado que Valle Nevado.",
+    "coordinates": {
+      "latitude": -33.3542,
+      "longitude": -70.3275
+    },
+    "images": [
+      "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
+      "https://ogimg.infoglobo.com.br/in/23890921-80e-81c/FT1086A/760/84119796_View-of-an-empty-cableway-at-El-Colorado-skiing-centre-in-the-Andes-Mountains-some-30-km-fr.jpg?posicaoFoto8"
+    ],
+    "details": "Farellones é um vilarejo de montanha situado a 36 km a nordeste de Santiago, a uma altitude de aproximadamente 2.340 metros. Fundado na década de 1930, é o centro de esqui mais antigo do Chile."
+  },
+  {
+    "id": "betel-chile",
+    "name": "Betel do Chile",
+    "type": "religious-site",
+    "description": "Sede nacional das Testemunhas de Jeová no Chile.",
+    "coordinates": {
+      "latitude": -33.5814,
+      "longitude": -70.5794
+    },
+    "images": [
+      "https://cms-imgp.jw-cdn.org/img/p/1011232/univ/art/1011232_univ_pnr_md.jpg"
+    ],
+    "details": "O complexo Betel é a sede nacional das Testemunhas de Jeová no Chile. 'Betel' significa 'Casa de Deus' em hebraico. Estas instalações abrigam escritórios administrativos, centros de impressão de literatura bíblica e residência para os trabalhadores voluntários."
+  },
+  {
+    "id": "aeroporto-santiago",
+    "name": "Aeroporto Internacional de Santiago",
+    "type": "airport",
+    "description": "Aeroporto Internacional Arturo Merino Benítez.",
+    "coordinates": {
+      "latitude": -33.3898,
+      "longitude": -70.7945
+    },
+    "images": [
+      "https://aguiarbuenosaires.com/wp-content/uploads/2019/03/Aeroporto-buenos-aires.jpg"
+    ],
+    "details": "O Aeroporto Internacional Arturo Merino Benítez fica a aproximadamente 20 km do centro de Santiago."
+  }
+] 

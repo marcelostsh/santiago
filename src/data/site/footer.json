@@ -1,0 +1,34 @@
+{
+  "copyright": "© 2025 Santiago Trip",
+  "socialMedia": [
+    {
+      "id": "instagram",
+      "title": "Instagram",
+      "url": "https://instagram.com/",
+      "icon": "fab fa-instagram"
+    },
+    {
+      "id": "facebook",
+      "title": "Facebook",
+      "url": "https://facebook.com/",
+      "icon": "fab fa-facebook"
+    }
+  ],
+  "links": [
+    {
+      "id": "privacy",
+      "title": "Política de Privacidade",
+      "url": "/privacy"
+    },
+    {
+      "id": "terms",
+      "title": "Termos de Uso",
+      "url": "/terms"
+    },
+    {
+      "id": "contact",
+      "title": "Contato",
+      "url": "/contact"
+    }
+  ]
+} 

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "hotel-check-in",
+    "title": "Check-in no Hotel Panamericano",
+    "description": "Hospedagem em região central de Santiago, próximo a pontos turísticos e com fácil acesso ao transporte público.",
+    "locationId": "hotel-panamericano",
+    "duration": 1,
+    "withAgency": false,
+    "category": "accommodation"
+  },
+  {
+    "id": "free-walking",
+    "title": "Passeio livre pelos arredores",
+    "description": "Conheça o bairro onde está hospedado e comece a explorar Santiago.",
+    "locationId": "centro-santiago",
+    "duration": 2,
+    "withAgency": false,
+    "category": "leisure"
+  },
+  {
+    "id": "valle-nevado-sunset",
+    "title": "Valle Nevado Sunset",
+    "description": "Subida à tarde para curtir o pôr do sol na neve, uma experiência inesquecível nos Andes chilenos.",
+    "locationId": "valle-nevado",
+    "duration": 6,
+    "withAgency": true,
+    "category": "nature"
+  },
+  {
+    "id": "portillo-visit",
+    "title": "Passeio em Portillo",
+    "description": "Visita a um dos centros de esqui mais antigos e prestigiados da América do Sul.",
+    "locationId": "portillo",
+    "duration": 4,
+    "withAgency": true,
+    "category": "nature"
+  },
+  {
+    "id": "laguna-del-inca-visit",
+    "title": "Laguna del Inca",
+    "description": "Conhecer o lago glacial de águas turquesas cercado por montanhas nevadas.",
+    "locationId": "laguna-del-inca",
+    "duration": 2,
+    "withAgency": true,
+    "category": "nature"
+  },
+  {
+    "id": "wine-tasting-tour",
+    "title": "Tour e degustação na Vinícola Concha y Toro",
+    "description": "Uma das vinícolas mais famosas do Chile, com tour guiado e degustação de vinhos premium.",
+    "locationId": "vina-concha-y-toro",
+    "duration": 3,
+    "withAgency": false,
+    "category": "gastronomy"
+  },
+  {
+    "id": "santiago-city-tour",
+    "title": "City Tour Santiago",
+    "description": "Visita ao Centro Histórico, Plaza de Armas, Catedral de Santiago e Palácio de La Moneda.",
+    "locationId": "centro-santiago",
+    "duration": 3,
+    "withAgency": false,
+    "category": "culture"
+  },
+  {
+    "id": "sky-costanera-visit",
+    "title": "Sky Costanera (pôr do sol)",
+    "description": "Visita ao mirante mais alto da América Latina, com vista 360° da cidade e dos Andes.",
+    "locationId": "sky-costanera",
+    "duration": 2,
+    "withAgency": false,
+    "category": "leisure"
+  },
+  {
+    "id": "bellavista-dinner",
+    "title": "Jantar e passeio pelo Bairro Bellavista",
+    "description": "Zona boêmia de Santiago, com restaurantes, bares e vida noturna animada.",
+    "locationId": "bellavista",
+    "duration": 3,
+    "withAgency": false,
+    "category": "gastronomy"
+  },
+  {
+    "id": "caleta-portales-visit",
+    "title": "Visita a Caleta Portales",
+    "description": "Porto de pescadores onde é possível observar leões marinhos em seu habitat natural.",
+    "locationId": "valparaiso",
+    "duration": 1,
+    "withAgency": false,
+    "category": "nature"
+  },
+  {
+    "id": "valparaiso-tour",
+    "title": "Passeio por Valparaíso",
+    "description": "Explorar os murais, mirantes e funiculares históricos da cidade colorida.",
+    "locationId": "valparaiso",
+    "duration": 3,
+    "withAgency": false,
+    "category": "culture"
+  },
+  {
+    "id": "vina-del-mar-lunch",
+    "title": "Almoço em Viña del Mar",
+    "description": "Restaurante à beira-mar para degustar frutos do mar frescos.",
+    "locationId": "vina-del-mar",
+    "duration": 2,
+    "withAgency": false,
+    "category": "gastronomy"
+  },
+  {
+    "id": "vina-del-mar-promenade",
+    "title": "Passeio pela orla de Viña del Mar",
+    "description": "Caminhada pelo calçadão, visita ao Castelo Wulff e ao famoso Relógio de Flores.",
+    "locationId": "vina-del-mar",
+    "duration": 2,
+    "withAgency": false,
+    "category": "leisure"
+  },
+  {
+    "id": "farellones-visit",
+    "title": "Passeio a Farellones",
+    "description": "Visita à estância de esqui próxima a Santiago, menos movimentada que Valle Nevado.",
+    "locationId": "farellones",
+    "duration": 6,
+    "withAgency": false,
+    "category": "nature"
+  },
+  {
+    "id": "betel-chile-visit",
+    "title": "Visita ao Betel do Chile",
+    "description": "Visita às instalações administrativas e de impressão das Testemunhas de Jeová no Chile.",
+    "locationId": "betel-chile",
+    "duration": 3,
+    "withAgency": false,
+    "category": "culture"
+  },
+  {
+    "id": "free-time-santiago",
+    "title": "Tarde livre",
+    "description": "Tempo disponível para compras ou para revisitar lugares favoritos em Santiago.",
+    "locationId": "centro-santiago",
+    "duration": 4,
+    "withAgency": false,
+    "category": "leisure"
+  },
+  {
+    "id": "hotel-checkout",
+    "title": "Check-out do hotel",
+    "description": "Deixar o hotel e armazenar as bagagens se necessário.",
+    "locationId": "hotel-panamericano",
+    "duration": 1,
+    "withAgency": false,
+    "category": "accommodation"
+  },
+  {
+    "id": "airport-transfer",
+    "title": "Ir para o aeroporto",
+    "description": "Deslocamento para o Aeroporto Internacional de Santiago.",
+    "locationId": "aeroporto-santiago",
+    "duration": 1,
+    "withAgency": false,
+    "category": "transport"
+  }
+] 

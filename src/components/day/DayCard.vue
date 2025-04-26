@@ -1,6 +1,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from 'swiper/modules';
+import ActivityItem from './ActivityItem.vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -13,6 +14,14 @@ defineProps({
 });
 
 const modules = [Navigation, Pagination];
+
+// Função para gerar o link do Google Maps
+function getGoogleMapsLink(position) {
+  if (!position || !position.latitude || !position.longitude) {
+    return null;
+  }
+  return `https://www.google.com/maps/dir/?api=1&destination=${position.latitude},${position.longitude}`;
+}
 </script>
 
 <template>
@@ -21,14 +30,6 @@ const modules = [Navigation, Pagination];
     <div class="flex flex-wrap items-center mb-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">{{ day.titulo }}</h2>
       <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">{{ day.data }}</div>
-      <div class="w-full sm:w-auto sm:ml-auto px-4 py-1 text-white rounded-full text-sm mt-2 sm:mt-0"
-           :class="{
-             'probability-high': day.probabilidadeNeve === 'alta',
-             'probability-medium': day.probabilidadeNeve === 'media',
-             'probability-low': day.probabilidadeNeve === 'baixa'
-           }">
-        Probabilidade de Neve: {{ day.probabilidadeNeve === 'alta' ? 'Alta' : day.probabilidadeNeve === 'media' ? 'Média' : 'Baixa' }}
-      </div>
     </div>
 
     <div class="day-divider mb-8"></div>
@@ -42,52 +43,34 @@ const modules = [Navigation, Pagination];
         <h3 class="text-xl font-bold text-blue-700 mb-4">Atividades Planejadas</h3>
         <!-- Para dias com estrutura de atividades simples -->
         <div v-if="day.atividades">
-          <div v-for="(atividade, index) in day.atividades" :key="index" class="activity-item">
-            <p class="font-medium">{{ atividade.titulo }}</p>
-            <p class="text-gray-600">{{ atividade.descricao }}</p>
-          </div>
+          <ActivityItem v-for="(atividade, index) in day.atividades" :key="index" :atividade="atividade" />
         </div>
         
         <!-- Para dias com estrutura de períodos -->
         <div v-if="day.periodo">
           <div v-if="day.periodo.manha">
             <h4 class="font-semibold text-blue-600 mb-2">Manhã</h4>
-            <div v-for="(atividade, index) in day.periodo.manha" :key="'manha-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.manha" :key="'manha-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.almoco || day.periodo.meioDia" class="mt-4">
             <h4 class="font-semibold text-blue-600 mb-2">{{ day.periodo.almoco ? 'Almoço' : 'Meio-dia' }}</h4>
-            <div v-for="(atividade, index) in day.periodo.almoco || day.periodo.meioDia" :key="'almoco-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.almoco || day.periodo.meioDia" :key="'almoco-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.tarde" class="mt-4">
             <h4 class="font-semibold text-blue-600 mb-2">Tarde</h4>
-            <div v-for="(atividade, index) in day.periodo.tarde" :key="'tarde-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.tarde" :key="'tarde-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.fimDeTarde" class="mt-4">
             <h4 class="font-semibold text-blue-600 mb-2">Fim de tarde</h4>
-            <div v-for="(atividade, index) in day.periodo.fimDeTarde" :key="'fimtarde-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.fimDeTarde" :key="'fimtarde-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.noite" class="mt-4">
             <h4 class="font-semibold text-blue-600 mb-2">Noite</h4>
-            <div v-for="(atividade, index) in day.periodo.noite" :key="'noite-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.noite" :key="'noite-'+index" :atividade="atividade" />
           </div>
         </div>
 
@@ -134,45 +117,30 @@ const modules = [Navigation, Pagination];
         <div v-if="day.periodo" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div v-if="day.periodo.manha">
             <h4 class="font-semibold text-blue-600 mb-2">Manhã</h4>
-            <div v-for="(atividade, index) in day.periodo.manha" :key="'manha-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.manha" :key="'manha-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.almoco || day.periodo.meioDia">
             <h4 class="font-semibold text-blue-600 mb-2">{{ day.periodo.almoco ? 'Almoço' : 'Meio-dia' }}</h4>
-            <div v-for="(atividade, index) in day.periodo.almoco || day.periodo.meioDia" :key="'almoco-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.almoco || day.periodo.meioDia" :key="'almoco-'+index" :atividade="atividade" />
           </div>
         </div>
 
         <div v-if="day.periodo" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div v-if="day.periodo.tarde">
             <h4 class="font-semibold text-blue-600 mb-2">Tarde</h4>
-            <div v-for="(atividade, index) in day.periodo.tarde" :key="'tarde-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.tarde" :key="'tarde-'+index" :atividade="atividade" />
           </div>
           
           <div v-if="day.periodo.fimDeTarde">
             <h4 class="font-semibold text-blue-600 mb-2">Fim de tarde</h4>
-            <div v-for="(atividade, index) in day.periodo.fimDeTarde" :key="'fimtarde-'+index" class="activity-item">
-              <p class="font-medium">{{ atividade.titulo }}</p>
-              <p class="text-gray-600">{{ atividade.descricao }}</p>
-            </div>
+            <ActivityItem v-for="(atividade, index) in day.periodo.fimDeTarde" :key="'fimtarde-'+index" :atividade="atividade" />
           </div>
         </div>
 
         <div v-if="day.periodo && day.periodo.noite" class="mt-6">
           <h4 class="font-semibold text-blue-600 mb-2">Noite</h4>
-          <div v-for="(atividade, index) in day.periodo.noite" :key="'noite-'+index" class="activity-item">
-            <p class="font-medium">{{ atividade.titulo }}</p>
-            <p class="text-gray-600">{{ atividade.descricao }}</p>
-          </div>
+          <ActivityItem v-for="(atividade, index) in day.periodo.noite" :key="'noite-'+index" :atividade="atividade" />
         </div>
       </div>
     </div>
@@ -205,44 +173,11 @@ const modules = [Navigation, Pagination];
 </template>
 
 <style scoped>
-
 .day-divider {
   height: 4px;
   background: linear-gradient(90deg, #3182ce, #63b3ed, #3182ce);
   border-radius: 2px;
 }
-
-.activity-item {
-  border-left: 4px solid #3182ce;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.activity-item::before {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: #3182ce;
-  border-radius: 50%;
-  left: -8px; /* Ajuste conforme necessário com padding-left */
-  top: 0.6em; /* Ajuste para alinhar melhor com o texto */
-  transform: translateY(-50%);
-}
-
-.probability-high {
-  background-color: #f56565;
-}
-
-.probability-medium {
-  background-color: #ed8936;
-}
-
-.probability-low {
-  background-color: #48bb78;
-}
-
 
 /* Estilos existentes do Swiper e Photo Container */
 

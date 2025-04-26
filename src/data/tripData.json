@@ -3,7 +3,6 @@
     "id": "dia1",
     "titulo": "Chegada a Santiago",
     "data": "Terça-feira, 06/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
     ],
@@ -47,7 +46,6 @@
     "id": "dia2",
     "titulo": "Valle Nevado Sunset",
     "data": "Quarta-feira, 07/05/2025",
-    "probabilidadeNeve": "alta",
     "imagens": [
       "https://static.wixstatic.com/media/87b3ef_39fd98a3d363413aa3256efd53ee6b7d~mv2.jpg/v1/fill/w_556,h_418,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state_edited.jpg"
     ],
@@ -84,7 +82,6 @@
     "id": "dia3",
     "titulo": "Portillo e Laguna del Inca",
     "data": "Quinta-feira, 08/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg"
     ],
@@ -126,7 +123,6 @@
     "id": "dia4",
     "titulo": "Vinícola e City Tour",
     "data": "Sexta-feira, 09/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://forbes.com.br/wp-content/uploads/2022/11/Life_Concha-y-Toro-Vinicola.jpg",
       "https://santiagodochile.com/wp-content/uploads/Casillero-del-Diablo.jpg",
@@ -210,7 +206,6 @@
     "id": "dia5",
     "titulo": "Valparaíso e Viña del Mar",
     "data": "Sábado, 10/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://litoral-verde.s3.sa-east-1.amazonaws.com/wp-content/uploads/2024/08/30180720/Vina-del-Mar.jpg",
       "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2015/07/04/foto12.jpg",
@@ -296,7 +291,6 @@
     "id": "dia6",
     "titulo": "Farellones",
     "data": "Domingo, 11/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
       "https://ogimg.infoglobo.com.br/in/23890921-80e-81c/FT1086A/760/84119796_View-of-an-empty-cableway-at-El-Colorado-skiing-centre-in-the-Andes-Mountains-some-30-km-fr.jpg?posicaoFoto8"
@@ -324,7 +318,6 @@
     "id": "dia7",
     "titulo": "Visita ao Betel do Chile",
     "data": "Segunda-feira, 12/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://cms-imgp.jw-cdn.org/img/p/1011232/univ/art/1011232_univ_pnr_md.jpg"
     ],
@@ -358,7 +351,6 @@
     "id": "dia8",
     "titulo": "Despedida de Santiago",
     "data": "Terça-feira, 13/05/2025",
-    "probabilidadeNeve": "media",
     "imagens": [
       "https://aguiarbuenosaires.com/wp-content/uploads/2019/03/Aeroporto-buenos-aires.jpg"
     ],
