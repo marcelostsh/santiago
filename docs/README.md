@@ -49,7 +49,7 @@ A camada de serviços abstrai a fonte de dados (JSON local ou Firebase), permiti
 
 Os dados do site estão organizados nos seguintes arquivos JSON:
 
-### 🏢 Informações do Site (`/src/data/site/`)
+### 🏢 Informações do Site (`/public/data/site/`)
 
 | Arquivo           | Descrição                        | Estrutura Principal                                            |
 | ----------------- | -------------------------------- | -------------------------------------------------------------- |
@@ -57,7 +57,7 @@ Os dados do site estão organizados nos seguintes arquivos JSON:
 | **footer.json**   | Informações do rodapé do site    | Copyright, links de redes sociais, links de navegação          |
 | **metadata.json** | Metadados do site                | Título, descrição, palavras-chave, autor, configurações de SEO |
 
-### 🧳 Dados da Viagem - Santiago (`/src/data/trips/santiago/`)
+### 🧳 Dados da Viagem - Santiago (`/public/data/trips/santiago/`)
 
 | Arquivo             | Descrição                     | Estrutura Principal                                               |
 | ------------------- | ----------------------------- | ----------------------------------------------------------------- |
@@ -356,7 +356,7 @@ O projeto está preparado para migrar de JSONs locais para o Firebase quando nec
 
 ### Como adicionar uma nova viagem?
 
-1. Criar pasta com estrutura similar a `src/data/trips/santiago/` para a nova viagem
+1. Criar pasta com estrutura similar a `public/data/trips/santiago/` para a nova viagem
 2. Atualizar `config.js` para incluir caminhos para a nova viagem
 3. Usar os serviços existentes passando o novo ID de viagem
 
@@ -372,7 +372,7 @@ O projeto está preparado para migrar de JSONs locais para o Firebase quando nec
 **Solução**: Verificar se os dados foram carregados antes de usá-los, adicionando verificações `if (this.data) { ... }`
 
 **Erro**: `Fetch error for JSON file`  
-**Solução**: Verificar caminhos em `localDataPaths` no arquivo `config.js` e garantir que os arquivos existem
+**Solução**: Verificar caminhos em `localDataPaths` no arquivo `config.js` e garantir que os arquivos existem na pasta `public/data`
 
 ---
 
