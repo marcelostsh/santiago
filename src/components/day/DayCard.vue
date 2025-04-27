@@ -219,14 +219,6 @@ const loadAllActivities = async () => {
     isLoading.value = true;
     // Obtém todas as atividades disponíveis
     allActivities.value = await getActivities();
-    console.log(`Carregadas ${allActivities.value.length} atividades do arquivo activities.json`);
-    
-    // Log para debugging
-    if (props.day.id === "day-4") {
-      console.log("DEPURANDO DAY 4:");
-      console.log("Day 4 schedule:", JSON.stringify(props.day.schedule, null, 2));
-      console.log("Todas as atividades carregadas:", allActivities.value.map(a => a.id));
-    }
   } catch (error) {
     console.error('Erro ao carregar atividades:', error);
     allActivities.value = [];
@@ -243,7 +235,6 @@ onMounted(async () => {
 // Computed property para filtrar e agrupar atividades por período
 const filteredActivities = computed(() => {
   if (!props.day.schedule || allActivities.value.length === 0) {
-    console.log(`Dia ${props.day.id}: schedule ou atividades não disponíveis`);
     return {
       morning: [],
       lunch: [],
@@ -258,20 +249,10 @@ const filteredActivities = computed(() => {
   const processScheduleItems = (items) => {
     if (!items || items.length === 0 || !items.map) return [];
     
-    // Log para debugging
-    if (props.day.id === "day-4") {
-      console.log(`Processando atividades do período:`, items);
-    }
-    
     return items.map(item => {
       // Se o item for uma string mas não for um ID de atividade, cria um objeto simples
       if (typeof item === 'string') {
         const activityFromJson = allActivities.value.find(a => a.id === item);
-        
-        // Log para debugging
-        if (props.day.id === "day-4") {
-          console.log(`Buscando atividade com ID "${item}":`, activityFromJson ? 'ENCONTRADA' : 'NÃO ENCONTRADA');
-        }
         
         if (activityFromJson) {
           return {
@@ -302,16 +283,6 @@ const filteredActivities = computed(() => {
     evening: processScheduleItems(props.day.schedule.evening),
     night: processScheduleItems(props.day.schedule.night)
   };
-  
-  // Log para debugging
-  if (props.day.id === "day-4") {
-    console.log("RESULTADO FINAL DO PROCESSAMENTO do Day 4:");
-    console.log("Morning:", result.morning.length, "atividades");
-    console.log("Lunch:", result.lunch.length, "atividades");
-    console.log("Afternoon:", result.afternoon.length, "atividades");
-    console.log("Evening:", result.evening.length, "atividades");
-    console.log("Night:", result.night.length, "atividades");
-  }
   
   return result;
 });
