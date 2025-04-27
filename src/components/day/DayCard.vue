@@ -58,8 +58,7 @@
                   filteredActivities.afternoon.length + 
                   filteredActivities.evening.length + 
                   filteredActivities.night.length > 0" class="mb-4">
-          <p class="text-gray-600 italic">{{ getTotalDayActivities() }} atividades programadas para este dia</p>
-        </div>
+         </div>
         
         <!-- Conteúdo de schedule (períodos) -->
         <div v-if="!isLoading">
@@ -98,7 +97,7 @@
         <!-- Dicas do dia -->
         <div v-if="day.tips && day.tips.length > 0" class="mt-6 bg-blue-50 p-4 rounded-lg">
           <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
-            Dicas para o {{ day.id }}:</h4>
+            Dicas para o dia:</h4>
           <ul class="text-gray-700 space-y-2">
             <li v-for="(tip, index) in day.tips" :key="index">• {{ tip }}</li>
           </ul>
@@ -157,6 +156,13 @@ const loadAllActivities = async () => {
     // Obtém todas as atividades disponíveis
     allActivities.value = await getActivities();
     console.log(`Carregadas ${allActivities.value.length} atividades do arquivo activities.json`);
+    
+    // Log para debugging
+    if (props.day.id === "day-4") {
+      console.log("DEPURANDO DAY 4:");
+      console.log("Day 4 schedule:", JSON.stringify(props.day.schedule, null, 2));
+      console.log("Todas as atividades carregadas:", allActivities.value.map(a => a.id));
+    }
   } catch (error) {
     console.error('Erro ao carregar atividades:', error);
     allActivities.value = [];
@@ -173,6 +179,7 @@ onMounted(async () => {
 // Computed property para filtrar e agrupar atividades por período
 const filteredActivities = computed(() => {
   if (!props.day.schedule || allActivities.value.length === 0) {
+    console.log(`Dia ${props.day.id}: schedule ou atividades não disponíveis`);
     return {
       morning: [],
       lunch: [],
@@ -185,12 +192,23 @@ const filteredActivities = computed(() => {
 
   // Função auxiliar para processar os IDs ou strings de atividades
   const processScheduleItems = (items) => {
-    if (!items) return [];
+    if (!items || items.length === 0 || !items.map) return [];
+    
+    // Log para debugging
+    if (props.day.id === "day-4") {
+      console.log(`Processando atividades do período:`, items);
+    }
     
     return items.map(item => {
       // Se o item for uma string mas não for um ID de atividade, cria um objeto simples
       if (typeof item === 'string') {
         const activityFromJson = allActivities.value.find(a => a.id === item);
+        
+        // Log para debugging
+        if (props.day.id === "day-4") {
+          console.log(`Buscando atividade com ID "${item}":`, activityFromJson ? 'ENCONTRADA' : 'NÃO ENCONTRADA');
+        }
+        
         if (activityFromJson) {
           return {
             ...activityFromJson,
@@ -212,7 +230,7 @@ const filteredActivities = computed(() => {
   };
 
   // Processa cada período do dia
-  return {
+  const result = {
     morning: processScheduleItems(props.day.schedule.morning),
     lunch: processScheduleItems(props.day.schedule.lunch),
     midDay: processScheduleItems(props.day.schedule.midDay),
@@ -220,17 +238,19 @@ const filteredActivities = computed(() => {
     evening: processScheduleItems(props.day.schedule.evening),
     night: processScheduleItems(props.day.schedule.night)
   };
+  
+  // Log para debugging
+  if (props.day.id === "day-4") {
+    console.log("RESULTADO FINAL DO PROCESSAMENTO do Day 4:");
+    console.log("Morning:", result.morning.length, "atividades");
+    console.log("Lunch:", result.lunch.length, "atividades");
+    console.log("Afternoon:", result.afternoon.length, "atividades");
+    console.log("Evening:", result.evening.length, "atividades");
+    console.log("Night:", result.night.length, "atividades");
+  }
+  
+  return result;
 });
-
-// Método para obter o total de atividades do dia
-const getTotalDayActivities = () => {
-  return filteredActivities.value.morning.length +
-         filteredActivities.value.lunch.length +
-         filteredActivities.value.midDay.length +
-         filteredActivities.value.afternoon.length +
-         filteredActivities.value.evening.length +
-         filteredActivities.value.night.length;
-};
 </script>
 <style scoped>
 .day-divider {
