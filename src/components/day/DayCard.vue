@@ -1,12 +1,15 @@
 <template>
   <section :id="day.id" class="mb-20">
     <!-- Cabeçalho do dia -->
-    <div class="flex flex-wrap items-center mb-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-2 sm:mb-0">{{ day.title }}</h2>
-      <div class="text-base sm:text-lg px-4 py-1 bg-blue-100 text-blue-800 rounded-full mb-2 sm:mb-0">{{ day.date }}</div>
+    <div class="flex flex-wrap items-center mb-1">
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mr-4 mb-1 sm:mb-0">{{ day.title }}</h2>
     </div>
-
-    <div class="day-divider mb-8"></div>
+    <!-- Data formatada em linha separada -->
+    <div class="mb-5">
+      <h3 class="text-sm text-gray-700">
+        {{ formatDate(day.date) }}
+      </h3>
+    </div>
 
     <!-- Layout unificado para imagens -->
     <div class="mb-8">
@@ -145,6 +148,67 @@ const modules = [Navigation, Pagination];
 const allActivities = ref([]); // Para armazenar TODAS as atividades do JSON
 const isLoading = ref(true);
 
+// Função para formatar a data no formato desejado
+const formatDate = (dateStr) => {
+  if (!dateStr) return '';
+  // Obter data atual para comparar com a data do roteiro
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  
+  // Converter a string de data para um objeto Date
+  // Verificar se a data usa / ou - como separador
+  let parts;
+  if (dateStr.includes('/')) {
+    parts = dateStr.split('/');
+  } else if (dateStr.includes('-')) {
+    parts = dateStr.split('-');
+  } else {
+    return dateStr; // Retorna o original se não tiver separador conhecido
+  }
+  
+  if (parts.length < 3) return dateStr; // Retorna o original se não conseguir converter
+  
+  const day = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1; // Mês em JS é 0-indexed
+  const year = parts[2].length === 2 ? 2000 + parseInt(parts[2], 10) : parseInt(parts[2], 10);
+  
+  const date = new Date(year, month, day);
+  
+  // Array com nomes dos meses em português
+  const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+                'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+  
+  // Array com nomes dos dias da semana em português
+  const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 
+                      'Quinta-feira', 'Sexta-feira', 'Sábado'];
+  
+  // Formatar a data
+  let formattedDate = `${day} de ${meses[month]}`;
+  
+  // Adicionar indicador se é hoje ou amanhã
+  if (date.getTime() === today.getTime()) {
+    formattedDate += ' (hoje)';
+  } else if (date.getTime() === tomorrow.getTime()) {
+    formattedDate += ' (amanhã)';
+  }
+  
+  // Adicionar dia da semana
+  formattedDate += ` - ${diasSemana[date.getDay()]}`;
+  
+  // Adicionar número do dia no roteiro (extraído do ID do dia)
+  if (props.day.id && props.day.id.includes('day-')) {
+    const dayNum = props.day.id.replace('day-', '');
+    if (!isNaN(parseInt(dayNum, 10))) {
+      formattedDate += ` - ${dayNum}º dia`;
+    }
+  }
+  
+  return formattedDate;
+};
+
 const onSlideChange = (swiper) => {
   activeSlide.value = swiper.activeIndex;
 };
@@ -253,11 +317,6 @@ const filteredActivities = computed(() => {
 });
 </script>
 <style scoped>
-.day-divider {
-  height: 4px;
-  background: linear-gradient(90deg, #3182ce, #63b3ed, #3182ce);
-  border-radius: 2px;
-}
 
 /* Estilos existentes do Swiper e Photo Container */
 

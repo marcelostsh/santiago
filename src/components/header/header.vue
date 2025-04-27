@@ -34,15 +34,19 @@ const headerBackgroundStyle = computed(() => {
 
 // Format the date range for display
 const formatDateRange = (start, end) => {
-  const startDate = new Date(start);
-  const endDate = new Date(end);
+  // Parse date strings in DD/MM/YYYY format
+  const [startDay, startMonth, startYear] = start.split('/');
+  const [endDay, endMonth, endYear] = end.split('/');
   
-  const startDay = startDate.getDate();
-  const endDay = endDate.getDate();
+  // Create date objects with correct format
+  const startDate = new Date(`${startYear}-${startMonth}-${startDay}`);
+  const endDate = new Date(`${endYear}-${endMonth}-${endDay}`);
+  
+  // Format the display
   const month = startDate.toLocaleString('pt-BR', { month: 'long' });
   const year = startDate.getFullYear();
   
-  return `${startDay} a ${endDay} de ${month} de ${year}`;
+  return `${parseInt(startDay)} a ${parseInt(endDay)} de ${month} de ${year}`;
 };
 
 // Fetch header data when component is mounted
