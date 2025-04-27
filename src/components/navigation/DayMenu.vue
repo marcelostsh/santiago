@@ -25,23 +25,38 @@ const emit = defineEmits(['goToDay', 'swiper']); // Add 'swiper' emit
 
 // Function to format the day display text
 function formatDayText(day) {
-  const dayNumber = day.id.replace('dia', '');
-
-  // Helper function to parse dd/mm/yyyy from the string
-  const parseDate = (dateString) => {
-    const match = dateString.match(/(\d{2})\/(\d{2})\/(\d{4})/);
-    if (match) {
-      // Note: Month is 0-indexed in JavaScript Date object
-      return new Date(parseInt(match[3]), parseInt(match[2]) - 1, parseInt(match[1]));
-    }
-    return null;
-  };
+  if (!day || !day.id) return 'Dia';
+  
+  const dayNumber = day.id.replace('day-', '');
 
   // Portuguese full month names
   const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-  const eventDate = parseDate(day.data);
-  if (!eventDate) {
+  let eventDate = null;
+  
+  // Check if we have an ISO date format (YYYY-MM-DD)
+  if (day.date) {
+    eventDate = new Date(day.date);
+  }
+  
+  // Fallback to old format (dd/mm/yyyy) for backward compatibility
+  else if (day.data) {
+    // Helper function to parse dd/mm/yyyy from the string
+    const parseDate = (dateString) => {
+      if (!dateString) return null;
+      
+      const match = dateString.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+      if (match) {
+        // Note: Month is 0-indexed in JavaScript Date object
+        return new Date(parseInt(match[3]), parseInt(match[2]) - 1, parseInt(match[1]));
+      }
+      return null;
+    };
+    
+    eventDate = parseDate(day.data);
+  }
+  
+  if (!eventDate || isNaN(eventDate.getTime())) {
     return `Dia ${dayNumber}`; // Fallback if date parsing fails
   }
 

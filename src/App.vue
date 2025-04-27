@@ -1,6 +1,6 @@
 <script setup>
 // Roteiro de Viagem Chile 2025
-import { ref } from 'vue'; // Importar ref para a instância do Swiper
+import { ref, onMounted } from 'vue'; // Importar ref para a instância do Swiper e onMounted para carregar dados
 import Header from './components/header/header.vue'
 // import NavigationMenu from './components/navigationmenu/navigationmenu.vue' // Removido
 import TripOverview from './components/overview/TripOverview.vue'
@@ -8,7 +8,8 @@ import DayMenu from './components/navigation/DayMenu.vue'; // Uncommented
 import FooterSection from './components/footer/FooterSection.vue'
 import DayCard from './components/day/DayCard.vue'
 import Recommendations from './components/recommendation/Recommendations.vue'
-import tripData from './data/tripData.json'
+// Removida importação direta do JSON
+import { getItinerary, getTips } from './services'; // Importar serviços para buscar dados
 
 // Importar Swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -17,9 +18,28 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Separar os dias regulares das recomendações adicionais
-const days = tripData.filter(item => item.id.startsWith('dia'))
-const recommendations = tripData.find(item => item.id === 'dicas')
+// Referências para armazenar os dados carregados
+const days = ref([]);
+const recommendations = ref(null);
+
+// Carregar dados quando componente for montado
+onMounted(async () => {
+  try {
+    // Carregar itinerário (dias)
+    const itineraryData = await getItinerary();
+    if (itineraryData) {
+      days.value = itineraryData.filter(item => item.id.startsWith('day'));
+    }
+    
+    // Carregar dicas (recommendations)
+    const tipsData = await getTips();
+    if (tipsData) {
+      recommendations.value = tipsData;
+    }
+  } catch (error) {
+    console.error('Erro ao carregar dados:', error);
+  }
+});
 
 const modules = [Navigation, Pagination, Controller];
 const mainSwiper = ref(null); // Ref para a instância do Swiper
@@ -61,7 +81,7 @@ const onMainSlideChange = (swiper) => {
   <!-- Navigation Menu removido -->
 
   <!-- Main Content -->
-  <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8" v-if="days.length > 0">
 
     <!-- Day Navigation Menu -->
     <DayMenu
@@ -91,7 +111,7 @@ const onMainSlideChange = (swiper) => {
     <!-- Container customizado para a paginação -->
     <div class="main-swiper-pagination"></div>
   </main>
-  <div class="container">
+  <div class="container" v-if="recommendations">
     <!-- Recomendações Adicionais -->
     <Recommendations :recommendations="recommendations" />
   </div>

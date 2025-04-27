@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "id": "clima-vestimenta",
+      "title": "Clima e Vestimenta",
+      "items": [
+        {
+          "title": "Santiago (maio)",
+          "description": "Temperaturas entre 5°C e 20°C, início do inverno.",
+          "icon": "fas fa-thermometer-half"
+        },
+        {
+          "title": "Regiões montanhosas",
+          "description": "Temperaturas abaixo de 0°C, especialmente à noite.",
+          "icon": "fas fa-mountain"
+        },
+        {
+          "title": "Recomendação",
+          "description": "Leve roupas de inverno, principalmente para os passeios à neve. Para a cidade, roupas em camadas funcionam bem, pois durante o dia pode esquentar e à noite esfria bastante.",
+          "icon": "fas fa-tshirt"
+        }
+      ]
+    },
+    {
+      "id": "transporte",
+      "title": "Transporte",
+      "items": [
+        {
+          "title": "Dentro de Santiago",
+          "description": "O metrô é eficiente e seguro para se locomover pela cidade.",
+          "icon": "fas fa-subway"
+        },
+        {
+          "title": "Para Valle Nevado e Portillo",
+          "description": "O transporte com agência é ideal, pois são estradas de montanha que podem ser desafiadoras.",
+          "icon": "fas fa-bus"
+        },
+        {
+          "title": "Valparaíso/Viña del Mar",
+          "description": "O aluguel de carro oferece flexibilidade, mas também existe a opção de ônibus interurbanos confortáveis.",
+          "icon": "fas fa-car"
+        }
+      ]
+    },
+    {
+      "id": "gastronomia",
+      "title": "Gastronomia Recomendada",
+      "items": [
+        {
+          "title": "Pratos típicos",
+          "description": "Experimente empanadas, pastel de choclo, curanto, e frutos do mar frescos.",
+          "icon": "fas fa-utensils"
+        },
+        {
+          "title": "Vinhos",
+          "description": "Chile é famoso por seus vinhos, especialmente Carménère, Cabernet Sauvignon e Sauvignon Blanc.",
+          "icon": "fas fa-wine-glass-alt"
+        },
+        {
+          "title": "Restaurantes recomendados em Santiago",
+          "description": "Boragó (alta gastronomia chilena), Aquí está Coco (frutos do mar), El Mesón Nerudiano (comida tradicional).",
+          "icon": "fas fa-concierge-bell"
+        }
+      ]
+    },
+    {
+      "id": "dicas-praticas",
+      "title": "Dicas Práticas",
+      "items": [
+        {
+          "title": "Moeda",
+          "description": "Peso chileno (CLP). Recomendo ter algum dinheiro em espécie, especialmente para pequenos comércios.",
+          "icon": "fas fa-dollar-sign"
+        },
+        {
+          "title": "Idioma",
+          "description": "Espanhol. Inglês é falado principalmente em áreas turísticas e hotéis.",
+          "icon": "fas fa-language"
+        },
+        {
+          "title": "Segurança",
+          "description": "Santiago é relativamente segura para turistas, mas como em qualquer grande cidade, é recomendável tomar precauções básicas.",
+          "icon": "fas fa-shield-alt"
+        },
+        {
+          "title": "Fuso horário",
+          "description": "Chile está no fuso GMT-4, uma hora a mais que o horário de Brasília.",
+          "icon": "fas fa-clock"
+        }
+      ]
+    }
+  ],
+  "observations": "Seu roteiro está bem equilibrado, combinando natureza, cultura e gastronomia. Você terá a oportunidade de conhecer tanto a movimentada vida urbana de Santiago quanto as paisagens impressionantes dos Andes, o charme das cidades costeiras e a rica tradição vinícola chilena. A única sugestão seria talvez reservar alguns momentos para descanso, especialmente após os dias de passeios à neve, que podem ser fisicamente cansativos. Por fim, mantenha-se flexível. O clima na Cordilheira dos Andes pode mudar rapidamente, então é bom estar preparado para possíveis alterações no roteiro."
+} 

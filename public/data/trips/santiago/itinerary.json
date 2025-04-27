@@ -1,0 +1,195 @@
+[
+  {
+    "id": "day-1",
+    "date": "2025-05-06",
+    "title": "Chegada a Santiago",
+    "description": "Chegada e acomodação no hotel",
+    "schedule": {
+      "afternoon": ["hotel-check-in"],
+      "evening": ["free-walking"]
+    },
+    "transport": "Transfer do aeroporto / Transporte público",
+    "tips": [
+      "Após o check-in, você pode visitar o Cerro Santa Lucía ou o Parque Forestal, ambos próximos ao hotel.",
+      "Experimente restaurantes locais no bairro Lastarria para seu primeiro contato com a gastronomia chilena.",
+      "Aproveite para descansar e se adaptar à altitude de Santiago (520m acima do nível do mar)."
+    ],
+    "images": [
+      "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+    ]
+  },
+  {
+    "id": "day-2",
+    "date": "2025-05-07",
+    "title": "Valle Nevado Sunset",
+    "description": "Passeio para ver o pôr do sol na neve",
+    "schedule": {
+      "afternoon": ["valle-nevado-sunset"]
+    },
+    "transport": "Agência de turismo",
+    "tips": [
+      "Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos Andes.",
+      "Leve uma garrafa térmica com bebida quente e alguns snacks para o passeio.",
+      "Não se esqueça da proteção solar - mesmo com tempo nublado, a radiação UV é intensa na altitude.",
+      "Leve sua câmera ou celular com bateria completa para registrar os visuais espetaculares."
+    ],
+    "images": [
+      "https://static.wixstatic.com/media/87b3ef_39fd98a3d363413aa3256efd53ee6b7d~mv2.jpg/v1/fill/w_556,h_418,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state_edited.jpg"
+    ]
+  },
+  {
+    "id": "day-3",
+    "date": "2025-05-08",
+    "title": "Portillo e Laguna del Inca",
+    "description": "Visita a um dos centros de esqui mais tradicionais do Chile",
+    "schedule": {
+      "morning": ["portillo-visit"],
+      "afternoon": ["laguna-del-inca-visit"]
+    },
+    "transport": "Agência de turismo",
+    "tips": [
+      "Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja com bateria completa.",
+      "Use calçados confortáveis e com boa aderência para caminhar em terrenos nevados.",
+      "Leve água e lanches, pois algumas áreas têm opções limitadas de alimentação."
+    ],
+    "additionalDetails": [
+      {
+        "title": "A Lenda da Laguna del Inca",
+        "content": "A Laguna del Inca, com suas águas de um azul-esmeralda impressionante, está envolta em uma lenda inca romântica e trágica. Segundo a história, o príncipe inca Illi Yupanqui e sua noiva Kora-Illé viajaram até este local para seu casamento. Tragicamente, Kora-Illé caiu de um penhasco e morreu. O inconsolável príncipe ordenou que o corpo de sua amada fosse depositado no fundo do lago. A lenda diz que as lágrimas do príncipe e os deuses incas transformaram as águas do lago em sua tonalidade turquesa única, em homenagem à beleza da princesa."
+      }
+    ],
+    "images": [
+      "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg"
+    ]
+  },
+  {
+    "id": "day-4",
+    "date": "2025-05-09",
+    "title": "Vinícola e City Tour",
+    "description": "Visita à vinícola Concha y Toro e passeio pelo centro histórico de Santiago",
+    "schedule": {
+      "morning": ["wine-tasting-tour"],
+      "lunch": "Restaurante na vinícola ou retorno a Santiago",
+      "afternoon": ["santiago-city-tour"],
+      "evening": ["sky-costanera-visit"],
+      "night": ["bellavista-dinner"]
+    },
+    "transport": "Transfer / Transporte público",
+    "tips": [
+      "Reserve o jantar com antecedência se tiver um restaurante específico em mente no Bellavista, especialmente sendo uma sexta-feira.",
+      "Na Concha y Toro, considere adquirir o tour premium que inclui degustação de vinhos especiais.",
+      "O Sky Costanera tem ingressos com horário marcado, então é recomendável comprar antecipadamente para garantir o horário do pôr do sol.",
+      "Leve um casaco leve para o fim do dia, quando as temperaturas caem em Santiago."
+    ],
+    "images": [
+      "https://forbes.com.br/wp-content/uploads/2022/11/Life_Concha-y-Toro-Vinicola.jpg",
+      "https://santiagodochile.com/wp-content/uploads/Casillero-del-Diablo.jpg",
+      "https://ciatrip.com/wp-content/uploads/2024/06/WhatsApp-Image-2024-07-20-at-09.49.23.jpeg",
+      "https://www.voltologo.net/wp-content/uploads/2023/02/santiago-city-tours-melhores.jpg",
+      "https://vivachile.com.br/wp-content/uploads/2024/03/city-tour-chile.jpg",
+      "https://arrumaessamala.com.br/wp-content/uploads/2024/01/sky-costanera-2.jpg"
+    ]
+  },
+  {
+    "id": "day-5",
+    "date": "2025-05-10",
+    "title": "Valparaíso e Viña del Mar",
+    "description": "Passeio pelas cidades costeiras",
+    "schedule": {
+      "morning": [
+        "Aluguel de carro e saída cedo de Santiago",
+        "caleta-portales-visit"
+      ],
+      "midDay": [
+        "valparaiso-tour",
+        "vina-del-mar-lunch"
+      ],
+      "afternoon": [
+        "vina-del-mar-promenade",
+        "Retorno para Santiago"
+      ]
+    },
+    "transport": "Carro alugado",
+    "tips": [
+      "Saia bem cedo para aproveitar o dia completo. O ideal é partir de Santiago antes das 8h.",
+      "O trânsito pode ser intenso no retorno a Santiago no fim da tarde de sábado, calcule bem o tempo.",
+      "Em Valparaíso, o melhor jeito de explorar é a pé, pelos Cerros Alegre e Concepción, onde estão as casas coloridas e murais mais famosos.",
+      "Os funiculares (elevadores) de Valparaíso são patrimônio histórico e uma experiência única, não deixe de experimentar.",
+      "Para almoço em Viña del Mar, os restaurantes na área de Caleta Abarca oferecem excelentes frutos do mar com vista para o oceano."
+    ],
+    "images": [
+      "https://litoral-verde.s3.sa-east-1.amazonaws.com/wp-content/uploads/2024/08/30180720/Vina-del-Mar.jpg",
+      "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2015/07/04/foto12.jpg",
+      "https://conexionchile.com.br/images/tours/valparaiso/val-01.png"
+    ]
+  },
+  {
+    "id": "day-6",
+    "date": "2025-05-11",
+    "title": "Farellones",
+    "description": "Passeio à estância de esqui de Farellones",
+    "schedule": {
+      "morning": ["farellones-visit"],
+      "afternoon": ["farellones-visit"]
+    },
+    "transport": "Carro alugado",
+    "tips": [
+      "Verifique se seu carro alugado tem os equipamentos necessários para dirigir na neve (correntes, pneus adequados).",
+      "A estrada para Farellones tem 40 curvas em ziguezague e requer atenção. Dirija com cautela, especialmente em condições de neve.",
+      "Em Farellones, você pode alugar equipamentos para atividades na neve mesmo sem ser esquiador profissional.",
+      "Este é um bom dia para experimentar a gastronomia de montanha - os restaurantes de Farellones oferecem pratos típicos como fondues e racletttes."
+    ],
+    "images": [
+      "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
+      "https://ogimg.infoglobo.com.br/in/23890921-80e-81c/FT1086A/760/84119796_View-of-an-empty-cableway-at-El-Colorado-skiing-centre-in-the-Andes-Mountains-some-30-km-fr.jpg?posicaoFoto8"
+    ]
+  },
+  {
+    "id": "day-7",
+    "date": "2025-05-12",
+    "title": "Visita ao Betel do Chile",
+    "description": "Visita à sede nacional das Testemunhas de Jeová no Chile",
+    "schedule": {
+      "morning": ["betel-chile-visit"],
+      "afternoon": ["free-time-santiago"]
+    },
+    "transport": "Transporte público",
+    "tips": [
+      "Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.",
+      "A sede do Betel fica em Av. Concha y Toro 3456-3540, Puente Alto, Santiago.",
+      "Para o tempo livre, considere visitar algum dos mercados de artesanato de Santiago para comprar lembranças, como o Centro Artesanal Los Dominicos ou o Patio Bellavista."
+    ],
+    "images": [
+      "https://cms-imgp.jw-cdn.org/img/p/1011232/univ/art/1011232_univ_pnr_md.jpg"
+    ]
+  },
+  {
+    "id": "day-8",
+    "date": "2025-05-13",
+    "title": "Despedida de Santiago",
+    "description": "Check-out do hotel e ida ao aeroporto",
+    "schedule": {
+      "morning": ["hotel-checkout"],
+      "afternoon": ["airport-transfer"]
+    },
+    "transport": "Táxi / Transfer",
+    "tips": [
+      "Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.",
+      "O Parque Bicentenario é uma opção próxima à rota para o aeroporto, ideal para uma última caminhada relaxante.",
+      "Lembre-se de calcular pelo menos 3 horas antes do voo internacional para chegar ao aeroporto."
+    ],
+    "additionalDetails": [
+      {
+        "title": "Check-out do Hotel",
+        "content": "O horário padrão de check-out no Hotel Panamericano é às 12h. Caso seu voo seja mais tarde, solicite ao hotel a guarda de bagagens, serviço geralmente disponível sem custo adicional. Não se esqueça de verificar se todos os consumos extras foram incluídos na sua conta final e guarde o comprovante de pagamento."
+      },
+      {
+        "title": "Transporte para o Aeroporto",
+        "content": "O Aeroporto Internacional Arturo Merino Benítez fica a aproximadamente 20 km do centro de Santiago. As opções de transporte incluem: Táxi (30-40 minutos, dependendo do trânsito), Transfer do hotel (mediante reserva prévia), Ônibus Centropuerto ou Turbus (opções econômicas com saídas frequentes)."
+      }
+    ],
+    "images": [
+      "https://aguiarbuenosaires.com/wp-content/uploads/2019/03/Aeroporto-buenos-aires.jpg"
+    ]
+  }
+] 
