@@ -19,6 +19,9 @@ const firebaseConfig = {
   measurementId: "G-EV395T3365"
 };
 
+// Token de administrador necessário para permissões de escrita
+const ADMIN_TOKEN = "Oxd3Xk7F7XTzfELkxS74";
+
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -51,6 +54,14 @@ function readJsonFile(filePath) {
   }
 }
 
+// Adiciona o token de administrador aos dados
+function addAdminToken(data) {
+  return {
+    ...data,
+    adminToken: ADMIN_TOKEN
+  };
+}
+
 // Funções de migração para cada tipo de dados
 async function migrateSiteData() {
   console.log('Migrando dados do site...');
@@ -58,21 +69,21 @@ async function migrateSiteData() {
   // Header
   const header = readJsonFile(paths.site.header);
   if (header) {
-    await setDoc(doc(db, 'site', 'header'), header);
+    await setDoc(doc(db, 'site', 'header'), addAdminToken(header));
     console.log('✓ Header migrado com sucesso');
   }
   
   // Footer
   const footer = readJsonFile(paths.site.footer);
   if (footer) {
-    await setDoc(doc(db, 'site', 'footer'), footer);
+    await setDoc(doc(db, 'site', 'footer'), addAdminToken(footer));
     console.log('✓ Footer migrado com sucesso');
   }
   
   // Metadata
   const metadata = readJsonFile(paths.site.metadata);
   if (metadata) {
-    await setDoc(doc(db, 'site', 'metadata'), metadata);
+    await setDoc(doc(db, 'site', 'metadata'), addAdminToken(metadata));
     console.log('✓ Metadata migrado com sucesso');
   }
 }
@@ -83,14 +94,14 @@ async function migrateTripData(tripId = 'santiago') {
   // Informações da viagem
   const tripInfo = readJsonFile(paths.trips[tripId].info);
   if (tripInfo) {
-    await setDoc(doc(db, 'trips', tripId, 'info', 'details'), tripInfo);
+    await setDoc(doc(db, 'trips', tripId, 'info', 'details'), addAdminToken(tripInfo));
     console.log(`✓ Informações da viagem ${tripId} migradas com sucesso`);
   }
   
   // Dicas
   const tips = readJsonFile(paths.trips[tripId].tips);
   if (tips) {
-    await setDoc(doc(db, 'trips', tripId, 'info', 'tips'), tips);
+    await setDoc(doc(db, 'trips', tripId, 'info', 'tips'), addAdminToken(tips));
     console.log(`✓ Dicas da viagem ${tripId} migradas com sucesso`);
   }
   
@@ -100,7 +111,7 @@ async function migrateTripData(tripId = 'santiago') {
     // Para o Firebase cliente, precisamos processar cada documento separadamente
     for (const day of itinerary) {
       if (day && day.id) {
-        await setDoc(doc(db, 'trips', tripId, 'itinerary', day.id), day);
+        await setDoc(doc(db, 'trips', tripId, 'itinerary', day.id), addAdminToken(day));
       }
     }
     console.log(`✓ Itinerário da viagem ${tripId} migrado com sucesso (${itinerary.length} dias)`);
@@ -114,7 +125,7 @@ async function migrateTripData(tripId = 'santiago') {
     
     for (const activity of activities) {
       if (activity && activity.id) {
-        await setDoc(doc(db, 'trips', tripId, 'activities', activity.id), activity);
+        await setDoc(doc(db, 'trips', tripId, 'activities', activity.id), addAdminToken(activity));
         
         // Se a atividade tem um local, adicionamos ao mapa de locais
         if (activity.location) {
@@ -137,7 +148,7 @@ async function migrateTripData(tripId = 'santiago') {
     // Agora criamos os documentos de locais a partir das atividades
     if (Object.keys(locationsMap).length > 0) {
       for (const [locationId, locationData] of Object.entries(locationsMap)) {
-        await setDoc(doc(db, 'trips', tripId, 'locations', locationId), locationData);
+        await setDoc(doc(db, 'trips', tripId, 'locations', locationId), addAdminToken(locationData));
       }
       
       console.log(`✓ Locais da viagem ${tripId} migrados com sucesso (${Object.keys(locationsMap).length} locais)`);
@@ -157,6 +168,7 @@ async function migrateAll() {
     await migrateTripData('santiago');
     
     console.log('\nMigração concluída com sucesso! 🎉');
+    console.log('Todos os documentos incluem o token de administrador necessário para permissões de escrita.');
   } catch (error) {
     console.error('Erro durante a migração:', error);
   }

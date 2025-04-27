@@ -16,3 +16,26 @@ Para migrar os dados locais para o Firestore, siga este passo simples:
    - Os dados serão buscados do Firestore automaticamente
 
 Não é necessário nenhuma configuração adicional, pois o script usa as mesmas credenciais do Firebase que já estão configuradas no projeto.
+
+## Token de Administrador para Escrita
+
+As regras de segurança do Firestore exigem um token de administrador para operações de escrita:
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read;
+      allow write: if request.resource.data.adminToken == "Oxd3Xk7F7XTzfELkxS74";
+    }
+  }
+}
+```
+
+Este token está configurado nos seguintes arquivos:
+
+- `src/services/firebaseWriteService.js` - Para operações de escrita na aplicação
+- `scripts/migrate-to-firebase.js` - Para migração de dados
+
+Ao utilizar estas funções, o token será automaticamente incluído nas operações de escrita.
