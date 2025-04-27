@@ -17,7 +17,6 @@ export const localDataPaths = {
       info: 'data/trips/santiago/trip-info.json',
       itinerary: 'data/trips/santiago/itinerary.json',
       activities: 'data/trips/santiago/activities.json',
-      locations: 'data/trips/santiago/locations.json',
       tips: 'data/trips/santiago/tips.json'
     }
   }

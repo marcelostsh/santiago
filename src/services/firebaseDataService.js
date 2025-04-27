@@ -38,10 +38,6 @@ export async function getActivities(tripId = 'santiago') {
   return firebaseNotImplemented();
 }
 
-export async function getLocations(tripId = 'santiago') {
-  return firebaseNotImplemented();
-}
-
 export async function getTips(tripId = 'santiago') {
   return firebaseNotImplemented();
 }

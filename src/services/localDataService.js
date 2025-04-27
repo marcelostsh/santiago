@@ -58,13 +58,6 @@ export async function getActivities(tripId = 'santiago') {
   return fetchLocalJson(localDataPaths.trips.santiago.activities);
 }
 
-export async function getLocations(tripId = 'santiago') {
-  if (tripId !== 'santiago') {
-    console.warn('Apenas dados da viagem Santiago estão disponíveis no momento.');
-  }
-  return fetchLocalJson(localDataPaths.trips.santiago.locations);
-}
-
 export async function getTips(tripId = 'santiago') {
   if (tripId !== 'santiago') {
     console.warn('Apenas dados da viagem Santiago estão disponíveis no momento.');
@@ -80,11 +73,28 @@ export async function getActivityById(activityId, tripId = 'santiago') {
   return activities.find(activity => activity.id === activityId) || null;
 }
 
+// Agora a função getLocationById usa o activities.json para encontrar locais
 export async function getLocationById(locationId, tripId = 'santiago') {
-  const locations = await getLocations(tripId);
-  if (!locations) return null;
+  const activities = await getActivities(tripId);
+  if (!activities) return null;
   
-  return locations.find(location => location.id === locationId) || null;
+  // Encontra a primeira atividade com location correspondente
+  const activity = activities.find(activity => 
+    activity.location && activity.location.toLowerCase().replace(/\s+/g, '-') === locationId
+  );
+  
+  if (!activity) return null;
+  
+  // Retorna um objeto de location com os dados necessários
+  return {
+    id: locationId,
+    name: activity.location,
+    type: activity.type,
+    description: activity.description,
+    images: activity.images || [],
+    details: activity.details,
+    links: activity.links
+  };
 }
 
 export async function getDayById(dayId, tripId = 'santiago') {

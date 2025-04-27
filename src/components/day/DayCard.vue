@@ -14,19 +14,20 @@
     <!-- Layout unificado para imagens -->
     <div class="mb-8">
       <!-- Imagem única -->
-      <div v-if="day.images && day.images.length === 1" class="photo-container h-60 sm:h-80 mb-8">
-        <img :src="day.images[0]" :alt="day.title" class="w-full h-full object-cover rounded-lg shadow-md">
+      <div v-if="activityImages.length === 1" class="photo-container h-60 sm:h-80 mb-8">
+        <img :src="activityImages[0]" :alt="day.title" class="w-full h-full object-cover rounded-lg shadow-md">
       </div>
 
       <!-- Múltiplas imagens -->
       <swiper
-        v-if="day.images && day.images.length > 1"
+        v-if="activityImages.length > 1"
         :modules="modules"
         :slides-per-view="3"
         :space-between="20"
         :loop="true"
         :pagination="{ clickable: true }"
         :navigation="false"
+        :nested="true"
         v-model:activeIndex="activeSlide"
         @slideChange="onSlideChange"
         class="photo-swiper mb-8"
@@ -36,7 +37,7 @@
           1024: { slidesPerView: 3, spaceBetween: 20 }
         }"
       >
-        <swiper-slide v-for="(image, index) in day.images" :key="index">
+        <swiper-slide v-for="(image, index) in activityImages" :key="index">
           <div class="photo-container h-60 sm:h-72">
             <img :src="image" :alt="`${day.title} ${index + 1}`" class="w-full h-full object-cover rounded-lg shadow-md">
           </div>
@@ -147,6 +148,25 @@ const activeSlide = ref(0);
 const modules = [Navigation, Pagination];
 const allActivities = ref([]); // Para armazenar TODAS as atividades do JSON
 const isLoading = ref(true);
+
+// Nova computed property para obter imagens das atividades
+const activityImages = computed(() => {
+  const images = [];
+  
+  // Para cada período do dia
+  Object.values(filteredActivities.value).forEach(activities => {
+    // Para cada atividade nesse período
+    activities.forEach(activity => {
+      // Se a atividade tem imagens, adicione-as ao array
+      if (activity.images && activity.images.length) {
+        images.push(...activity.images);
+      }
+    });
+  });
+  
+  // Remove duplicatas (caso a mesma imagem apareça em várias atividades)
+  return [...new Set(images)];
+});
 
 // Função para formatar a data no formato desejado
 const formatDate = (dateStr) => {
@@ -265,7 +285,9 @@ const filteredActivities = computed(() => {
           return {
             id: item,
             titulo: item,
-            descricao: ''
+            descricao: '',
+            title: item,
+            description: ''
           };
         }
       } 
