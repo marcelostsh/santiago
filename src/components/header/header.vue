@@ -6,7 +6,10 @@
     :style="headerBackgroundStyle"
   >
     <!-- Menu Icon Button -->
-    <button class="absolute top-4 left-4 text-white p-2 bg-blue-900 bg-opacity-50 rounded-md hover:bg-opacity-70 transition-all">
+    <button 
+      @click="toggleSidebar"
+      class="absolute top-4 left-4 text-white p-2 bg-blue-900 bg-opacity-50 rounded-md hover:bg-opacity-70 transition-all"
+    >
       <i class="fas fa-bars text-xl"></i>
     </button>
     
@@ -17,14 +20,28 @@
       {{ formatDateRange(headerData.period.start, headerData.period.end) }}
     </div>
   </header>
+  
+  <!-- Admin Sidebar Component -->
+  <AdminSidebar :isOpen="isSidebarOpen" @close="closeSidebar" />
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { getSiteHeader } from '../../services';
+import AdminSidebar from '../admin/AdminSidebar.vue';
 
 // Data for the header section
 const headerData = ref(null);
+const isSidebarOpen = ref(false);
+
+// Sidebar toggle functions
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
+
+const closeSidebar = () => {
+  isSidebarOpen.value = false;
+};
 
 // Computed background style based on headerData
 const headerBackgroundStyle = computed(() => {
