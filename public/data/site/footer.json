@@ -36,22 +36,5 @@
       "rota": ""
     }
   ],
-  "copyright": "© 2023 Roteiro de Viagem Chile. Todos os direitos reservados.",
-  "links": [
-    {
-      "id": "privacy",
-      "title": "Política de Privacidade",
-      "url": "/privacy"
-    },
-    {
-      "id": "terms",
-      "title": "Termos de Uso",
-      "url": "/terms"
-    },
-    {
-      "id": "contact",
-      "title": "Contato",
-      "url": "/contact"
-    }
-  ]
+  "copyright": "© 2023 Roteiro de Viagem Chile."
 }
