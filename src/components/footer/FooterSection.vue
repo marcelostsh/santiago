@@ -24,23 +24,29 @@
   </footer>
 </template>
 <script setup>
-// Footer Component
 import { ref, onMounted } from 'vue';
+import { getSiteFooter } from '../../services/dataService';
 
+// Footer Component
 const footerData = ref({
-  titulo: '',
-  descricao: '',
-  data: '',
-  contatos_importantes: [],
-  copyright: '',
-  socialMedia: [],
-  links: []
+  titulo: 'Santiago Trip',
+  descricao: 'Seu guia de viagem para Santiago',
+  data: '2023-2024',
+  contatos_importantes: [
+    { id: 1, nome: 'Emergência', telefone: '133' },
+    { id: 2, nome: 'Polícia', telefone: '134' },
+    { id: 3, nome: 'Ambulância', telefone: '131' }
+  ],
+  copyright: '© 2023 Santiago Trip. Todos os direitos reservados.'
 });
 
+// Carregar dados do footer
 onMounted(async () => {
   try {
-    const response = await fetch('./data/site/footer.json');
-    footerData.value = await response.json();
+    const data = await getSiteFooter();
+    if (data) {
+      footerData.value = data;
+    }
   } catch (error) {
     console.error('Erro ao carregar os dados do footer:', error);
   }
