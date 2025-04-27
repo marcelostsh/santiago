@@ -59,13 +59,13 @@ Os dados do site estão organizados nos seguintes arquivos JSON:
 
 ### 🧳 Dados da Viagem - Santiago (`/public/data/trips/santiago/`)
 
-| Arquivo             | Descrição                     | Estrutura Principal                                               |
-| ------------------- | ----------------------------- | ----------------------------------------------------------------- |
-| **trip-info.json**  | Informações gerais da viagem  | ID, título, descrição, datas, destino, imagem de capa             |
-| **locations.json**  | Detalhes dos locais a visitar | Array de locais com ID, nome, coordenadas, descrição, imagens     |
-| **activities.json** | Atividades disponíveis        | Array de atividades com ID, título, descrição, duração, categoria |
-| **itinerary.json**  | Programação diária            | Array de dias com data, título, atividades, dicas, transporte     |
-| **tips.json**       | Dicas e recomendações         | Categorias de dicas (clima, transporte, gastronomia, práticas)    |
+| Arquivo             | Descrição                     | Estrutura Principal                                                                          |
+| ------------------- | ----------------------------- | -------------------------------------------------------------------------------------------- |
+| **trip-info.json**  | Informações gerais da viagem  | ID, título, descrição, datas, destino, imagem de capa                                        |
+| **locations.json**  | Detalhes dos locais a visitar | Array de locais com ID, nome, coordenadas, descrição, imagens                                |
+| **activities.json** | Atividades disponíveis        | Array de atividades com ID, título, descrição, duração, categoria                            |
+| **itinerary.json**  | Programação diária            | Array de dias com data, título, schedule (períodos do dia com atividades), dicas, transporte |
+| **tips.json**       | Dicas e recomendações         | Categorias de dicas (clima, transporte, gastronomia, práticas)                               |
 
 ### 📊 Relações entre os Dados
 
@@ -83,7 +83,7 @@ Os dados do site estão organizados nos seguintes arquivos JSON:
 └─────────────┘
 ```
 
-- **Dias do itinerário** (`itinerary.json`) referenciam **atividades** por ID
+- **Dias do itinerário** (`itinerary.json`) referenciam **atividades** por ID através da estrutura `schedule`
 - **Atividades** (`activities.json`) referenciam **locais** por ID
 - **Dicas** (`tips.json`) complementam as informações do itinerário
 
@@ -239,9 +239,20 @@ async created() {
   this.footer = await getSiteFooter();
 
   // Filtrar atividades do dia
-  this.dayActivities = this.activities.filter(activity =>
-    this.day.activities.includes(activity.id)
-  );
+  this.dayActivities = this.activities.filter(activity => {
+    // Verificar se a atividade está em algum período do dia no schedule
+    if (this.day.schedule) {
+      const allScheduleActivities = [
+        ...(this.day.schedule.morning || []),
+        ...(this.day.schedule.lunch || this.day.schedule.midDay || []),
+        ...(this.day.schedule.afternoon || []),
+        ...(this.day.schedule.evening || []),
+        ...(this.day.schedule.night || [])
+      ];
+      return allScheduleActivities.includes(activity.id);
+    }
+    return false;
+  });
 
   // Relacionar atividades com locais
   this.dayActivitiesWithLocations = this.dayActivities.map(activity => {
@@ -359,6 +370,22 @@ O projeto está preparado para migrar de JSONs locais para o Firebase quando nec
 1. Criar pasta com estrutura similar a `public/data/trips/santiago/` para a nova viagem
 2. Atualizar `config.js` para incluir caminhos para a nova viagem
 3. Usar os serviços existentes passando o novo ID de viagem
+
+### Como padronizar a estrutura do itinerário?
+
+Todos os dias no arquivo `itinerary.json` devem usar o formato `schedule` para organizar as atividades por períodos do dia:
+
+```json
+"schedule": {
+  "morning": ["atividade-1", "atividade-2"],
+  "lunch": ["atividade-almoço"],
+  "afternoon": ["atividade-3"],
+  "evening": ["atividade-4"],
+  "night": ["atividade-5"]
+}
+```
+
+Cada período (morning, lunch/midDay, afternoon, evening, night) deve conter um array de IDs de atividades ou strings.
 
 ### Como modificar a estrutura de um JSON?
 

@@ -4,7 +4,10 @@
     "date": "2025-05-06",
     "title": "Chegada a Santiago",
     "description": "Chegada e acomodação no hotel",
-    "activities": ["hotel-check-in", "free-walking"],
+    "schedule": {
+      "afternoon": ["hotel-check-in"],
+      "evening": ["free-walking"]
+    },
     "transport": "Transfer do aeroporto / Transporte público",
     "tips": [
       "Após o check-in, você pode visitar o Cerro Santa Lucía ou o Parque Forestal, ambos próximos ao hotel.",
@@ -20,7 +23,9 @@
     "date": "2025-05-07",
     "title": "Valle Nevado Sunset",
     "description": "Passeio para ver o pôr do sol na neve",
-    "activities": ["valle-nevado-sunset"],
+    "schedule": {
+      "afternoon": ["valle-nevado-sunset"]
+    },
     "transport": "Agência de turismo",
     "tips": [
       "Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos Andes.",
@@ -37,7 +42,10 @@
     "date": "2025-05-08",
     "title": "Portillo e Laguna del Inca",
     "description": "Visita a um dos centros de esqui mais tradicionais do Chile",
-    "activities": ["portillo-visit", "laguna-del-inca-visit"],
+    "schedule": {
+      "morning": ["portillo-visit"],
+      "afternoon": ["laguna-del-inca-visit"]
+    },
     "transport": "Agência de turismo",
     "tips": [
       "Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja com bateria completa.",
@@ -120,7 +128,10 @@
     "date": "2025-05-11",
     "title": "Farellones",
     "description": "Passeio à estância de esqui de Farellones",
-    "activities": ["farellones-visit"],
+    "schedule": {
+      "morning": ["farellones-visit"],
+      "afternoon": ["farellones-visit"]
+    },
     "transport": "Carro alugado",
     "tips": [
       "Verifique se seu carro alugado tem os equipamentos necessários para dirigir na neve (correntes, pneus adequados).",
@@ -138,7 +149,10 @@
     "date": "2025-05-12",
     "title": "Visita ao Betel do Chile",
     "description": "Visita à sede nacional das Testemunhas de Jeová no Chile",
-    "activities": ["betel-chile-visit", "free-time-santiago"],
+    "schedule": {
+      "morning": ["betel-chile-visit"],
+      "afternoon": ["free-time-santiago"]
+    },
     "transport": "Transporte público",
     "tips": [
       "Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.",
@@ -154,7 +168,10 @@
     "date": "2025-05-13",
     "title": "Despedida de Santiago",
     "description": "Check-out do hotel e ida ao aeroporto",
-    "activities": ["hotel-checkout", "airport-transfer"],
+    "schedule": {
+      "morning": ["hotel-checkout"],
+      "afternoon": ["airport-transfer"]
+    },
     "transport": "Táxi / Transfer",
     "tips": [
       "Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.",

@@ -3,6 +3,7 @@
   <header 
     class="hero-bg text-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center"
     v-if="headerData"
+    :style="headerBackgroundStyle"
   >
     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{{ headerData.title }}</h1>
     <p class="text-lg sm:text-xl lg:text-2xl mb-8">{{ headerData.subtitle }}</p>
@@ -14,11 +15,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { getSiteHeader } from '../../services';
 
 // Data for the header section
 const headerData = ref(null);
+
+// Computed background style based on headerData
+const headerBackgroundStyle = computed(() => {
+  if (!headerData.value || !headerData.value.backgroundImage) return {};
+  
+  return {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${headerData.value.backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  };
+});
 
 // Format the date range for display
 const formatDateRange = (start, end) => {
@@ -44,9 +56,4 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.hero-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), v-bind('headerData ? `url(${headerData.backgroundImage})` : ""');
-  background-size: cover;
-  background-position: center;
-}
 </style> 
