@@ -49,6 +49,12 @@ export async function getActivities(tripId = 'santiago') {
     : localDataService.getActivities(tripId);
 }
 
+export async function getLocations(tripId = 'santiago') {
+  return isUsingFirebase
+    ? firebaseDataService.getLocations(tripId)
+    : localDataService.getLocations(tripId);
+}
+
 export async function getTips(tripId = 'santiago') {
   return isUsingFirebase
     ? firebaseDataService.getTips(tripId)

@@ -65,9 +65,13 @@
           </a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
+          <router-link 
+            to="/admin/locais" 
+            class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200"
+            @click="$emit('close')"
+          >
             <i class="fas fa-map-marker-alt mr-2"></i> Locais
-          </a>
+          </router-link>
         </li>
         <li>
           <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">

@@ -58,6 +58,39 @@ export async function getActivities(tripId = 'santiago') {
   return fetchLocalJson(localDataPaths.trips.santiago.activities);
 }
 
+export async function getLocations(tripId = 'santiago') {
+  if (tripId !== 'santiago') {
+    console.warn('Apenas dados da viagem Santiago estão disponíveis no momento.');
+  }
+  
+  const activities = await getActivities(tripId);
+  if (!activities) return [];
+  
+  // Mapeia todos os locais únicos das atividades
+  const locationsMap = {};
+  
+  activities.forEach(activity => {
+    if (activity.location) {
+      const locationId = activity.location.toLowerCase().replace(/\s+/g, '-');
+      
+      if (!locationsMap[locationId]) {
+        locationsMap[locationId] = {
+          id: locationId,
+          name: activity.location,
+          type: activity.type,
+          description: activity.description,
+          images: activity.images || [],
+          details: activity.details,
+          links: activity.links || {}
+        };
+      }
+    }
+  });
+  
+  // Converte o objeto em array
+  return Object.values(locationsMap);
+}
+
 export async function getTips(tripId = 'santiago') {
   if (tripId !== 'santiago') {
     console.warn('Apenas dados da viagem Santiago estão disponíveis no momento.');
@@ -85,6 +118,9 @@ export async function getLocationById(locationId, tripId = 'santiago') {
   
   if (!activity) return null;
   
+  // Processa os links para garantir formato adequado
+  let processedLinks = activity.links || {};
+  
   // Retorna um objeto de location com os dados necessários
   return {
     id: locationId,
@@ -93,7 +129,7 @@ export async function getLocationById(locationId, tripId = 'santiago') {
     description: activity.description,
     images: activity.images || [],
     details: activity.details,
-    links: activity.links
+    links: processedLinks
   };
 }
 
