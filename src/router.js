@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import SiteHeaderForm from './components/admin/forms/SiteHeaderForm.vue';
+import SiteFooterForm from './components/admin/forms/SiteFooterForm.vue';
 import AdminLayout from './components/admin/AdminLayout.vue';
 
 const routes = [
@@ -15,6 +16,12 @@ const routes = [
         path: 'header',
         name: 'admin-header',
         component: SiteHeaderForm,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'footer',
+        name: 'admin-footer',
+        component: SiteFooterForm,
         meta: { requiresAuth: true }
       }
     ]
