@@ -1,24 +1,28 @@
 <template>
   <AdminFormLayout 
-    :title="isNewActivity ? 'Nova Atividade' : `Editar Atividade: ${formData.name}`" 
+    :title="isNewActivity ? 'Nova Atividade' : `Editar Atividade: ${formData.title}`" 
     :alert="alert"
     @close-alert="closeAlert"
   >
     <form @submit.prevent="saveActivity">
-      <!-- Nome da Atividade -->
       <FormField
-        id="name"
+        id="title"
         label="Nome da Atividade"
-        v-model="formData.name"
+        v-model="formData.title"
         required
       />
-      
-      <!-- Local -->
-      <FormField
-        id="location"
-        label="Local"
-        v-model="formData.location"
-      />
+      <!-- Local (URL do Google Maps) -->
+      <div class="mb-4">
+        <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Local (URL do Google Maps)</label>
+        <input
+          type="text"
+          id="location"
+          v-model="formData.location"
+          class="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="https://maps.app.goo.gl/..."
+        />
+        <p class="text-xs text-gray-500 mt-1">Cole aqui a URL do Google Maps para o local da atividade</p>
+      </div>
       
       <!-- Descrição -->
       <div class="mb-4">
@@ -206,7 +210,7 @@
       <div class="bg-white rounded-lg p-6 max-w-md w-full z-10">
         <h3 class="text-lg font-medium text-gray-900 mb-4">Confirmar Exclusão</h3>
         <p class="mb-4 text-gray-600">
-          Tem certeza de que deseja excluir a atividade "{{ formData.name }}"? Esta ação não pode ser desfeita.
+          Tem certeza de que deseja excluir a atividade "{{ formData.title }}"? Esta ação não pode ser desfeita.
         </p>
         <div class="flex justify-end gap-3">
           <button 
@@ -247,7 +251,7 @@ const isNewActivity = computed(() => route.params.id === 'novo')
 
 // Inicializa o formulário com valores padrão
 const formData = ref({
-  name: '',
+  title: '',
   location: '',
   description: '',
   type: '',
@@ -287,7 +291,7 @@ onMounted(async () => {
         console.log('Dados da atividade carregados:', data) // Log para debug
         // Preenche o formulário com os dados existentes
         formData.value = {
-          name: data.name || '',
+          title: data.title || '',
           location: data.location || '',
           description: data.description || '',
           type: data.type || '',
@@ -318,27 +322,10 @@ onMounted(async () => {
         
         // Processamento de links
         if (data.links) {
-          // Se links for um array, usamos diretamente
-          if (Array.isArray(data.links)) {
-            formData.value.links = data.links.map(link => {
-              // Garantir que cada link tenha a estrutura correta
-              if (typeof link === 'object') {
-                return {
-                  title: link.title || link.name || '',
-                  url: link.url || ''
-                }
-              } else {
-                return { title: '', url: link }
-              }
-            })
-          } 
-          // Se for um objeto de links nomeados
-          else if (typeof data.links === 'object' && !Array.isArray(data.links)) {
-            formData.value.links = Object.entries(data.links).map(([key, value]) => {
-              return {
-                title: key,
-                url: typeof value === 'string' ? value : (value.url || '')
-              }
+          if (typeof data.links === 'object' && !Array.isArray(data.links)) {
+            // Converte os links de objeto para array
+            formData.value.links = Object.entries(data.links).map(([title, url]) => {
+              return { title, url }
             })
           }
         }
@@ -397,14 +384,14 @@ const removeLink = (index) => {
 const saveActivity = async () => {
   try {
     // Verifica se o nome da atividade foi informado
-    if (!formData.value.name.trim()) {
+    if (!formData.value.title.trim()) {
       showAlert('O nome da atividade é obrigatório!', 'error')
       return
     }
     
     // Gera um ID baseado no nome se for uma nova atividade
     const activityId = isNewActivity.value 
-      ? formData.value.name.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      ? formData.value.title.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       : route.params.id
     
     // Prepara os dados antes de salvar

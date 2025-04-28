@@ -136,7 +136,6 @@ async function migrateTripData(tripId = 'santiago') {
             type: activity.type || 'local',
             description: activity.description || '',
             images: activity.images || [],
-            details: activity.details || {},
             links: activity.links || {}
           };
         }

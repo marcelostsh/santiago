@@ -13,12 +13,18 @@
         required
       />
       
-      <!-- Local -->
-      <FormField
-        id="location"
-        label="Local"
-        v-model="formData.location"
-      />
+      <!-- Local (URL do Google Maps) -->
+      <div class="mb-4">
+        <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Local (URL do Google Maps)</label>
+        <input
+          type="text"
+          id="location"
+          v-model="formData.location"
+          class="w-full px-3 py-2 border border-gray-300 rounded-md"
+          placeholder="https://maps.app.goo.gl/..."
+        />
+        <p class="text-xs text-gray-500 mt-1">Cole aqui a URL do Google Maps para o local da atividade</p>
+      </div>
       
       <!-- Descrição -->
       <div class="mb-4">
@@ -317,27 +323,10 @@ onMounted(async () => {
         
         // Processamento de links
         if (data.links) {
-          // Se links for um array, usamos diretamente
-          if (Array.isArray(data.links)) {
-            formData.value.links = data.links.map(link => {
-              // Garantir que cada link tenha a estrutura correta
-              if (typeof link === 'object') {
-                return {
-                  title: link.title || link.name || '',
-                  url: link.url || ''
-                }
-              } else {
-                return { title: '', url: link }
-              }
-            })
-          } 
-          // Se for um objeto de links nomeados
-          else if (typeof data.links === 'object' && !Array.isArray(data.links)) {
-            formData.value.links = Object.entries(data.links).map(([key, value]) => {
-              return {
-                title: key,
-                url: typeof value === 'string' ? value : (value.url || '')
-              }
+          if (typeof data.links === 'object' && !Array.isArray(data.links)) {
+            // Converte os links de objeto para array
+            formData.value.links = Object.entries(data.links).map(([title, url]) => {
+              return { title, url }
             })
           }
         }

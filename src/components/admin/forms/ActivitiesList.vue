@@ -46,9 +46,9 @@
             <router-link :to="`/admin/atividades/${activity.id}`" class="block p-4">
               <div class="flex items-center justify-between">
                 <div>
-                  <h3 class="text-lg font-medium text-gray-900">{{ activity.name }}</h3>
+                  <h3 class="text-lg font-medium text-gray-900">{{ activity.title }}</h3>
                   <p v-if="activity.location" class="text-sm text-gray-500 mt-1">
-                    {{ activity.location }}
+                    {{ activity.description }}
                   </p>
                 </div>
                 <div class="text-gray-400">
@@ -100,8 +100,13 @@ onMounted(async () => {
     loading.value = true
     activities.value = await getActivities()
     
-    // Ordenar por nome
-    activities.value.sort((a, b) => a.name.localeCompare(b.name))
+    // Ordenar por título
+    activities.value.sort((a, b) => {
+      if (a.title && b.title) {
+        return a.title.localeCompare(b.title);
+      }
+      return 0;
+    })
   } catch (error) {
     console.error('Erro ao carregar atividades:', error)
     showAlert('Erro ao carregar lista de atividades!', 'error')

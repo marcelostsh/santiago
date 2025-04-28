@@ -80,7 +80,6 @@ export async function getLocations(tripId = 'santiago') {
           type: activity.type,
           description: activity.description,
           images: activity.images || [],
-          details: activity.details,
           links: activity.links || {}
         };
       }
@@ -128,7 +127,6 @@ export async function getLocationById(locationId, tripId = 'santiago') {
     type: activity.type,
     description: activity.description,
     images: activity.images || [],
-    details: activity.details,
     links: processedLinks
   };
 }
