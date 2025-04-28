@@ -113,4 +113,14 @@ export const addOrUpdateLocation = async (tripId, locationId, data) => {
 
 export const addOrUpdateDay = async (tripId, dayId, data) => {
   return await setDocument(`trips/${tripId}/itinerary`, dayId, data);
+};
+
+/**
+ * Adiciona ou atualiza um link na coleção de links
+ * @param {string} tripId - ID da viagem
+ * @param {string} linkId - ID do link
+ * @param {Object} data - Dados do link (título, url, descrição, etc.)
+ */
+export const addOrUpdateLink = async (tripId, linkId, data) => {
+  return await setDocument(`trips/${tripId}/links`, linkId, data);
 }; 

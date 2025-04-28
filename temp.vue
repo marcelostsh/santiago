@@ -1,16 +1,23 @@
-<template>
+﻿<template>
   <AdminFormLayout 
-    :title="isNewLocation ? 'Novo Local' : `Editar Local: ${formData.name}`" 
+    :title="isNewActivity ? 'Nova Atividade' : `Editar Atividade: ${formData.name}`" 
     :alert="alert"
     @close-alert="closeAlert"
   >
-    <form @submit.prevent="saveLocation">
-      <!-- Nome do Local -->
+    <form @submit.prevent="saveActivity">
+      <!-- Nome da Atividade -->
       <FormField
         id="name"
-        label="Nome do Local"
+        label="Nome da Atividade"
         v-model="formData.name"
         required
+      />
+      
+      <!-- Local -->
+      <FormField
+        id="location"
+        label="Local"
+        v-model="formData.location"
       />
       
       <!-- Descrição -->
@@ -21,9 +28,17 @@
           v-model="formData.description"
           rows="4"
           class="w-full px-3 py-2 border border-gray-300 rounded-md"
-          placeholder="Descreva este local"
+          placeholder="Descreva esta atividade"
         ></textarea>
       </div>
+      
+      <!-- Tipo -->
+      <FormField
+        id="type"
+        label="Tipo"
+        v-model="formData.type"
+        class="mb-4"
+      />
       
       <!-- Imagens -->
       <div class="mb-4">
@@ -88,7 +103,7 @@
           
           <!-- Preview da imagem -->
           <div v-if="imagem.url" class="mt-3">
-            <img :src="imagem.url" :alt="imagem.name || 'Imagem do local'" class="h-32 object-cover rounded-md">
+            <img :src="imagem.url" :alt="imagem.name || 'Imagem da atividade'" class="h-32 object-cover rounded-md">
           </div>
         </div>
         
@@ -170,7 +185,7 @@
         <button 
           type="button" 
           @click="confirmDelete" 
-          v-if="!isNewLocation"
+          v-if="!isNewActivity"
           class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
         >
           Excluir
@@ -191,7 +206,7 @@
       <div class="bg-white rounded-lg p-6 max-w-md w-full z-10">
         <h3 class="text-lg font-medium text-gray-900 mb-4">Confirmar Exclusão</h3>
         <p class="mb-4 text-gray-600">
-          Tem certeza de que deseja excluir o local "{{ formData.name }}"? Esta ação não pode ser desfeita.
+          Tem certeza de que deseja excluir a atividade "{{ formData.name }}"? Esta ação não pode ser desfeita.
         </p>
         <div class="flex justify-end gap-3">
           <button 
@@ -201,7 +216,7 @@
             Cancelar
           </button>
           <button 
-            @click="deleteLocation" 
+            @click="deleteActivity" 
             class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
           >
             Excluir
@@ -215,7 +230,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { getLocationById, addOrUpdateLocation, deleteDocument } from '../../../services'
+import { getActivityById, addOrUpdateActivity, deleteDocument } from '../../../services'
 import AdminFormLayout from '../common/AdminFormLayout.vue'
 import FormField from '../common/FormField.vue'
 import FormActions from '../common/FormActions.vue'
@@ -226,13 +241,15 @@ const route = useRoute()
 // Estado para controlar a exclusão
 const showDeleteModal = ref(false)
 
-// Verifica se é um novo local ou edição
-const isNewLocation = computed(() => route.params.id === 'novo')
+// Verifica se é uma nova atividade ou edição
+const isNewActivity = computed(() => route.params.id === 'novo')
 
 // Inicializa o formulário com valores padrão
 const formData = ref({
   name: '',
+  location: '',
   description: '',
+  type: '',
   images: [],
   links: []
 })
@@ -258,19 +275,21 @@ const closeAlert = () => {
   alert.value.show = false
 }
 
-// Carregar dados do local se estiver em modo de edição
+// Carregar dados da atividade se estiver em modo de edição
 onMounted(async () => {
-  if (!isNewLocation.value) {
+  if (!isNewActivity.value) {
     try {
-      const locationId = route.params.id
-      const data = await getLocationById(locationId)
+      const activityId = route.params.id
+      const data = await getActivityById(activityId)
       
       if (data) {
-        console.log('Dados do local carregados:', data) // Log para debug
+        console.log('Dados da atividade carregados:', data) // Log para debug
         // Preenche o formulário com os dados existentes
         formData.value = {
           name: data.name || '',
+          location: data.location || '',
           description: data.description || '',
+          type: data.type || '',
           images: [],
           links: []
         }
@@ -325,12 +344,12 @@ onMounted(async () => {
         
         console.log('Formulário preenchido:', formData.value) // Log para debug
       } else {
-        showAlert('Local não encontrado!', 'error')
-        router.push('/admin/locais')
+        showAlert('Atividade não encontrada!', 'error')
+        router.push('/admin/atividades')
       }
     } catch (error) {
-      console.error('Erro ao carregar dados do local:', error)
-      showAlert('Erro ao carregar dados do local!', 'error')
+      console.error('Erro ao carregar dados da atividade:', error)
+      showAlert('Erro ao carregar dados da atividade!', 'error')
     }
   }
 })
@@ -373,17 +392,17 @@ const removeLink = (index) => {
   formData.value.links.splice(index, 1)
 }
 
-// Salvar local no Firebase
-const saveLocation = async () => {
+// Salvar atividade no Firebase
+const saveActivity = async () => {
   try {
-    // Verifica se o nome do local foi informado
+    // Verifica se o nome da atividade foi informado
     if (!formData.value.name.trim()) {
-      showAlert('O nome do local é obrigatório!', 'error')
+      showAlert('O nome da atividade é obrigatório!', 'error')
       return
     }
     
-    // Gera um ID baseado no nome se for um novo local
-    const locationId = isNewLocation.value 
+    // Gera um ID baseado no nome se for uma nova atividade
+    const activityId = isNewActivity.value 
       ? formData.value.name.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       : route.params.id
     
@@ -408,21 +427,21 @@ const saveLocation = async () => {
     console.log('Dados a serem salvos:', dataToSave) // Log para debug
     
     // Salva os dados
-    const result = await addOrUpdateLocation('santiago', locationId, dataToSave)
+    const result = await addOrUpdateActivity('santiago', activityId, dataToSave)
     
     if (result.success) {
-      showAlert('Local salvo com sucesso!', 'success')
+      showAlert('Atividade salva com sucesso!', 'success')
       
-      // Se for um novo local, redireciona para a página de edição
-      if (isNewLocation.value) {
-        router.push(`/admin/locais/${locationId}`)
+      // Se for uma nova atividade, redireciona para a página de edição
+      if (isNewActivity.value) {
+        router.push(`/admin/atividades/${activityId}`)
       }
     } else {
-      showAlert('Erro ao salvar local!', 'error')
+      showAlert('Erro ao salvar atividade!', 'error')
     }
   } catch (error) {
-    console.error('Erro ao salvar local:', error)
-    showAlert('Erro ao salvar local!', 'error')
+    console.error('Erro ao salvar atividade:', error)
+    showAlert('Erro ao salvar atividade!', 'error')
   }
 }
 
@@ -431,29 +450,30 @@ const confirmDelete = () => {
   showDeleteModal.value = true
 }
 
-// Excluir local
-const deleteLocation = async () => {
+// Excluir atividade
+const deleteActivity = async () => {
   try {
-    const locationId = route.params.id
-    const result = await deleteDocument(`trips/santiago/locations`, locationId)
+    const activityId = route.params.id
+    const result = await deleteDocument(`trips/santiago/activities`, activityId)
     
     if (result.success) {
-      showAlert('Local excluído com sucesso!', 'success')
-      router.push('/admin/locais')
+      showAlert('Atividade excluída com sucesso!', 'success')
+      router.push('/admin/atividades')
     } else {
-      showAlert('Erro ao excluir local!', 'error')
+      showAlert('Erro ao excluir atividade!', 'error')
     }
     
     showDeleteModal.value = false
   } catch (error) {
-    console.error('Erro ao excluir local:', error)
-    showAlert('Erro ao excluir local!', 'error')
+    console.error('Erro ao excluir atividade:', error)
+    showAlert('Erro ao excluir atividade!', 'error')
     showDeleteModal.value = false
   }
 }
 
 // Voltar para a listagem
 const goBack = () => {
-  router.push('/admin/locais')
+  router.push('/admin/atividades')
 }
-</script> 
+</script>
+

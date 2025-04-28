@@ -6,6 +6,7 @@
 import { isUsingFirebase } from './config';
 import * as localDataService from './localDataService';
 import * as firebaseDataService from './firebaseDataService';
+import * as firebaseWriteService from './firebaseWriteService';
 
 /**
  * Dados do Site
@@ -80,4 +81,22 @@ export async function getDayById(dayId, tripId = 'santiago') {
   return isUsingFirebase
     ? firebaseDataService.getDayById(dayId, tripId)
     : localDataService.getDayById(dayId, tripId);
-} 
+}
+
+/**
+ * Funções de escrita (apenas suportadas pelo Firebase)
+ */
+export async function addOrUpdateActivity(tripId, activityId, data) {
+  if (!isUsingFirebase) {
+    console.warn('Escrita de dados só é suportada ao usar Firebase');
+    return { success: false };
+  }
+  return firebaseWriteService.addOrUpdateActivity(tripId, activityId, data);
+}
+
+export const getLinks = (tripId) => {
+  if (isUsingFirebase) {
+    return firebaseDataService.getLinks(tripId);
+  }
+  return []; // Retorna array vazio se não estiver usando Firebase
+}; 

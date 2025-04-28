@@ -60,17 +60,12 @@
           </a>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
-            <i class="fas fa-hiking mr-2"></i> Atividades
-          </a>
-        </li>
-        <li>
           <router-link 
-            to="/admin/locais" 
+            to="/admin/atividades" 
             class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200"
             @click="$emit('close')"
           >
-            <i class="fas fa-map-marker-alt mr-2"></i> Locais
+            <i class="fas fa-hiking mr-2"></i> Atividades
           </router-link>
         </li>
         <li>

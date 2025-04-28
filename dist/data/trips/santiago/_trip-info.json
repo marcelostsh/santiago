@@ -1,0 +1,17 @@
+{
+  "id": "santiago-2025",
+  "title": "Santiago do Chile",
+  "subtitle": "Roteiro de viagem: Santiago e arredores",
+  "description": "Uma semana explorando Santiago, os Andes e a costa chilena",
+  "dateRange": {
+    "start": "2025-05-06",
+    "end": "2025-05-13"
+  },
+  "destination": {
+    "country": "Chile",
+    "city": "Santiago",
+    "countryCode": "CL"
+  },
+  "coverImage": "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
+  "introText": "Viagem a Santiago do Chile com passeios para conhecer os Andes, centros de esqui, vinícolas e as cidades costeiras de Valparaíso e Viña del Mar."
+} 

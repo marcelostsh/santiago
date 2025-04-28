@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import SiteHeaderForm from './components/admin/forms/SiteHeaderForm.vue';
 import SiteFooterForm from './components/admin/forms/SiteFooterForm.vue';
-import LocationsList from './components/admin/forms/LocationsList.vue';
-import LocationForm from './components/admin/forms/LocationForm.vue';
+import ActivitiesList from './components/admin/forms/ActivitiesList.vue';
+import ActivityForm from './components/admin/forms/ActivityForm.vue';
 import AdminLayout from './components/admin/AdminLayout.vue';
 
 const routes = [
@@ -27,15 +27,15 @@ const routes = [
         meta: { requiresAuth: true }
       },
       {
-        path: 'locais',
-        name: 'admin-locais',
-        component: LocationsList,
+        path: 'atividades',
+        name: 'admin-atividades',
+        component: ActivitiesList,
         meta: { requiresAuth: true }
       },
       {
-        path: 'locais/:id',
-        name: 'admin-locais-detalhes',
-        component: LocationForm,
+        path: 'atividades/:id',
+        name: 'admin-atividades-detalhes',
+        component: ActivityForm,
         meta: { requiresAuth: true }
       }
     ]

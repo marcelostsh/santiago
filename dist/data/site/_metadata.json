@@ -1,0 +1,15 @@
+{
+  "siteTitle": "Santiago Trip",
+  "siteDescription": "Roteiro de viagem para Santiago do Chile e arredores",
+  "keywords": ["santiago", "chile", "viagem", "roteiro", "andes", "valparaiso", "vina del mar"],
+  "author": "Santiago Trip",
+  "themeColor": "#3b7cb9",
+  "ogImage": "/images/santiago-cover.jpg",
+  "defaultLocale": "pt-BR",
+  "socialMedia": {
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/"
+  },
+  "contactEmail": "contato@santiagotrip.com",
+  "favicon": "/favicon.ico"
+} 

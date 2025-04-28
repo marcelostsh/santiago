@@ -137,6 +137,20 @@ export async function getDayById(dayId, tripId = 'santiago') {
   }
 }
 
+export const getLinks = async (tripId) => {
+  try {
+    const collectionRef = collection(db, `trips/${tripId}/links`);
+    const querySnapshot = await getDocs(collectionRef);
+    return querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+  } catch (error) {
+    console.error("Error getting links:", error);
+    return [];
+  }
+};
+
 /**
  * A implementação real provavelmente será algo assim:
  * 
