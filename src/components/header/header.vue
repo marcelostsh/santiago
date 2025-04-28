@@ -1,10 +1,18 @@
 <template>
   <!-- Header & Hero Section -->
   <header 
-    class="hero-bg text-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center"
+    class="relative hero-bg text-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center"
     v-if="headerData"
     :style="headerBackgroundStyle"
   >
+    <!-- Menu Icon Button -->
+    <button 
+      @click="toggleSidebar"
+      class="absolute top-4 left-4 text-white p-2 bg-blue-900 bg-opacity-50 rounded-md hover:bg-opacity-70 transition-all"
+    >
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+    
     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{{ headerData.title }}</h1>
     <p class="text-lg sm:text-xl lg:text-2xl mb-8">{{ headerData.subtitle }}</p>
     <div class="inline-flex bg-white text-blue-900 font-bold rounded-full px-6 py-2">
@@ -12,14 +20,28 @@
       {{ formatDateRange(headerData.period.start, headerData.period.end) }}
     </div>
   </header>
+  
+  <!-- Admin Sidebar Component -->
+  <AdminSidebar :isOpen="isSidebarOpen" @close="closeSidebar" />
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { getSiteHeader } from '../../services';
+import AdminSidebar from '../admin/AdminSidebar.vue';
 
 // Data for the header section
 const headerData = ref(null);
+const isSidebarOpen = ref(false);
+
+// Sidebar toggle functions
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
+
+const closeSidebar = () => {
+  isSidebarOpen.value = false;
+};
 
 // Computed background style based on headerData
 const headerBackgroundStyle = computed(() => {

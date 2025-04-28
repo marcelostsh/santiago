@@ -3,7 +3,7 @@
  * Altere isUsingFirebase para true quando estiver pronto para usar o Firebase.
  */
 
-export const isUsingFirebase = false;
+export const isUsingFirebase = true;
 
 // Configuração para paths de dados locais
 export const localDataPaths = {
