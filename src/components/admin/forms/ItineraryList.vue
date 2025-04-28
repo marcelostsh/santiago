@@ -5,6 +5,22 @@
     @close-alert="closeAlert"
   >
     <div class="mb-6">
+      <p class="text-sm text-gray-600 mb-4">
+        Gerencie os dias do roteiro de viagem. Clique em um dia para editá-lo ou adicione um novo dia.
+      </p>
+      
+      <div class="flex justify-end mb-4">
+        <router-link 
+          to="/admin/itinerario/novo" 
+          class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center text-sm"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          Novo Dia
+        </router-link>
+      </div>
+      
       <div v-if="loading" class="text-center py-8">
         <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600"></div>
         <p class="mt-2 text-gray-500">Carregando itinerário...</p>

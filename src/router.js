@@ -4,6 +4,7 @@ import SiteFooterForm from './components/admin/forms/SiteFooterForm.vue';
 import ActivitiesList from './components/admin/forms/ActivitiesList.vue';
 import ActivityForm from './components/admin/forms/ActivityForm.vue';
 import ItineraryList from './components/admin/forms/ItineraryList.vue';
+import ItineraryDayForm from './components/admin/forms/ItineraryDayForm.vue';
 import AdminLayout from './components/admin/AdminLayout.vue';
 
 const routes = [
@@ -48,7 +49,7 @@ const routes = [
       {
         path: 'itinerario/:id',
         name: 'admin-itinerario-detalhes',
-        component: ActivityForm, // Precisará ser substituído por um componente ItineraryForm
+        component: ItineraryDayForm,
         meta: { requiresAuth: true }
       }
     ]
