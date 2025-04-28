@@ -38,18 +38,13 @@
             <i class="fas fa-shoe-prints mr-2"></i> Footer
           </router-link>
         </li>
-        <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
-            <i class="fas fa-tags mr-2"></i> Metadados
-          </a>
-        </li>
       </ul>
       
       <div class="mt-6 px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
         Conteúdo da Viagem
       </div>
       <ul>
-        <li>
+        <li v-show="false">
           <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
             <i class="fas fa-info-circle mr-2"></i> Informações da Viagem
           </a>
@@ -73,9 +68,13 @@
           </router-link>
         </li>
         <li>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
+          <router-link
+            to="/admin/dicas"
+            class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200"
+            @click="$emit('close')"
+          >
             <i class="fas fa-lightbulb mr-2"></i> Dicas
-          </a>
+          </router-link>
         </li>
       </ul>
     </nav>

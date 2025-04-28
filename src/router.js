@@ -5,6 +5,8 @@ import ActivitiesList from './components/admin/forms/ActivitiesList.vue';
 import ActivityForm from './components/admin/forms/ActivityForm.vue';
 import ItineraryList from './components/admin/forms/ItineraryList.vue';
 import ItineraryDayForm from './components/admin/forms/ItineraryDayForm.vue';
+import TipsForm from './components/admin/forms/TipsForm.vue';
+import TipDetailForm from './components/admin/forms/TipDetailForm.vue';
 import AdminLayout from './components/admin/AdminLayout.vue';
 
 const routes = [
@@ -50,6 +52,18 @@ const routes = [
         path: 'itinerario/:id',
         name: 'admin-itinerario-detalhes',
         component: ItineraryDayForm,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'dicas',
+        name: 'admin-dicas',
+        component: TipsForm,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'dicas/:category',
+        name: 'admin-dicas-categoria',
+        component: TipDetailForm,
         meta: { requiresAuth: true }
       }
     ]
