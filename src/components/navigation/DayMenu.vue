@@ -33,49 +33,55 @@ function formatDayText(day) {
   const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
   let eventDate = null;
+  let year, month, date;
   
-  // Check if we have an ISO date format (YYYY-MM-DD)
+  // Tratamento para formato ISO (YYYY-MM-DD)
   if (day.date) {
-    eventDate = new Date(day.date);
+    // Forçando interpretação correta sem problemas de UTC
+    [year, month, date] = day.date.split('-').map(Number);
+    // Criando data com os componentes específicos (ano, mês (0-11), dia)
+    eventDate = new Date(year, month - 1, date, 12, 0, 0);
   }
   
-  // Fallback to old format (dd/mm/yyyy) for backward compatibility
+  // Tratamento para formato dd/mm/yyyy
   else if (day.data) {
-    // Helper function to parse dd/mm/yyyy from the string
-    const parseDate = (dateString) => {
-      if (!dateString) return null;
-      
-      const match = dateString.match(/(\d{2})\/(\d{2})\/(\d{4})/);
-      if (match) {
-        // Note: Month is 0-indexed in JavaScript Date object
-        return new Date(parseInt(match[3]), parseInt(match[2]) - 1, parseInt(match[1]));
-      }
-      return null;
-    };
-    
-    eventDate = parseDate(day.data);
+    const match = day.data.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+    if (match) {
+      date = parseInt(match[1]);
+      month = parseInt(match[2]);
+      year = parseInt(match[3]);
+      // Adicionando meio-dia para evitar problemas de fuso
+      eventDate = new Date(year, month - 1, date, 12, 0, 0);
+    }
   }
   
   if (!eventDate || isNaN(eventDate.getTime())) {
-    return `Dia ${dayNumber}`; // Fallback if date parsing fails
+    return `Dia ${dayNumber}`; // Fallback se parsing falhar
   }
 
+  // Configurando today e tomorrow com hora fixa também
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // Reset time for accurate date comparison
+  today.setHours(12, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
 
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
 
   let dateLabel = '';
 
-  if (eventDate.getTime() === today.getTime()) {
+  // Comparações usando dia, mês e ano em vez de timestamp
+  if (eventDate.getDate() === today.getDate() && 
+      eventDate.getMonth() === today.getMonth() && 
+      eventDate.getFullYear() === today.getFullYear()) {
     dateLabel = 'Hoje';
-  } else if (eventDate.getTime() === tomorrow.getTime()) {
+  } else if (eventDate.getDate() === tomorrow.getDate() && 
+            eventDate.getMonth() === tomorrow.getMonth() && 
+            eventDate.getFullYear() === tomorrow.getFullYear()) {
     dateLabel = 'Amanhã';
   } else {
     const dayOfMonth = eventDate.getDate();
-    const monthName = monthNames[eventDate.getMonth()]; // Use full month name
-    dateLabel = `${dayOfMonth} de ${monthName}`; // Format as "d de Mmmm"
+    const monthName = monthNames[eventDate.getMonth()];
+    dateLabel = `${dayOfMonth} de ${monthName}`;
   }
 
   return `Dia ${dayNumber} - ${dateLabel}`;
