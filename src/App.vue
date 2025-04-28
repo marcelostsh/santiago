@@ -1,6 +1,6 @@
 <script setup>
 // Roteiro de Viagem Chile 2025
-import { ref, onMounted } from 'vue'; // Importar ref para a instância do Swiper e onMounted para carregar dados
+import { ref, onMounted, computed } from 'vue'; // Importar ref para a instância do Swiper e onMounted para carregar dados
 import Header from './components/header/header.vue'
 // import NavigationMenu from './components/navigationmenu/navigationmenu.vue' // Removido
 import TripOverview from './components/overview/TripOverview.vue'
@@ -10,6 +10,15 @@ import DayCard from './components/day/DayCard.vue'
 import Recommendations from './components/recommendation/Recommendations.vue'
 // Removida importação direta do JSON
 import { getItinerary, getTips } from './services'; // Importar serviços para buscar dados
+import { useRoute } from 'vue-router';
+
+// Verificar se estamos em uma rota de admin
+const route = useRoute();
+const isAdminRoute = computed(() => {
+  const isAdmin = route.path.startsWith('/admin');
+  console.log('Current route:', route.path, 'isAdmin:', isAdmin);
+  return isAdmin;
+});
 
 // Importar Swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -24,6 +33,9 @@ const recommendations = ref(null);
 
 // Carregar dados quando componente for montado
 onMounted(async () => {
+  // Não carregar dados da viagem se estivermos na área administrativa
+  if (isAdminRoute.value) return;
+  
   try {
     // Carregar itinerário (dias)
     const itineraryData = await getItinerary();
@@ -72,51 +84,55 @@ const onMainSlideChange = (swiper) => {
 </script>
 
 <template>
-  <!-- Header Component -->
-  <Header />
+  <!-- Conteúdo da área admin é renderizado pelo router-view -->
+  <router-view v-if="isAdminRoute"></router-view>
+  
+  <!-- Conteúdo normal do site quando não estiver na área administrativa -->
+  <div v-else>
+    <!-- Header Component -->
+    <Header />
 
-  <!-- Overview Section - Movido para cima -->
-  <TripOverview />
+    <!-- Overview Section - Movido para cima -->
+    <TripOverview />
 
-  <!-- Navigation Menu removido -->
+    <!-- Main Content -->
+    <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8" v-if="days.length > 0">
 
-  <!-- Main Content -->
-  <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8" v-if="days.length > 0">
+      <!-- Day Navigation Menu -->
+      <DayMenu
+        :days="days"
+        @go-to-day="goToDaySlide"
+        @swiper="onDayMenuSwiper"
+        :controlled-swiper="mainSwiper"
+        :active-index="activeDayIndex" 
+      /> <!-- Pass active index as prop --> <!-- Pass main swiper for control -->
 
-    <!-- Day Navigation Menu -->
-    <DayMenu
-      :days="days"
-      @go-to-day="goToDaySlide"
-      @swiper="onDayMenuSwiper"
-      :controlled-swiper="mainSwiper"
-      :active-index="activeDayIndex" 
-    /> <!-- Pass active index as prop --> <!-- Pass main swiper for control -->
-
-    <!-- Swiper para os Dias da Viagem -->
-    <swiper
-      :modules="modules"
-      :slides-per-view="1"
-      :space-between="50"
-      :navigation="false"
-      :pagination="{ el: '.main-swiper-pagination', clickable: true }"
-      :auto-height="true"
-      @swiper="onSwiper"
-      @slideChange="onMainSlideChange"
-      class="main-day-swiper"
-    >
-      <swiper-slide v-for="(day, index) in days" :key="day.id">
-        <DayCard :day="day" />
-      </swiper-slide>
-    </swiper>
-    <!-- Container customizado para a paginação -->
-    <div class="main-swiper-pagination"></div>
-  </main>
-  <div class="container" v-if="recommendations">
-    <!-- Recomendações Adicionais -->
-    <Recommendations :recommendations="recommendations" />
+      <!-- Swiper para os Dias da Viagem -->
+      <swiper
+        :modules="modules"
+        :slides-per-view="1"
+        :space-between="50"
+        :navigation="false"
+        :pagination="{ el: '.main-swiper-pagination', clickable: true }"
+        :auto-height="true"
+        @swiper="onSwiper"
+        @slideChange="onMainSlideChange"
+        class="main-day-swiper"
+      >
+        <swiper-slide v-for="(day, index) in days" :key="day.id">
+          <DayCard :day="day" />
+        </swiper-slide>
+      </swiper>
+      <!-- Container customizado para a paginação -->
+      <div class="main-swiper-pagination"></div>
+    </main>
+    <div class="container" v-if="recommendations">
+      <!-- Recomendações Adicionais -->
+      <Recommendations :recommendations="recommendations" />
+    </div>
+    <!-- Footer Component -->
+    <FooterSection />
   </div>
-  <!-- Footer Component -->
-  <FooterSection />
 </template>
 
 <style>

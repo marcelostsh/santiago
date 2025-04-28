@@ -7,4 +7,7 @@
 export * from './dataService';
 
 // Exportar a configuração
-export { isUsingFirebase } from './config'; 
+export { isUsingFirebase } from './config';
+
+// Exportar todas as funções do firebaseWriteService
+export * from './firebaseWriteService'; 
