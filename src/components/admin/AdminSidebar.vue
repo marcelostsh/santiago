@@ -44,11 +44,6 @@
         Conteúdo da Viagem
       </div>
       <ul>
-        <li v-if="false">
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-200">
-            <i class="fas fa-info-circle mr-2"></i> Informações da Viagem
-          </a>
-        </li>
         <li>
           <router-link 
             to="/admin/itinerario" 
@@ -95,8 +90,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
 // Props
 const props = defineProps({
   isOpen: {
