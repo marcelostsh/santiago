@@ -11,6 +11,12 @@ defineProps({
   <div class="activity-item">
     <p class="font-medium">{{ atividade.titulo }}</p>
     <p class="text-gray-600">{{ atividade.descricao }}</p>
+    
+    <!-- Anotação da atividade (se existir) -->
+    <p v-if="atividade.note" class="mt-2 text-sm italic text-gray-700 bg-gray-50 p-2 rounded">
+      {{ atividade.note }}
+    </p>
+    
     <div class="mt-1 flex gap-2 flex-wrap">
       <a v-if="atividade.location" 
          :href="atividade.location" 

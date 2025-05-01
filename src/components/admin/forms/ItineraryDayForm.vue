@@ -49,185 +49,54 @@
       <div class="mt-8 mb-4">
         <h3 class="text-lg font-medium text-gray-900 mb-4 pb-2 border-b border-gray-200">Programação do Dia</h3>
         
-        <!-- Manhã (Morning) -->
-        <div class="mb-6">
+        <!-- Períodos do dia (usando v-for para reduzir repetição) -->
+        <div v-for="period in dayPeriods" :key="period.id" class="mb-6">
           <h4 class="font-medium text-gray-800 mb-2 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            <svg xmlns="http://www.w3.org/2000/svg" :class="['h-5', 'w-5', 'mr-1', period.color]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="period.icon" />
             </svg>
-            Manhã
+            {{ period.label }}
           </h4>
           
           <div class="bg-gray-50 p-3 rounded-md">
-            <div v-for="(activityId, index) in formData.schedule.morning" :key="`morning-${index}`" 
-                class="flex items-center mb-2 p-2 bg-white rounded border border-gray-200">
-              <div class="flex-grow">
-                <select
-                  v-model="formData.schedule.morning[index]"
-                  class="w-full p-2 border-0 focus:ring-0"
+            <div v-for="(activity, index) in formData.schedule[period.id]" :key="`${period.id}-${index}`" 
+                class="flex flex-col mb-2 p-2 bg-white rounded border border-gray-200">
+              <div class="flex items-center">
+                <div class="flex-grow">
+                  <select
+                    v-model="formData.schedule[period.id][index].activityId"
+                    class="w-full p-2 border-0 focus:ring-0"
+                  >
+                    <option value="">Selecione uma atividade</option>
+                    <option v-for="activity in activities" :key="activity.id" :value="activity.id">
+                      {{ activity.title }}
+                    </option>
+                  </select>
+                </div>
+                <button 
+                  type="button"
+                  @click="removeActivity(period.id, index)"
+                  class="ml-2 text-red-600 hover:text-red-800"
                 >
-                  <option value="">Selecione uma atividade</option>
-                  <option v-for="activity in activities" :key="activity.id" :value="activity.id">
-                    {{ activity.title }}
-                  </option>
-                </select>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
               </div>
-              <button 
-                type="button"
-                @click="removeActivity('morning', index)"
-                class="ml-2 text-red-600 hover:text-red-800"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </button>
+              
+              <div class="mt-2">
+                <textarea
+                  v-model="formData.schedule[period.id][index].note"
+                  rows="2"
+                  class="w-full p-2 border border-gray-200 rounded-md text-sm"
+                  placeholder="Anotações sobre esta atividade"
+                ></textarea>
+              </div>
             </div>
             
             <button 
               type="button"
-              @click="addActivity('morning')"
-              class="w-full mt-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 text-sm flex items-center justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Adicionar Atividade
-            </button>
-          </div>
-        </div>
-        
-        <!-- Almoço (Lunch) -->
-        <div class="mb-6">
-          <h4 class="font-medium text-gray-800 mb-2 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Almoço
-          </h4>
-          
-          <div class="bg-gray-50 p-3 rounded-md">
-            <div v-for="(activityId, index) in formData.schedule.lunch" :key="`lunch-${index}`" 
-                class="flex items-center mb-2 p-2 bg-white rounded border border-gray-200">
-              <div class="flex-grow">
-                <select
-                  v-model="formData.schedule.lunch[index]"
-                  class="w-full p-2 border-0 focus:ring-0"
-                >
-                  <option value="">Selecione uma atividade</option>
-                  <option v-for="activity in activities" :key="activity.id" :value="activity.id">
-                    {{ activity.title }}
-                  </option>
-                </select>
-              </div>
-              <button 
-                type="button"
-                @click="removeActivity('lunch', index)"
-                class="ml-2 text-red-600 hover:text-red-800"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </button>
-            </div>
-            
-            <button 
-              type="button"
-              @click="addActivity('lunch')"
-              class="w-full mt-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 text-sm flex items-center justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Adicionar Atividade
-            </button>
-          </div>
-        </div>
-        
-        <!-- Tarde (Afternoon) -->
-        <div class="mb-6">
-          <h4 class="font-medium text-gray-800 mb-2 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-            </svg>
-            Tarde
-          </h4>
-          
-          <div class="bg-gray-50 p-3 rounded-md">
-            <div v-for="(activityId, index) in formData.schedule.afternoon" :key="`afternoon-${index}`" 
-                class="flex items-center mb-2 p-2 bg-white rounded border border-gray-200">
-              <div class="flex-grow">
-                <select
-                  v-model="formData.schedule.afternoon[index]"
-                  class="w-full p-2 border-0 focus:ring-0"
-                >
-                  <option value="">Selecione uma atividade</option>
-                  <option v-for="activity in activities" :key="activity.id" :value="activity.id">
-                    {{ activity.title }}
-                  </option>
-                </select>
-              </div>
-              <button 
-                type="button"
-                @click="removeActivity('afternoon', index)"
-                class="ml-2 text-red-600 hover:text-red-800"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </button>
-            </div>
-            
-            <button 
-              type="button"
-              @click="addActivity('afternoon')"
-              class="w-full mt-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 text-sm flex items-center justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Adicionar Atividade
-            </button>
-          </div>
-        </div>
-        
-        <!-- Noite (Night) -->
-        <div class="mb-6">
-          <h4 class="font-medium text-gray-800 mb-2 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-            Noite
-          </h4>
-          
-          <div class="bg-gray-50 p-3 rounded-md">
-            <div v-for="(activityId, index) in formData.schedule.night" :key="`night-${index}`" 
-                class="flex items-center mb-2 p-2 bg-white rounded border border-gray-200">
-              <div class="flex-grow">
-                <select
-                  v-model="formData.schedule.night[index]"
-                  class="w-full p-2 border-0 focus:ring-0"
-                >
-                  <option value="">Selecione uma atividade</option>
-                  <option v-for="activity in activities" :key="activity.id" :value="activity.id">
-                    {{ activity.title }}
-                  </option>
-                </select>
-              </div>
-              <button 
-                type="button"
-                @click="removeActivity('night', index)"
-                class="ml-2 text-red-600 hover:text-red-800"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </button>
-            </div>
-            
-            <button 
-              type="button"
-              @click="addActivity('night')"
+              @click="addActivity(period.id)"
               class="w-full mt-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 text-sm flex items-center justify-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -339,6 +208,34 @@ const showDeleteModal = ref(false)
 // Lista de atividades disponíveis
 const activities = ref([])
 
+// Array com os períodos do dia para reduzir repetição no template
+const dayPeriods = [
+  { 
+    id: 'morning', 
+    label: 'Manhã', 
+    color: 'text-yellow-500',
+    icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+  },
+  { 
+    id: 'lunch', 
+    label: 'Almoço', 
+    color: 'text-orange-500',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  { 
+    id: 'afternoon', 
+    label: 'Tarde', 
+    color: 'text-red-500',
+    icon: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z'
+  },
+  { 
+    id: 'night', 
+    label: 'Noite', 
+    color: 'text-indigo-500',
+    icon: 'M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+  }
+]
+
 // Verifica se é um novo dia ou edição
 const isNewDay = computed(() => route.params.id === 'novo')
 
@@ -390,6 +287,23 @@ onMounted(async () => {
       const data = await getDayById(dayId)
       
       if (data) {
+        // Função para converter o formato antigo (array de IDs) para o novo formato (array de objetos com ID e anotação)
+        const convertActivityFormat = (activities) => {
+          if (!Array.isArray(activities)) return []
+          
+          return activities.map(activity => {
+            // Se já estiver no novo formato, retorna como está
+            if (typeof activity === 'object' && activity !== null) {
+              return { 
+                activityId: activity.activityId || '', 
+                note: activity.note || '' 
+              }
+            }
+            // Se for string (formato antigo), converte para o novo formato
+            return { activityId: activity || '', note: '' }
+          })
+        }
+        
         // Preenche o formulário com os dados existentes
         formData.value = {
           title: data.title || '',
@@ -397,12 +311,10 @@ onMounted(async () => {
           description: data.description || '',
           transport: data.transport || '',
           schedule: {
-            morning: Array.isArray(data.schedule?.morning) ? [...data.schedule.morning] : [],
-            lunch: Array.isArray(data.schedule?.lunch) ? [...data.schedule.lunch] : 
-                  Array.isArray(data.schedule?.midDay) ? [...data.schedule.midDay] : [],
-            afternoon: Array.isArray(data.schedule?.afternoon) ? [...data.schedule.afternoon] : [],
-            night: Array.isArray(data.schedule?.night) ? [...data.schedule.night] : 
-                  Array.isArray(data.schedule?.evening) ? [...data.schedule.evening] : []
+            morning: convertActivityFormat(data.schedule?.morning),
+            lunch: convertActivityFormat(data.schedule?.lunch || data.schedule?.midDay),
+            afternoon: convertActivityFormat(data.schedule?.afternoon),
+            night: convertActivityFormat(data.schedule?.night || data.schedule?.evening)
           },
           tips: Array.isArray(data.tips) ? [...data.tips] : []
         }
@@ -419,7 +331,7 @@ onMounted(async () => {
 
 // Adicionar uma atividade a um período do dia
 const addActivity = (period) => {
-  formData.value.schedule[period].push('')
+  formData.value.schedule[period].push({ activityId: '', note: '' })
 }
 
 // Remover uma atividade de um período do dia
@@ -477,10 +389,30 @@ const saveDay = async () => {
       transport: formData.value.transport.trim(),
       // Filtrar arrays vazios e remover atividades sem seleção
       schedule: {
-        morning: formData.value.schedule.morning.filter(activity => activity.trim() !== ''),
-        lunch: formData.value.schedule.lunch.filter(activity => activity.trim() !== ''),
-        afternoon: formData.value.schedule.afternoon.filter(activity => activity.trim() !== ''),
-        night: formData.value.schedule.night.filter(activity => activity.trim() !== '')
+        morning: formData.value.schedule.morning
+          .filter(activity => activity.activityId.trim() !== '')
+          .map(activity => ({
+            activityId: activity.activityId,
+            note: activity.note.trim()
+          })),
+        lunch: formData.value.schedule.lunch
+          .filter(activity => activity.activityId.trim() !== '')
+          .map(activity => ({
+            activityId: activity.activityId,
+            note: activity.note.trim()
+          })),
+        afternoon: formData.value.schedule.afternoon
+          .filter(activity => activity.activityId.trim() !== '')
+          .map(activity => ({
+            activityId: activity.activityId,
+            note: activity.note.trim()
+          })),
+        night: formData.value.schedule.night
+          .filter(activity => activity.activityId.trim() !== '')
+          .map(activity => ({
+            activityId: activity.activityId,
+            note: activity.note.trim()
+          }))
       },
       // Filtrar dicas vazias
       tips: formData.value.tips.filter(tip => tip.trim() !== '')

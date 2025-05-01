@@ -265,34 +265,55 @@ const filteredActivities = computed(() => {
     };
   }
 
-  // Função auxiliar para processar os IDs ou strings de atividades
+  // Função auxiliar para processar os IDs ou objetos de atividades
   const processScheduleItems = (items) => {
     if (!items || items.length === 0 || !items.map) return [];
     
     return items.map(item => {
-      // Se o item for uma string mas não for um ID de atividade, cria um objeto simples
+      // Determina o ID da atividade com base no formato (string ou objeto)
+      let activityId;
+      let note = '';
+      
       if (typeof item === 'string') {
-        const activityFromJson = allActivities.value.find(a => a.id === item);
-        
-        if (activityFromJson) {
-          return {
-            ...activityFromJson,
-            titulo: activityFromJson.title,
-            descricao: activityFromJson.description
-          };
-        } else {
-          // É uma string simples, não um ID
-          return {
-            id: item,
-            titulo: item,
-            descricao: '',
-            title: item,
-            description: ''
-          };
-        }
-      } 
-      // Se for um objeto, retorna ele mesmo
-      return item;
+        // Formato antigo: item é simplesmente o ID da atividade
+        activityId = item;
+      } else if (typeof item === 'object' && item !== null) {
+        // Formato novo: item é um objeto com activityId e note
+        activityId = item.activityId;
+        note = item.note || '';
+      } else {
+        // Caso não seja nem string nem objeto, retorna um objeto vazio
+        return {
+          id: '',
+          titulo: '',
+          descricao: '',
+          title: '',
+          description: '',
+          note: ''
+        };
+      }
+      
+      // Busca a atividade completa pelo ID
+      const activityFromJson = allActivities.value.find(a => a.id === activityId);
+      
+      if (activityFromJson) {
+        return {
+          ...activityFromJson,
+          titulo: activityFromJson.title,
+          descricao: activityFromJson.description,
+          note: note // Adiciona a anotação
+        };
+      } else {
+        // Não é um ID válido
+        return {
+          id: activityId,
+          titulo: activityId,
+          descricao: '',
+          title: activityId,
+          description: '',
+          note: note
+        };
+      }
     });
   };
 
