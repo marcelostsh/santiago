@@ -93,7 +93,7 @@ const onMainSlideChange = (swiper) => {
     <Header />
 
     <!-- Overview Section - Movido para cima -->
-    <TripOverview />
+    <TripOverview v-show="false" />
 
     <!-- Main Content -->
     <main class="container container-swiper mx-auto px-4 sm:px-6 lg:px-8" v-if="days.length > 0">
