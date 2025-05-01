@@ -49,7 +49,10 @@ src/
 **Objetivo**: Gerenciar o rodapé do site.
 **Campos**:
 
-- Links do rodapé (agrupados por seção)
+- Título
+- Descrição
+- Data
+- Contatos importantes (nome, contato, Instagram, WhatsApp, rota, link opcional)
 - Texto de copyright
 - Logo do rodapé
 - Informações de contato
