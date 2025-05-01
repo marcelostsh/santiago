@@ -22,19 +22,19 @@ defineProps({
          :href="atividade.location" 
          target="_blank" 
          class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
-        <i class="fas fa-map-marker-alt mr-1"></i> Como chegar
+        <i class="fas fa-map-marker-alt mr-1"></i> 
       </a>
       <a v-if="atividade.links && atividade.links.site" 
          :href="atividade.links.site" 
          target="_blank" 
          class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
-        <i class="fas fa-globe mr-1"></i> Site
+        <i class="fas fa-globe mr-1"></i>
       </a>
       <a v-if="atividade.links && atividade.links.instagram" 
          :href="atividade.links.instagram" 
          target="_blank" 
          class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
-        <i class="fab fa-instagram mr-1"></i> Instagram
+        <i class="fab fa-instagram mr-1"></i>
       </a>
     </div>
   </div>
