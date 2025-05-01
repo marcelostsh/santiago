@@ -179,21 +179,33 @@ const formatDate = (dateStr) => {
   tomorrow.setDate(tomorrow.getDate() + 1);
   
   // Converter a string de data para um objeto Date
-  // Verificar se a data usa / ou - como separador
   let parts;
-  if (dateStr.includes('/')) {
-    parts = dateStr.split('/');
-  } else if (dateStr.includes('-')) {
+  let day, month, year;
+  
+  // Verificar o formato da data (YYYY-MM-DD ou DD/MM/YYYY ou DD-MM-YYYY)
+  if (dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    // Formato ISO: YYYY-MM-DD
     parts = dateStr.split('-');
+    year = parseInt(parts[0], 10);
+    month = parseInt(parts[1], 10) - 1; // Mês em JS é 0-indexed
+    day = parseInt(parts[2], 10);
+  } else if (dateStr.includes('/')) {
+    // Formato DD/MM/YYYY
+    parts = dateStr.split('/');
+    day = parseInt(parts[0], 10);
+    month = parseInt(parts[1], 10) - 1;
+    year = parts[2].length === 2 ? 2000 + parseInt(parts[2], 10) : parseInt(parts[2], 10);
+  } else if (dateStr.includes('-')) {
+    // Formato DD-MM-YYYY
+    parts = dateStr.split('-');
+    day = parseInt(parts[0], 10);
+    month = parseInt(parts[1], 10) - 1;
+    year = parts[2].length === 2 ? 2000 + parseInt(parts[2], 10) : parseInt(parts[2], 10);
   } else {
     return dateStr; // Retorna o original se não tiver separador conhecido
   }
   
-  if (parts.length < 3) return dateStr; // Retorna o original se não conseguir converter
-  
-  const day = parseInt(parts[0], 10);
-  const month = parseInt(parts[1], 10) - 1; // Mês em JS é 0-indexed
-  const year = parts[2].length === 2 ? 2000 + parseInt(parts[2], 10) : parseInt(parts[2], 10);
+  if (isNaN(day) || isNaN(month) || isNaN(year)) return dateStr; // Retorna o original se os valores não forem numéricos
   
   const date = new Date(year, month, day);
   

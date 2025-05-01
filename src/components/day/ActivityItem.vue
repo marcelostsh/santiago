@@ -13,7 +13,7 @@ defineProps({
     <p class="text-gray-600">{{ atividade.descricao }}</p>
     
     <!-- Anotação da atividade (se existir) -->
-    <p v-if="atividade.note" class="mt-2 text-sm italic text-gray-700 bg-gray-50 p-2 rounded">
+    <p v-if="atividade.note" class="mt-2 text-sm italic text-gray-700 bg-gray-50 p-2 rounded whitespace-pre-wrap">
       {{ atividade.note }}
     </p>
     
