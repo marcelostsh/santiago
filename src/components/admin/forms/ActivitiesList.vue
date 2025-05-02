@@ -44,10 +44,17 @@
         <ul class="divide-y divide-gray-200">
           <li v-for="activity in activities" :key="activity.id" class="hover:bg-gray-50">
             <router-link :to="`/admin/atividades/${activity.id}`" class="block p-4">
-              <div class="flex items-center justify-between">
-                <div>
+              <div class="flex items-center">
+                <div class="flex-shrink-0 mr-4">
+                  <img 
+                    :src="activity.images && activity.images.length > 0 ? activity.images[0] : 'https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif'" 
+                    :alt="activity.title"
+                    class="h-16 w-16 object-cover rounded-md"
+                  />
+                </div>
+                <div class="flex-1">
                   <h3 class="text-lg font-medium text-gray-900">{{ activity.title }}</h3>
-                  <p v-if="activity.location" class="text-sm text-gray-500 mt-1">
+                  <p v-if="activity.description" class="text-sm text-gray-500 mt-1 line-clamp-2">
                     {{ activity.description }}
                   </p>
                 </div>
@@ -115,3 +122,12 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
