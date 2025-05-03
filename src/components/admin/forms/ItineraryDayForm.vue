@@ -63,15 +63,38 @@
                 class="flex flex-col mb-2 p-2 bg-white rounded border border-gray-200">
               <div class="flex items-center">
                 <div class="flex-grow">
-                  <select
+                  <Multiselect
                     v-model="formData.schedule[period.id][index].activityId"
-                    class="w-full p-2 border-0 focus:ring-0"
+                    :options="getActivityOptions"
+                    placeholder="Selecione uma atividade"
+                    :searchable="true"
+                    :object="false"
+                    valueProp="value"
+                    label="label"
                   >
-                    <option value="">Selecione uma atividade</option>
-                    <option v-for="activity in activities" :key="activity.id" :value="activity.id">
-                      {{ activity.title }}
-                    </option>
-                  </select>
+                    <template #singleLabel="{ value, label, image, type }">
+                      <div class="flex items-center">
+                        <span v-if="image" class="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 mr-2">
+                          <img :src="image" class="w-full h-full object-cover" alt="" />
+                        </span>
+                        <span v-else class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-2 text-lg">
+                          {{ getDefaultIcon(type) }}
+                        </span>
+                        <span>{{ label }}</span>
+                      </div>
+                    </template>
+                    <template #option="{ option }">
+                      <div class="flex items-center">
+                        <span v-if="option.image" class="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 mr-2">
+                          <img :src="option.image" class="w-full h-full object-cover" alt="" />
+                        </span>
+                        <span v-else class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-2 text-lg">
+                          {{ getDefaultIcon(option.type) }}
+                        </span>
+                        <span>{{ option.label }}</span>
+                      </div>
+                    </template>
+                  </Multiselect>
                 </div>
                 <button 
                   type="button"
@@ -198,6 +221,7 @@ import { addOrUpdateDay, deleteDocument } from '../../../services/firebaseWriteS
 import AdminFormLayout from '../common/AdminFormLayout.vue'
 import FormField from '../common/FormField.vue'
 import FormActions from '../common/FormActions.vue'
+import Multiselect from '@vueform/multiselect'
 
 const router = useRouter()
 const route = useRoute()
@@ -207,6 +231,34 @@ const showDeleteModal = ref(false)
 
 // Lista de atividades disponíveis
 const activities = ref([])
+
+// Função auxiliar para formatar as opções do Multiselect
+const getActivityOptions = computed(() => {
+  return activities.value.map(activity => ({
+    value: activity.id,
+    label: activity.title,
+    image: activity.images && activity.images.length > 0 ? activity.images[0] : null, // Usa a primeira imagem do array se existir
+    // Adiciona um tipo para definir ícone padrão
+    type: activity.type || 'default'
+  }))
+})
+
+// Função para obter ícone padrão baseado no tipo
+const getDefaultIcon = (type) => {
+  const icons = {
+    'restaurant': '🍽️',
+    'hotel': '🏨',
+    'attraction': '🏛️',
+    'transport': '🚌',
+    'tour': '🧭',
+    'museum': '🖼️',
+    'beach': '🏖️',
+    'hiking': '🥾',
+    'shopping': '🛍️',
+    'default': '📍'
+  }
+  return icons[type] || icons['default']
+}
 
 // Array com os períodos do dia para reduzir repetição no template
 const dayPeriods = [
@@ -475,4 +527,50 @@ const deleteDay = async () => {
 const goBack = () => {
   router.push('/admin/itinerario')
 }
-</script> 
+</script>
+
+<style>
+@import '@vueform/multiselect/themes/default.css';
+
+/* Customizações do Multiselect */
+.multiselect-wrapper {
+  width: 100%;
+}
+
+.multiselect {
+  min-height: 38px;
+  border-radius: 0.375rem;
+  border-color: rgb(229, 231, 235);
+}
+
+.multiselect.is-active {
+  box-shadow: 0 0 0 1px rgb(59, 130, 246);
+  border-color: rgb(59, 130, 246);
+}
+
+.multiselect-search {
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.multiselect-options {
+  padding: 0.25rem 0;
+  border-radius: 0.375rem;
+  border-color: rgb(229, 231, 235);
+  margin-top: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.multiselect-option {
+  padding: 0.5rem 0.75rem;
+}
+
+.multiselect-option.is-pointed {
+  background-color: rgb(243, 244, 246);
+}
+
+.multiselect-option.is-selected {
+  background-color: rgb(239, 246, 255);
+  color: rgb(37, 99, 235);
+}
+</style> 
