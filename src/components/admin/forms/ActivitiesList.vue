@@ -57,6 +57,14 @@
                   <p v-if="activity.description" class="text-sm text-gray-500 mt-1 line-clamp-2">
                     {{ activity.description }}
                   </p>
+                  <div class="flex items-center mt-2">
+                    <span v-if="getActivityUsage(activity.id) > 0" class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full mr-2">
+                      Usado {{ getActivityUsage(activity.id) }} {{ getActivityUsage(activity.id) === 1 ? 'vez' : 'vezes' }}
+                    </span>
+                    <span v-else class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
+                      Não utilizado
+                    </span>
+                  </div>
                 </div>
                 <div class="text-gray-400">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,11 +82,13 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { getActivities } from '../../../services'
+import { getActivities, getItinerary } from '../../../services'
 import AdminFormLayout from '../common/AdminFormLayout.vue'
 
 const activities = ref([])
 const loading = ref(true)
+const itineraryDays = ref([])
+const activityUsageMap = ref({})
 
 // Alert state
 const alert = ref({
@@ -101,19 +111,76 @@ const closeAlert = () => {
   alert.value.show = false
 }
 
+// Função para calcular o uso de cada atividade no itinerário
+const calculateActivityUsage = () => {
+  // Reiniciar o mapa de uso
+  activityUsageMap.value = {}
+  
+  // Inicializar contador para cada atividade
+  activities.value.forEach(activity => {
+    activityUsageMap.value[activity.id] = 0
+  })
+  
+  // Percorrer todos os dias do itinerário
+  itineraryDays.value.forEach(day => {
+    if (day.schedule) {
+      // Verificar cada período do dia
+      const periods = ['morning', 'lunch', 'midDay', 'afternoon', 'evening', 'night']
+      
+      periods.forEach(period => {
+        if (day.schedule[period] && Array.isArray(day.schedule[period])) {
+          // Para cada atividade no período
+          day.schedule[period].forEach(activity => {
+            // Formato antigo: array de strings com IDs
+            if (typeof activity === 'string') {
+              if (activityUsageMap.value[activity] !== undefined) {
+                activityUsageMap.value[activity]++
+              }
+            } 
+            // Formato novo: array de objetos {activityId, note}
+            else if (activity && activity.activityId) {
+              if (activityUsageMap.value[activity.activityId] !== undefined) {
+                activityUsageMap.value[activity.activityId]++
+              }
+            }
+          })
+        }
+      })
+    }
+  })
+}
+
+// Obter o número de vezes que uma atividade é usada
+const getActivityUsage = (activityId) => {
+  return activityUsageMap.value[activityId] || 0
+}
+
 // Carregar atividades ao montar o componente
 onMounted(async () => {
   try {
     loading.value = true
-    activities.value = await getActivities()
     
-    // Ordenar por título
+    // Carregar atividades e itinerário em paralelo
+    const [activitiesData, itineraryData] = await Promise.all([
+      getActivities(),
+      getItinerary()
+    ])
+    
+    activities.value = activitiesData
+    
+    // Filtrar apenas os dias do itinerário (itens com id que começa com "day")
+    itineraryDays.value = itineraryData.filter(item => item.id.startsWith('day'))
+    
+    // Ordenar atividades por título
     activities.value.sort((a, b) => {
       if (a.title && b.title) {
         return a.title.localeCompare(b.title);
       }
       return 0;
     })
+    
+    // Calcular o uso de cada atividade
+    calculateActivityUsage()
   } catch (error) {
     console.error('Erro ao carregar atividades:', error)
     showAlert('Erro ao carregar lista de atividades!', 'error')

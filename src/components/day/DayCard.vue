@@ -103,7 +103,7 @@
           <h4 class="font-bold text-blue-800 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
             Dicas para o dia:</h4>
           <ul class="text-gray-700 space-y-2">
-            <li v-for="(tip, index) in day.tips" :key="index">• {{ tip }}</li>
+            <li v-for="(tip, index) in day.tips" :key="index">• <span v-html="tip"></span></li>
           </ul>
         </div>
       </div>
