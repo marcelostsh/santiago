@@ -65,7 +65,7 @@
                 <div class="flex-grow">
                   <Multiselect
                     v-model="formData.schedule[period.id][index].activityId"
-                    :options="getActivityOptions"
+                    :options="getFilteredOptions(period.id, index)"
                     placeholder="Selecione uma atividade"
                     :searchable="true"
                     :object="false"
@@ -232,13 +232,52 @@ const showDeleteModal = ref(false)
 // Lista de atividades disponíveis
 const activities = ref([])
 
-// Função auxiliar para formatar as opções do Multiselect
+// Rastrear todas as atividades já selecionadas em todos os períodos
+const alreadySelectedActivities = computed(() => {
+  // Array para armazenar todos os IDs de atividades já selecionadas
+  const selectedIds = []
+  
+  // Verifica cada período
+  dayPeriods.forEach(period => {
+    // Para cada atividade no período
+    formData.value.schedule[period.id].forEach((activity, index) => {
+      // Apenas considerar atividades com ID válido
+      if (activity.activityId) {
+        selectedIds.push(activity.activityId)
+      }
+    })
+  })
+  
+  return selectedIds
+})
+
+// Função auxiliar para formatar as opções do Multiselect com filtragem por período e índice
+const getFilteredOptions = (periodId, activityIndex) => {
+  // Obter a atividade atual selecionada neste período/índice
+  const currentActivityId = formData.value.schedule[periodId][activityIndex]?.activityId
+  
+  // Filtrar atividades não selecionadas ou a que está atualmente selecionada neste índice
+  return activities.value
+    .filter(activity => 
+      // Incluir a atividade se ela for a atualmente selecionada neste índice
+      activity.id === currentActivityId || 
+      // Ou se não estiver na lista de atividades já selecionadas
+      !alreadySelectedActivities.value.includes(activity.id)
+    )
+    .map(activity => ({
+      value: activity.id,
+      label: activity.title,
+      image: activity.images && activity.images.length > 0 ? activity.images[0] : null,
+      type: activity.type || 'default'
+    }))
+}
+
+// Função auxiliar para formatar todas as opções do Multiselect (usado em outros lugares, se necessário)
 const getActivityOptions = computed(() => {
   return activities.value.map(activity => ({
     value: activity.id,
     label: activity.title,
-    image: activity.images && activity.images.length > 0 ? activity.images[0] : null, // Usa a primeira imagem do array se existir
-    // Adiciona um tipo para definir ícone padrão
+    image: activity.images && activity.images.length > 0 ? activity.images[0] : null,
     type: activity.type || 'default'
   }))
 })
