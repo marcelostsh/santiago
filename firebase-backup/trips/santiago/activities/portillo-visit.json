@@ -1,0 +1,18 @@
+{
+  "id": "portillo-visit",
+  "type": "ski-resort",
+  "links": {
+    "site": "https://www.skiportillo.com/",
+    "instagram": "https://www.instagram.com/explore/locations/3615947/ski-portillo-chile/?locale=pt_PT"
+  },
+  "location": "https://maps.app.goo.gl/9o9oe5vm6UttASPt7",
+  "description": "Visita a um dos centros de esqui mais antigos e prestigiados da América do Sul.",
+  "images": [
+    "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg",
+    "https://dobrasilparaomundo.com/core/uploads/2019/06/passeio-portillo-laguna-del-inca-santiago-4.jpeg",
+    "https://ciaodora.com/wp-content/uploads/2024/04/chile-portillo-1-scaled.webp",
+    "https://www.ruta-patagonia.com/configurador/fotos/Tour_Grande_18112015024413.jpg"
+  ],
+  "title": "Portillo e Laguna Del Inca",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+}

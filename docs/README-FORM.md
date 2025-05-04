@@ -1,10 +1,10 @@
 # Documentação dos Formulários de Administração
 
-Este documento descreve os formulários de administração necessários para gerenciar o conteúdo do site de roteiro de viagem, bem como a estrutura de componentes que será utilizada.
+Este documento descreve os formulários de administração utilizados para gerenciar o conteúdo do site de roteiro de viagem no Firebase, bem como a estrutura de componentes implementada.
 
 ## Menu Lateral de Administração
 
-O menu lateral será acessado através de um ícone no topo do site (header). Este menu conterá links para todos os formulários de administração.
+O menu lateral é acessado através de um ícone no topo do site (header). Este menu contém links para todos os formulários de administração.
 
 ### Estrutura de Componentes
 
@@ -32,7 +32,7 @@ src/
 │   │       └── DeleteButton.jsx
 ```
 
-## Formulários Necessários
+## Formulários Implementados
 
 ### 1. SiteHeaderForm
 
@@ -137,7 +137,7 @@ src/
 
 ## Integração com Firebase
 
-Todos os formulários utilizarão os métodos do serviço `firebaseWriteService.js` para salvar os dados:
+Todos os formulários utilizam os métodos do serviço `firebaseWriteService.js` para salvar os dados:
 
 - `updateSiteHeader()` - Para o formulário SiteHeaderForm
 - `updateSiteFooter()` - Para o formulário SiteFooterForm
@@ -145,28 +145,53 @@ Todos os formulários utilizarão os métodos do serviço `firebaseWriteService.
 - `addOrUpdateActivity()` - Para o formulário ActivityForm
 - `addOrUpdateDay()` - Para o formulário ItineraryForm
 - `updateTips()` - Para o formulário TipsForm
+- `addOrUpdateLocation()` - Para o formulário LocationForm
+- `addOrUpdateLink()` - Para gerenciar links úteis
 
-Para os outros formulários (metadados e locais), serão utilizados os métodos genéricos:
+Para operações mais genéricas, são utilizados os métodos:
 
 - `setDocument()`
 - `updateDocument()`
 - `addDocument()`
 - `deleteDocument()`
 
-## Fluxo de Autenticação
+## Autenticação e Segurança
 
-Para acessar os formulários de administração, será necessário implementar:
+A área de administração é protegida por autenticação. O fluxo implementado inclui:
 
 1. Tela de login para administradores
 2. Proteção de rotas para acesso apenas aos usuários autenticados
 3. Armazenamento seguro do token de autenticação
+4. Token de administrador (`ADMIN_TOKEN`) para autorizar operações de escrita
 
-Os formulários só estarão disponíveis para usuários autenticados e somente aparecerão no menu lateral quando o usuário tiver permissões de administrador.
+Os formulários só estão disponíveis para usuários autenticados e somente aparecem no menu lateral quando o usuário tem permissões de administrador.
 
-## Próximos Passos
+## Regras de Segurança do Firestore
 
-1. Implementar o layout base da área administrativa
-2. Desenvolver o componente de menu lateral
-3. Criar os formulários individuais, começando pelos mais críticos
-4. Integrar com o Firebase usando os métodos já existentes em `firebaseWriteService.js`
-5. Implementar o fluxo de autenticação
+As regras de segurança do Firestore verificam a presença do token de administrador para permitir operações de escrita:
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Regra para permitir leitura pública
+    match /{document=**} {
+      allow read: true;
+    }
+
+    // Regra para permitir escrita apenas com token de administrador
+    match /{collection}/{document=**} {
+      allow write: if request.resource.data.adminToken == "Oxd3Xk7F7XTzfELkxS74";
+    }
+  }
+}
+```
+
+## Manutenção e Expansão
+
+Para adicionar novos formulários ou campos:
+
+1. Criar o componente de formulário na pasta `forms/`
+2. Implementar os métodos de serviço necessários em `firebaseWriteService.js`
+3. Adicionar rota no menu de administração
+4. Testar com dados reais

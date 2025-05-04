@@ -1,0 +1,55 @@
+{
+  "id": "day-4",
+  "transport": "Transporte público / Carro alugado",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "schedule": {
+    "morning": [
+      {
+        "note": "Pegar carro alugado\nRetirada\n9 MAI,  2025 - Sex, 10:00\nDevolução\n13 MAI, 2025 - Ter, 10:00",
+        "activityId": "aeroporto-santiago-chile"
+      },
+      {
+        "note": "Degustação de 3 copos de vinho\nPresente 1 copo\nPasseio pelo local\nDuração 70 minuto\nAgendado para 10:30",
+        "activityId": "wine-tasting-tour"
+      }
+    ],
+    "night": [
+      {
+        "note": "⏰ Horário sugerido: 18:30 – 20:30\n⏱️ Tempo estimado: 2 horas\n📍 Local: Santiago\n🚶‍♂️ Transporte: Caminhada de aproximadamente 15 minutos do Sky Costanera ou curto trajeto de táxi\n📌 Descrição: Conhecido por sua vida noturna vibrante, Bellavista é repleto de bares, restaurantes e arte de rua colorida.\n💡 Dicas:\nExperimente pratos típicos chilenos em restaurantes locais.\nAproveite para visitar a casa-museu de Pablo Neruda, La Chascona.",
+        "activityId": "barrio-bellavista"
+      }
+    ],
+    "lunch": [],
+    "afternoon": [
+      {
+        "note": "⏰ Horário sugerido: 13:00 – 13:30\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Centro de Santiago",
+        "activityId": "city-tour---plaza-de-armas"
+      },
+      {
+        "note": "⏰ Horário sugerido: 13:30 – 14:00\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Anexa à Plaza de Armas\n🚶‍♂️ Transporte: A pé, poucos passos dentro da Plaza de Armas",
+        "activityId": "city-tour---catedral-metropolitana"
+      },
+      {
+        "note": "⏰ Horário sugerido: 14:15 – 14:45\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Centro de Santiago\n🚶‍♂️ Transporte: Caminhada de aproximadamente 10 minutos da Plaza de Armas\n📌 Descrição: Sede do governo chileno, o palácio é um símbolo da história política do país.",
+        "activityId": "city-tour---palacio-de-la-moneda"
+      },
+      {
+        "activityId": "city-tour---cerro-santa-lucia",
+        "note": "⏰ Horário sugerido: 15:00 – 16:00\n⏱️ Tempo estimado: 1 hora\n📍 Local: Centro de Santiago\n🚶‍♂️ Transporte: Caminhada de cerca de 15 minutos do Palácio de La Moneda\n📌 Descrição: Um parque urbano com mirantes que oferecem vistas panorâmicas de Santiago.\n💡 Dicas:\nPrepare-se para subir escadas; o esforço é recompensado pela vista.\nLeve água e protetor solar."
+      },
+      {
+        "note": "⏰ Horário sugerido: 17:00 – 18:00\n⏱️ Tempo estimado: 1 hora\n📍 Local: Providencia, Santiago\n🚇 Transporte: Metrô da estação Santa Lucía para Tobalaba (Linha 1), cerca de 15 minutos\n📌 Descrição: O mirante mais alto da América Latina, localizado no 62º andar do Costanera Center, oferece uma vista de 360° da cidade e da Cordilheira dos Andes.\n💡 Dicas:\nIdeal para visitar ao pôr do sol.\nCompre ingressos antecipadamente para evitar filas.\n🔗 Necessita reserva? Não obrigatória, mas recomendada para evitar filas.",
+        "activityId": "sky-costanera-visit"
+      }
+    ]
+  },
+  "tips": [
+    "O passeio na vinícola foi agendado para 10:30",
+    "O Sky Costanera tem ingressos com horário marcado, então é recomendável comprar antecipadamente para garantir o horário do pôr do sol.",
+    "Leve um casaco leve para o fim do dia, quando as temperaturas caem em Santiago."
+  ],
+  "dayNumber": 4,
+  "date": "2025-05-09",
+  "title": "Vinícola e City Tour",
+  "description": "Visita à vinícola Concha y Toro e passeio pelo centro histórico de Santiago"
+}

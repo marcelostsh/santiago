@@ -1,0 +1,26 @@
+{
+  "id": "day-2",
+  "date": "2025-05-07",
+  "tips": [
+    "Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos Andes.",
+    "Leve uma garrafa térmica com bebida quente e alguns snacks para o passeio.",
+    "Não se esqueça da proteção solar - mesmo com tempo nublado, a radiação UV é intensa na altitude.",
+    "Leve sua câmera ou celular com bateria completa para registrar os visuais espetaculares."
+  ],
+  "title": "Valle Nevado Sunset",
+  "transport": "Agência de turismo",
+  "schedule": {
+    "night": [],
+    "afternoon": [],
+    "lunch": [],
+    "morning": [
+      {
+        "activityId": "valle-nevado-sunset",
+        "note": "- Parada para café da manhã\n- Monumento Chacabuco\n- Salto del Soldado\n- Mirador Los Caracoles\n- Laguna del Inca\n- Hotel Portillo\n\nHorário\nSaída do hotel a partir das 5:00\nRetorno ao hotel por volta das 17:00"
+      }
+    ]
+  },
+  "dayNumber": 2,
+  "description": "Passeio para ver o pôr do sol na neve",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+}

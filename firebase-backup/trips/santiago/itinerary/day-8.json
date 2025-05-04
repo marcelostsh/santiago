@@ -1,0 +1,34 @@
+{
+  "id": "day-8",
+  "description": "Check-out do hotel e ida ao aeroporto",
+  "transport": "Táxi / Transfer",
+  "date": "2025-05-13",
+  "tips": [
+    "Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.",
+    "O Parque Bicentenario é uma opção próxima à rota para o aeroporto, ideal para uma última caminhada relaxante.",
+    "Lembre-se de calcular pelo menos 3 horas antes do voo internacional para chegar ao aeroporto."
+  ],
+  "dayNumber": 8,
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "schedule": {
+    "afternoon": [
+      {
+        "activityId": "aeroporto-de-brasilia",
+        "note": "Voo 8109\nPartida: 13h40\nChegada: 19h00\nDuração do voo: 4h20\nClasse: Econômica\nBagagem: Inclui mochila ou bolsa e bagagem de mão. Não inclui bagagem despachada.\nCódigo de web check-in: NGUBGG"
+      }
+    ],
+    "night": [],
+    "lunch": [],
+    "morning": [
+      {
+        "note": "Check-out\n : Terça-feira, 13 Mai. 2025 - 12:00 hrs",
+        "activityId": "hotel-check-in"
+      },
+      {
+        "activityId": "aeroporto-santiago-chile",
+        "note": "Código de web check-in: NGUBGG\nTer. 13 de mai. de 2025 \nSCL Santago (CL) -  13:40\nDuração  4h 20\nChegada 19:00"
+      }
+    ]
+  },
+  "title": "Despedida de Santiago"
+}

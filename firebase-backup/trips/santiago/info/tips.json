@@ -1,0 +1,101 @@
+{
+  "id": "tips",
+  "observations": "Seu roteiro está bem equilibrado, combinando natureza, cultura e gastronomia. Você terá a oportunidade de conhecer tanto a movimentada vida urbana de Santiago quanto as paisagens impressionantes dos Andes, o charme das cidades costeiras e a rica tradição vinícola chilena. A única sugestão seria talvez reservar alguns momentos para descanso, especialmente após os dias de passeios à neve, que podem ser fisicamente cansativos. Por fim, mantenha-se flexível. O clima na Cordilheira dos Andes pode mudar rapidamente, então é bom estar preparado para possíveis alterações no roteiro.",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "categories": [
+    {
+      "items": [
+        {
+          "description": "Temperaturas entre 5°C e 20°C, início do inverno.",
+          "title": "Santiago (maio)",
+          "icon": "fas fa-thermometer-half"
+        },
+        {
+          "description": "Temperaturas abaixo de 0°C, especialmente à noite.",
+          "title": "Regiões montanhosas",
+          "icon": "fas fa-mountain"
+        },
+        {
+          "icon": "fas fa-tshirt",
+          "description": "Leve roupas de inverno, principalmente para os passeios à neve. Para a cidade, roupas em camadas funcionam bem, pois durante o dia pode esquentar e à noite esfria bastante.",
+          "title": "Recomendação"
+        }
+      ],
+      "title": "Clima e Vestimenta",
+      "id": "clima-vestimenta"
+    },
+    {
+      "items": [
+        {
+          "description": "O metrô é eficiente e seguro para se locomover pela cidade.",
+          "title": "Dentro de Santiago",
+          "icon": "fas fa-subway"
+        },
+        {
+          "description": "O transporte com agência é ideal, pois são estradas de montanha que podem ser desafiadoras.",
+          "title": "Para Valle Nevado e Portillo",
+          "icon": "fas fa-bus"
+        },
+        {
+          "icon": "fas fa-car",
+          "title": "Valparaíso/Viña del Mar",
+          "description": "O aluguel de carro oferece flexibilidade, mas também existe a opção de ônibus interurbanos confortáveis."
+        }
+      ],
+      "title": "Transporte",
+      "id": "transporte"
+    },
+    {
+      "title": "Gastronomia Recomendada",
+      "id": "gastronomia",
+      "items": [
+        {
+          "description": "Experimente empanadas, pastel de choclo, curanto, e frutos do mar frescos.",
+          "title": "Pratos típicos",
+          "icon": "fas fa-utensils"
+        },
+        {
+          "description": "Chile é famoso por seus vinhos, especialmente Carménère, Cabernet Sauvignon e Sauvignon Blanc.",
+          "title": "Vinhos",
+          "icon": "fas fa-wine-glass-alt"
+        },
+        {
+          "title": "Restaurantes recomendados em Santiago",
+          "icon": "fas fa-concierge-bell",
+          "description": "Boragó (alta gastronomia chilena), Aquí está Coco (frutos do mar), El Mesón Nerudiano (comida tradicional)."
+        }
+      ]
+    },
+    {
+      "id": "dicas-praticas",
+      "items": [
+        {
+          "description": "Peso chileno (CLP). Recomendo ter algum dinheiro em espécie, especialmente para pequenos comércios.",
+          "icon": "fas fa-dollar-sign",
+          "title": "Moeda"
+        },
+        {
+          "icon": "fas fa-language",
+          "description": "Espanhol. Inglês é falado principalmente em áreas turísticas e hotéis.",
+          "title": "Idioma"
+        },
+        {
+          "icon": "fas fa-shield-alt",
+          "description": "Santiago é relativamente segura para turistas, mas como em qualquer grande cidade, é recomendável tomar precauções básicas.",
+          "title": "Segurança"
+        },
+        {
+          "icon": "fas fa-clock",
+          "description": "Chile está no fuso GMT-4, uma hora a mais que o horário de Brasília.",
+          "title": "Fuso horário"
+        },
+        {
+          "description": "Utilize wize como alternativa para cartão virtual",
+          "icon": "fas fa-info-circle",
+          "title": "Wize"
+        }
+      ],
+      "title": "Dicas Práticas"
+    }
+  ]
+}

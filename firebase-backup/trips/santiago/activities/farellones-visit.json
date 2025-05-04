@@ -1,0 +1,17 @@
+{
+  "id": "farellones-visit",
+  "category": "nature",
+  "withAgency": false,
+  "location": "Farellones",
+  "images": [
+    "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
+    "https://ogimg.infoglobo.com.br/in/23890921-80e-81c/FT1086A/760/84119796_View-of-an-empty-cableway-at-El-Colorado-skiing-centre-in-the-Andes-Mountains-some-30-km-fr.jpg?posicaoFoto8"
+  ],
+  "duration": 6,
+  "links": {
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=Farellones+Chile"
+  },
+  "title": "Passeio a Farellones",
+  "description": "Visita à estância de esqui próxima a Santiago, menos movimentada que Valle Nevado.",
+  "type": "ski-resort"
+}

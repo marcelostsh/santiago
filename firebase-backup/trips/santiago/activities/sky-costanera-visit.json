@@ -1,0 +1,15 @@
+{
+  "id": "sky-costanera-visit",
+  "links": {
+    "site": "https://www.skycostanera.cl/",
+    "instagram": "https://www.instagram.com/skycostanera/"
+  },
+  "images": [
+    "https://www.vounajanela.com/wp-content/uploads/2019/09/santiago.jpg"
+  ],
+  "title": "Sky Costanera",
+  "type": "observation-deck",
+  "location": "https://maps.app.goo.gl/YYAz3TCBD4HjNrmS6",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "description": "Visita ao mirante mais alto da América Latina, com vista 360° da cidade e dos Andes."
+}

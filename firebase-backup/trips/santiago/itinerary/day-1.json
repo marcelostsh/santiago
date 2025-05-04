@@ -1,0 +1,28 @@
+{
+  "id": "day-1",
+  "transport": "Transfer do aeroporto / Transporte público",
+  "description": "Chegada e acomodação no hotel",
+  "dayNumber": 1,
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "tips": [
+    "Aproveitar para descansar e conhecer os arredores do hotel"
+  ],
+  "schedule": {
+    "lunch": [],
+    "morning": [
+      {
+        "note": "LATAM Airlines Group – Voo 8108\n\n✈️ Partida: 08h50\n🛬 Chegada: 12h40\n⏱️ Duração do voo: 4h50\n💺 Classe: Econômica\n🎒 Bagagem: Inclui mochila ou bolsa e bagagem de mão. Não inclui bagagem despachada.\n🧾 Web Check-in (código): NGUBGG",
+        "activityId": "aeroporto-de-brasilia"
+      }
+    ],
+    "night": [],
+    "afternoon": [
+      {
+        "activityId": "hotel-check-in",
+        "note": "Check-in : Terça-feira, 6 Mai. 2025 - 15:00 hrs\nOs clientes estrangeiros que paguem em US$ estão isentos de 19% de IVA caso \napresentem o cartão da imigração. Si efetuar o pagamento em Pesos Chilenos, deverão \npagar os 19% de impostos sobre o valor da reserva"
+      }
+    ]
+  },
+  "title": "Chegada a Santiago",
+  "date": "2025-05-06"
+}

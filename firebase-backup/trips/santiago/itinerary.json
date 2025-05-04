@@ -1,0 +1,285 @@
+[
+  {
+    "id": "day-1",
+    "transport": "Transfer do aeroporto / Transporte público",
+    "description": "Chegada e acomodação no hotel",
+    "dayNumber": 1,
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "tips": [
+      "Aproveitar para descansar e conhecer os arredores do hotel"
+    ],
+    "schedule": {
+      "lunch": [],
+      "morning": [
+        {
+          "note": "LATAM Airlines Group – Voo 8108\n\n✈️ Partida: 08h50\n🛬 Chegada: 12h40\n⏱️ Duração do voo: 4h50\n💺 Classe: Econômica\n🎒 Bagagem: Inclui mochila ou bolsa e bagagem de mão. Não inclui bagagem despachada.\n🧾 Web Check-in (código): NGUBGG",
+          "activityId": "aeroporto-de-brasilia"
+        }
+      ],
+      "night": [],
+      "afternoon": [
+        {
+          "activityId": "hotel-check-in",
+          "note": "Check-in : Terça-feira, 6 Mai. 2025 - 15:00 hrs\nOs clientes estrangeiros que paguem em US$ estão isentos de 19% de IVA caso \napresentem o cartão da imigração. Si efetuar o pagamento em Pesos Chilenos, deverão \npagar os 19% de impostos sobre o valor da reserva"
+        }
+      ]
+    },
+    "title": "Chegada a Santiago",
+    "date": "2025-05-06"
+  },
+  {
+    "id": "day-2",
+    "date": "2025-05-07",
+    "tips": [
+      "Vista-se em camadas, pois a temperatura cai significativamente após o pôr do sol nos Andes.",
+      "Leve uma garrafa térmica com bebida quente e alguns snacks para o passeio.",
+      "Não se esqueça da proteção solar - mesmo com tempo nublado, a radiação UV é intensa na altitude.",
+      "Leve sua câmera ou celular com bateria completa para registrar os visuais espetaculares."
+    ],
+    "title": "Valle Nevado Sunset",
+    "transport": "Agência de turismo",
+    "schedule": {
+      "night": [],
+      "afternoon": [],
+      "lunch": [],
+      "morning": [
+        {
+          "activityId": "valle-nevado-sunset",
+          "note": "- Parada para café da manhã\n- Monumento Chacabuco\n- Salto del Soldado\n- Mirador Los Caracoles\n- Laguna del Inca\n- Hotel Portillo\n\nHorário\nSaída do hotel a partir das 5:00\nRetorno ao hotel por volta das 17:00"
+        }
+      ]
+    },
+    "dayNumber": 2,
+    "description": "Passeio para ver o pôr do sol na neve",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+  },
+  {
+    "id": "day-3",
+    "description": "Visita a um dos centros de esqui mais tradicionais do Chile",
+    "title": "Portillo e Laguna del Inca",
+    "schedule": {
+      "lunch": [],
+      "night": [],
+      "morning": [
+        {
+          "note": "- Saída do hotel à partir das 5:00\n- Retorno por volta das 17:00\n- Os passeios com a agência não incluem café da manhã nem almoço",
+          "activityId": "portillo-visit"
+        }
+      ],
+      "afternoon": []
+    },
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "tips": [
+      "Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja com bateria completa.",
+      "Use calçados confortáveis e com boa aderência para caminhar em terrenos nevados.",
+      "Leve água e lanches, pois algumas áreas têm opções limitadas de alimentação."
+    ],
+    "transport": "Agência de turismo",
+    "date": "2025-05-08",
+    "dayNumber": 3
+  },
+  {
+    "id": "day-4",
+    "transport": "Transporte público / Carro alugado",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "schedule": {
+      "morning": [
+        {
+          "note": "Pegar carro alugado\nRetirada\n9 MAI,  2025 - Sex, 10:00\nDevolução\n13 MAI, 2025 - Ter, 10:00",
+          "activityId": "aeroporto-santiago-chile"
+        },
+        {
+          "note": "Degustação de 3 copos de vinho\nPresente 1 copo\nPasseio pelo local\nDuração 70 minuto\nAgendado para 10:30",
+          "activityId": "wine-tasting-tour"
+        }
+      ],
+      "night": [
+        {
+          "note": "⏰ Horário sugerido: 18:30 – 20:30\n⏱️ Tempo estimado: 2 horas\n📍 Local: Santiago\n🚶‍♂️ Transporte: Caminhada de aproximadamente 15 minutos do Sky Costanera ou curto trajeto de táxi\n📌 Descrição: Conhecido por sua vida noturna vibrante, Bellavista é repleto de bares, restaurantes e arte de rua colorida.\n💡 Dicas:\nExperimente pratos típicos chilenos em restaurantes locais.\nAproveite para visitar a casa-museu de Pablo Neruda, La Chascona.",
+          "activityId": "barrio-bellavista"
+        }
+      ],
+      "lunch": [],
+      "afternoon": [
+        {
+          "note": "⏰ Horário sugerido: 13:00 – 13:30\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Centro de Santiago",
+          "activityId": "city-tour---plaza-de-armas"
+        },
+        {
+          "note": "⏰ Horário sugerido: 13:30 – 14:00\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Anexa à Plaza de Armas\n🚶‍♂️ Transporte: A pé, poucos passos dentro da Plaza de Armas",
+          "activityId": "city-tour---catedral-metropolitana"
+        },
+        {
+          "note": "⏰ Horário sugerido: 14:15 – 14:45\n⏱️ Tempo estimado: 30 minutos\n📍 Local: Centro de Santiago\n🚶‍♂️ Transporte: Caminhada de aproximadamente 10 minutos da Plaza de Armas\n📌 Descrição: Sede do governo chileno, o palácio é um símbolo da história política do país.",
+          "activityId": "city-tour---palacio-de-la-moneda"
+        },
+        {
+          "activityId": "city-tour---cerro-santa-lucia",
+          "note": "⏰ Horário sugerido: 15:00 – 16:00\n⏱️ Tempo estimado: 1 hora\n📍 Local: Centro de Santiago\n🚶‍♂️ Transporte: Caminhada de cerca de 15 minutos do Palácio de La Moneda\n📌 Descrição: Um parque urbano com mirantes que oferecem vistas panorâmicas de Santiago.\n💡 Dicas:\nPrepare-se para subir escadas; o esforço é recompensado pela vista.\nLeve água e protetor solar."
+        },
+        {
+          "note": "⏰ Horário sugerido: 17:00 – 18:00\n⏱️ Tempo estimado: 1 hora\n📍 Local: Providencia, Santiago\n🚇 Transporte: Metrô da estação Santa Lucía para Tobalaba (Linha 1), cerca de 15 minutos\n📌 Descrição: O mirante mais alto da América Latina, localizado no 62º andar do Costanera Center, oferece uma vista de 360° da cidade e da Cordilheira dos Andes.\n💡 Dicas:\nIdeal para visitar ao pôr do sol.\nCompre ingressos antecipadamente para evitar filas.\n🔗 Necessita reserva? Não obrigatória, mas recomendada para evitar filas.",
+          "activityId": "sky-costanera-visit"
+        }
+      ]
+    },
+    "tips": [
+      "O passeio na vinícola foi agendado para 10:30",
+      "O Sky Costanera tem ingressos com horário marcado, então é recomendável comprar antecipadamente para garantir o horário do pôr do sol.",
+      "Leve um casaco leve para o fim do dia, quando as temperaturas caem em Santiago."
+    ],
+    "dayNumber": 4,
+    "date": "2025-05-09",
+    "title": "Vinícola e City Tour",
+    "description": "Visita à vinícola Concha y Toro e passeio pelo centro histórico de Santiago"
+  },
+  {
+    "id": "day-5",
+    "tips": [
+      "Saída de Santiago\nSaia entre 6h e 6h30 para evitar trânsito e aproveitar Caleta Portales no melhor horário (leões-marinhos mais ativos pela manhã).",
+      "O que levar\nCasaco leve/corta-vento (vento frio em maio)\n\nProtetor solar\n\nBoné/chapéu\n\nÁgua e lanches rápidos\n\nTrocador pequeno para criança\n\nPower bank e celular carregado",
+      " Interação com leões-marinhos\nCaleta Portales: eles ficam muito perto — não toque, nem se aproxime demais.\n\nObserve com cautela, especialmente com a criança ao lado.",
+      "Retorno\nInicie a volta entre 16h e 16h30 para evitar o trânsito pesado na saída de Viña.",
+      "Dinheiro\nLeve um pouco de dinheiro em espécie (pesos chilenos).\n\nPara sanitários públicos, ambulantes e gorjetas simples.",
+      "Banheiros e pausas\nBanheiros acessíveis no Paseo 21 de Mayo, Playa Abarca e shoppings de Viña.\n\nFaça pausas com lanches curtos, especialmente após a manhã em Valparaíso.",
+      "Se for preciso cortar algo\nPriorize\nCaleta Portales\nPaseo 21 de Mayo\nRelógio de Flores + Playa Abarca\nO Resto é complementar"
+    ],
+    "description": "Passeio pelas cidades costeiras",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "transport": "Carro alugado",
+    "schedule": {
+      "lunch": [
+        {
+          "note": "12h às 13h30\nBom ambiente, comida chilena e visual top",
+          "activityId": "almoco-com-vista---vina-del-mar"
+        }
+      ],
+      "afternoon": [
+        {
+          "note": "13h30 às 14h\nDá pra ir andando até o Relógio de Flores depois.",
+          "activityId": "castillo-wulff"
+        },
+        {
+          "note": "14h às 15h\nGelato por ali e pronto pro retorno.",
+          "activityId": "vina-del-mar---reloj-de-flores"
+        },
+        {
+          "activityId": "hotel-check-in",
+          "note": "16h ou 16h30\nVocê evita o pico de trânsito da saída de Viña."
+        }
+      ],
+      "night": [],
+      "morning": [
+        {
+          "activityId": "playa-caleta-portales-–-valparaiso",
+          "note": "(8h às 9h30)\nEstacione perto do Mercado Portales e vá caminhando."
+        },
+        {
+          "note": "(9h45 às 10h30)\nTem estacionamento perto, acesso fácil.",
+          "activityId": "paseo-21-de-mayo-de-valparaiso"
+        },
+        {
+          "activityId": "mirador-cochoa-–-vina-del-mar",
+          "note": "11h às 11h40\nFica entre Reñaca e Concón."
+        }
+      ]
+    },
+    "date": "2025-05-10",
+    "dayNumber": 5,
+    "title": "Valparaíso e Viña del Mar"
+  },
+  {
+    "id": "day-6",
+    "tips": [
+      "🧴 Use protetor solar e óculos escuros\nMesmo no frio, o sol na altitude é forte e pode causar queimaduras e desconforto visual.",
+      "🍼 Leve itens para a criança\nLeve trocas de roupa, fraldas, lanches, garrafa d'água, brinquedos pequenos e manta extra.",
+      "📸 Carregue seu celular e leve power bank\nO sinal pode ser instável em alguns trechos, e o frio pode descarregar o celular mais rápido.",
+      "🎟️ Compre ingressos com antecedência\nEvita filas e garante entrada, principalmente em alta temporada ou feriados.",
+      "🚗 Encha o tanque antes de subir\nNão há postos de gasolina após sair da área urbana de Santiago.",
+      "⛓️ Leve correntes para os pneus (por precaução)\nSe houver risco de neve na estrada, as correntes podem ser obrigatórias.",
+      "🧯 Kit de emergência no carro\nInclua lanterna, água, cobertor e primeiros socorros.",
+      "💳 Leve dinheiro e cartão\nAlguns lugares podem não aceitar cartão ou ter sistema fora do ar."
+    ],
+    "transport": "Carro alugado",
+    "dayNumber": 6,
+    "description": "Passeio à estância de esqui de Farellones",
+    "schedule": {
+      "lunch": [],
+      "morning": [
+        {
+          "note": "🕗 Saída de Santiago\nSaia por volta das 7h30 para evitar trânsito e aproveitar bem o dia.\n\n⚠️ Atenção na estrada\nA estrada até Farellones possui mais de 40 curvas acentuadas e é estreita em vários trechos.\nNos fins de semana e feriados, há horários específicos:\n\n⬆️ Subida: das 8h30 às 13h30\n\n⬇️ Descida: das 15h30 às 20h00\n\n🍽️ Alimentação\n\nHá restaurantes e lanchonetes no parque, mas os preços são elevados.\n\n🥪 Dica: leve lanches, frutas e água, especialmente para crianças.\n\n🕓 Retorno a Santiago\n\nHorário sugerido: inicie a descida por volta das 15h30, respeitando o horário permitido.\n\nDuração: cerca de 1h30 a 2h, similar à subida.",
+          "activityId": "farellones-visit"
+        }
+      ],
+      "afternoon": [],
+      "night": []
+    },
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "date": "2025-05-11",
+    "title": "Farellones"
+  },
+  {
+    "id": "day-7",
+    "title": "Visita ao Betel do Chile",
+    "dayNumber": 7,
+    "transport": "Transporte público / Carro alugado",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "date": "2025-05-12",
+    "schedule": {
+      "afternoon": [
+        {
+          "activityId": "free-time-santiago",
+          "note": ""
+        }
+      ],
+      "morning": [
+        {
+          "note": "",
+          "activityId": "betel-chile-visit"
+        }
+      ],
+      "lunch": [],
+      "night": []
+    },
+    "tips": [
+      "Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.",
+      "A sede do Betel fica em Av. Concha y Toro 3456-3540, Puente Alto, Santiago.",
+      "Para o tempo livre, considere visitar algum dos mercados de artesanato de Santiago para comprar lembranças, como o Centro Artesanal Los Dominicos ou o Patio Bellavista."
+    ],
+    "description": "Visita à sede nacional das Testemunhas de Jeová no Chile"
+  },
+  {
+    "id": "day-8",
+    "description": "Check-out do hotel e ida ao aeroporto",
+    "transport": "Táxi / Transfer",
+    "date": "2025-05-13",
+    "tips": [
+      "Dependendo do horário do seu voo, você poderia visitar o Mercado Central para almoçar ou comprar lembranças culinárias como vinhos, azeites e especiarias chilenas.",
+      "O Parque Bicentenario é uma opção próxima à rota para o aeroporto, ideal para uma última caminhada relaxante.",
+      "Lembre-se de calcular pelo menos 3 horas antes do voo internacional para chegar ao aeroporto."
+    ],
+    "dayNumber": 8,
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "schedule": {
+      "afternoon": [
+        {
+          "activityId": "aeroporto-de-brasilia",
+          "note": "Voo 8109\nPartida: 13h40\nChegada: 19h00\nDuração do voo: 4h20\nClasse: Econômica\nBagagem: Inclui mochila ou bolsa e bagagem de mão. Não inclui bagagem despachada.\nCódigo de web check-in: NGUBGG"
+        }
+      ],
+      "night": [],
+      "lunch": [],
+      "morning": [
+        {
+          "note": "Check-out\n : Terça-feira, 13 Mai. 2025 - 12:00 hrs",
+          "activityId": "hotel-check-in"
+        },
+        {
+          "activityId": "aeroporto-santiago-chile",
+          "note": "Código de web check-in: NGUBGG\nTer. 13 de mai. de 2025 \nSCL Santago (CL) -  13:40\nDuração  4h 20\nChegada 19:00"
+        }
+      ]
+    },
+    "title": "Despedida de Santiago"
+  }
+]

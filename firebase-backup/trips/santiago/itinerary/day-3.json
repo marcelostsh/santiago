@@ -1,0 +1,25 @@
+{
+  "id": "day-3",
+  "description": "Visita a um dos centros de esqui mais tradicionais do Chile",
+  "title": "Portillo e Laguna del Inca",
+  "schedule": {
+    "lunch": [],
+    "night": [],
+    "morning": [
+      {
+        "note": "- Saída do hotel à partir das 5:00\n- Retorno por volta das 17:00\n- Os passeios com a agência não incluem café da manhã nem almoço",
+        "activityId": "portillo-visit"
+      }
+    ],
+    "afternoon": []
+  },
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "tips": [
+    "Este é um passeio fotogênico, então certifique-se de que seu celular ou câmera esteja com bateria completa.",
+    "Use calçados confortáveis e com boa aderência para caminhar em terrenos nevados.",
+    "Leve água e lanches, pois algumas áreas têm opções limitadas de alimentação."
+  ],
+  "transport": "Agência de turismo",
+  "date": "2025-05-08",
+  "dayNumber": 3
+}

@@ -1,0 +1,55 @@
+{
+  "id": "day-5",
+  "tips": [
+    "Saída de Santiago\nSaia entre 6h e 6h30 para evitar trânsito e aproveitar Caleta Portales no melhor horário (leões-marinhos mais ativos pela manhã).",
+    "O que levar\nCasaco leve/corta-vento (vento frio em maio)\n\nProtetor solar\n\nBoné/chapéu\n\nÁgua e lanches rápidos\n\nTrocador pequeno para criança\n\nPower bank e celular carregado",
+    " Interação com leões-marinhos\nCaleta Portales: eles ficam muito perto — não toque, nem se aproxime demais.\n\nObserve com cautela, especialmente com a criança ao lado.",
+    "Retorno\nInicie a volta entre 16h e 16h30 para evitar o trânsito pesado na saída de Viña.",
+    "Dinheiro\nLeve um pouco de dinheiro em espécie (pesos chilenos).\n\nPara sanitários públicos, ambulantes e gorjetas simples.",
+    "Banheiros e pausas\nBanheiros acessíveis no Paseo 21 de Mayo, Playa Abarca e shoppings de Viña.\n\nFaça pausas com lanches curtos, especialmente após a manhã em Valparaíso.",
+    "Se for preciso cortar algo\nPriorize\nCaleta Portales\nPaseo 21 de Mayo\nRelógio de Flores + Playa Abarca\nO Resto é complementar"
+  ],
+  "description": "Passeio pelas cidades costeiras",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "transport": "Carro alugado",
+  "schedule": {
+    "lunch": [
+      {
+        "note": "12h às 13h30\nBom ambiente, comida chilena e visual top",
+        "activityId": "almoco-com-vista---vina-del-mar"
+      }
+    ],
+    "afternoon": [
+      {
+        "note": "13h30 às 14h\nDá pra ir andando até o Relógio de Flores depois.",
+        "activityId": "castillo-wulff"
+      },
+      {
+        "note": "14h às 15h\nGelato por ali e pronto pro retorno.",
+        "activityId": "vina-del-mar---reloj-de-flores"
+      },
+      {
+        "activityId": "hotel-check-in",
+        "note": "16h ou 16h30\nVocê evita o pico de trânsito da saída de Viña."
+      }
+    ],
+    "night": [],
+    "morning": [
+      {
+        "activityId": "playa-caleta-portales-–-valparaiso",
+        "note": "(8h às 9h30)\nEstacione perto do Mercado Portales e vá caminhando."
+      },
+      {
+        "note": "(9h45 às 10h30)\nTem estacionamento perto, acesso fácil.",
+        "activityId": "paseo-21-de-mayo-de-valparaiso"
+      },
+      {
+        "activityId": "mirador-cochoa-–-vina-del-mar",
+        "note": "11h às 11h40\nFica entre Reñaca e Concón."
+      }
+    ]
+  },
+  "date": "2025-05-10",
+  "dayNumber": 5,
+  "title": "Valparaíso e Viña del Mar"
+}

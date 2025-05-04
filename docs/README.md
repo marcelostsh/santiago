@@ -4,10 +4,11 @@
 
 - [Visão Geral](#visão-geral)
 - [Arquitetura](#arquitetura)
-- [Estrutura de Arquivos JSON](#estrutura-de-arquivos-json)
+- [Estrutura de Dados no Firebase](#estrutura-de-dados-no-firebase)
 - [Camada de Serviços](#camada-de-serviços)
 - [Mapeamento de Páginas e Componentes](#mapeamento-de-páginas-e-componentes)
-- [Migração para Firebase](#migração-para-firebase)
+- [Administração do Conteúdo](#administração-do-conteúdo)
+- [Scripts de Utilidade](#scripts-de-utilidade)
 - [FAQs e Troubleshooting](#faqs-e-troubleshooting)
 
 ---
@@ -20,52 +21,65 @@ O **Santiago Trip** é um site de roteiro de viagem para Santiago do Chile, dese
 
 - Exibir um roteiro detalhado de viagem
 - Estruturar os dados de forma organizada e fácil de manter
-- Permitir edições futuras através do Firebase
+- Permitir edições do conteúdo através do Firebase
 
 ### 🔧 Tecnologias Utilizadas
 
 - **Frontend**: Vue.js
-- **Armazenamento de Dados**: Arquivos JSON locais (com futura migração para Firebase)
+- **Armazenamento de Dados**: Firebase/Firestore
 - **Deploy**: GitHub Pages
 
 ---
 
 ## 🏗️ Arquitetura
 
-O projeto usa uma arquitetura baseada em componentes Vue.js com uma camada de serviços para acesso a dados. Os dados são armazenados em arquivos JSON e futuramente serão migrados para o Firebase.
+O projeto usa uma arquitetura baseada em componentes Vue.js com uma camada de serviços para acesso a dados. Os dados são armazenados no Firebase Firestore.
 
 ```
 ┌───────────────┐      ┌───────────────┐      ┌───────────────┐
 │  Componentes  │ ←──→ │   Serviços    │ ←──→ │    Dados      │
-│    (Vue.js)   │      │  (dataService) │      │ (JSON/Firebase)│
+│    (Vue.js)   │      │(firebaseServices)│    │ (Firebase)    │
 └───────────────┘      └───────────────┘      └───────────────┘
 ```
 
-A camada de serviços abstrai a fonte de dados (JSON local ou Firebase), permitindo uma migração suave entre as duas opções.
+A camada de serviços abstrai a fonte de dados, permitindo um acesso consistente independente da implementação.
 
 ---
 
-## 📄 Estrutura de Arquivos JSON
+## 📄 Estrutura de Dados no Firebase
 
-Os dados do site estão organizados nos seguintes arquivos JSON:
+Os dados do site estão organizados no Firebase Firestore com a seguinte estrutura:
 
-### 🏢 Informações do Site (`/public/data/site/`)
+### 🏢 Configuração do Firebase
 
-| Arquivo           | Descrição                        | Estrutura Principal                                            |
-| ----------------- | -------------------------------- | -------------------------------------------------------------- |
-| **header.json**   | Informações do cabeçalho do site | Título, subtítulo, imagem de fundo, período da viagem          |
-| **footer.json**   | Informações do rodapé do site    | Copyright, links de redes sociais, links de navegação          |
-| **metadata.json** | Metadados do site                | Título, descrição, palavras-chave, autor, configurações de SEO |
+O projeto usa as seguintes configurações Firebase:
 
-### 🧳 Dados da Viagem - Santiago (`/public/data/trips/santiago/`)
+```javascript
+// src/firebase.js
+const firebaseConfig = {
+  apiKey: "AIzaSyBLe2TOSDo7xeMZh4ARVXbd1FiPCVCUNGo",
+  authDomain: "roteiroviagem-b5116.firebaseapp.com",
+  projectId: "roteiroviagem-b5116",
+  storageBucket: "roteiroviagem-b5116.firebasestorage.app",
+  messagingSenderId: "872269638046",
+  appId: "1:872269638046:web:2718740bd2eba8ba028e8f",
+  measurementId: "G-EV395T3365",
+};
+```
 
-| Arquivo             | Descrição                     | Estrutura Principal                                                                          |
-| ------------------- | ----------------------------- | -------------------------------------------------------------------------------------------- |
-| **trip-info.json**  | Informações gerais da viagem  | ID, título, descrição, datas, destino, imagem de capa                                        |
-| **locations.json**  | Detalhes dos locais a visitar | Array de locais com ID, nome, coordenadas, descrição, imagens                                |
-| **activities.json** | Atividades disponíveis        | Array de atividades com ID, título, descrição, duração, categoria                            |
-| **itinerary.json**  | Programação diária            | Array de dias com data, título, schedule (períodos do dia com atividades), dicas, transporte |
-| **tips.json**       | Dicas e recomendações         | Categorias de dicas (clima, transporte, gastronomia, práticas)                               |
+### 🏢 Coleções e Documentos no Firestore
+
+| Coleção/Documento               | Descrição                     | Estrutura                                                |
+| ------------------------------- | ----------------------------- | -------------------------------------------------------- |
+| **site/header**                 | Informações do cabeçalho      | Título, subtítulo, imagem de fundo, período da viagem    |
+| **site/footer**                 | Informações do rodapé         | Copyright, links, contatos                               |
+| **site/metadata**               | Metadados do site             | SEO, título, descrição                                   |
+| **trips/{tripId}/info/details** | Informações gerais da viagem  | ID, título, descrição, datas, destino, imagem            |
+| **trips/{tripId}/info/tips**    | Dicas e recomendações         | Categorias de dicas                                      |
+| **trips/{tripId}/itinerary**    | Coleção de dias do itinerário | Array de documentos, cada um representando um dia        |
+| **trips/{tripId}/activities**   | Coleção de atividades         | Array de documentos, cada um representando uma atividade |
+| **trips/{tripId}/locations**    | Coleção de locais             | Array de documentos, cada um representando um local      |
+| **trips/{tripId}/links**        | Coleção de links úteis        | Array de documentos com links relevantes para a viagem   |
 
 ### 📊 Relações entre os Dados
 
@@ -78,32 +92,31 @@ Os dados do site estão organizados nos seguintes arquivos JSON:
 │  itinerary  │ ←── │ activities  │ ←── │  locations  │
 └─────────────┘     └─────────────┘     └─────────────┘
        ↓
-┌─────────────┐
-│    tips     │
-└─────────────┘
+┌─────────────┐     ┌─────────────┐
+│    tips     │ ←── │    links    │
+└─────────────┘     └─────────────┘
 ```
 
-- **Dias do itinerário** (`itinerary.json`) referenciam **atividades** por ID através da estrutura `schedule`
-- **Atividades** (`activities.json`) referenciam **locais** por ID
-- **Dicas** (`tips.json`) complementam as informações do itinerário
+- **Dias do itinerário** referenciam **atividades** por ID através da estrutura `schedule`
+- **Atividades** referenciam **locais** por ID
+- **Dicas** e **Links** complementam as informações do itinerário
 
 ---
 
 ## 🛠️ Camada de Serviços
 
-A camada de serviços (`/src/services/`) facilita o acesso aos dados, abstraindo a fonte (JSON local ou Firebase).
+A camada de serviços (`/src/services/`) facilita o acesso aos dados do Firebase.
 
 ### 📁 Estrutura de Arquivos
 
-| Arquivo                    | Propósito                                        |
-| -------------------------- | ------------------------------------------------ |
-| **index.js**               | Exporta todos os serviços centralizadamente      |
-| **config.js**              | Configurações e flags (fonte de dados, caminhos) |
-| **dataService.js**         | Ponto de entrada principal para acesso aos dados |
-| **localDataService.js**    | Implementação para buscar dados de JSONs locais  |
-| **firebaseDataService.js** | Esqueleto para implementação futura do Firebase  |
+| Arquivo                     | Propósito                                                    |
+| --------------------------- | ------------------------------------------------------------ |
+| **index.js**                | Exporta todos os serviços centralizadamente                  |
+| **config.js**               | Configurações (isUsingFirebase = true, caminhos de coleções) |
+| **firebaseDataService.js**  | Implementação para buscar dados do Firebase                  |
+| **firebaseWriteService.js** | Implementação para gravar dados no Firebase                  |
 
-### 🔄 Funções Principais
+### 🔄 Funções Principais para Leitura
 
 Todas as funções a seguir podem ser importadas de `@/services`:
 
@@ -137,6 +150,9 @@ const locations = await getLocations("santiago");
 
 // Obter dicas e recomendações
 const tips = await getTips("santiago");
+
+// Obter links úteis
+const links = await getLinks("santiago");
 ```
 
 #### Busca por ID
@@ -150,6 +166,31 @@ const activity = await getActivityById("valle-nevado-sunset", "santiago");
 
 // Buscar um local específico
 const location = await getLocationById("hotel-panamericano", "santiago");
+```
+
+### 🔄 Funções Principais para Escrita
+
+```javascript
+// Atualizar informações da viagem
+await updateTripInfo("santiago", tripInfoData);
+
+// Atualizar cabeçalho do site
+await updateSiteHeader(headerData);
+
+// Atualizar rodapé do site
+await updateSiteFooter(footerData);
+
+// Adicionar ou atualizar atividade
+await addOrUpdateActivity("santiago", "activity-id", activityData);
+
+// Adicionar ou atualizar local
+await addOrUpdateLocation("santiago", "location-id", locationData);
+
+// Adicionar ou atualizar dia do itinerário
+await addOrUpdateDay("santiago", "day-1", dayData);
+
+// Adicionar ou atualizar link
+await addOrUpdateLink("santiago", "link-id", linkData);
 ```
 
 ---
@@ -286,80 +327,115 @@ async created() {
 
 ---
 
-## 🔄 Migração para Firebase
+## 👩‍💼 Administração do Conteúdo
 
-O projeto está preparado para migrar de JSONs locais para o Firebase quando necessário.
+O projeto inclui um conjunto de formulários administrativos para gerenciar o conteúdo.
 
-### Passos para Migração
+### 🔒 Autenticação
 
-1. **Configurar Firebase**:
+Os formulários administrativos requerem autenticação. O sistema utiliza um token de administrador (`ADMIN_TOKEN`) para autorização das operações de escrita.
 
-   - Criar projeto no Firebase Console
-   - Adicionar Firestore Database
-   - Configurar autenticação (se necessário)
+### 📝 Formulários Disponíveis
 
-2. **Instalar Dependências**:
+- **SiteHeaderForm**: Gerencia cabeçalho do site
+- **SiteFooterForm**: Gerencia rodapé do site
+- **SiteMetadataForm**: Gerencia metadados e SEO
+- **TripInfoForm**: Gerencia informações básicas da viagem
+- **ItineraryForm**: Gerencia dias do itinerário
+- **ActivityForm**: Gerencia atividades
+- **LocationForm**: Gerencia locais
+- **TipsForm**: Gerencia dicas de viagem
 
-   ```bash
-   npm install firebase
+### 🔄 Integração com Firebase
+
+Todos os formulários utilizam os métodos do serviço `firebaseWriteService.js` para salvar os dados no Firebase. As operações incluem:
+
+- Criação de novos documentos
+- Atualização de documentos existentes
+- Exclusão de documentos
+
+---
+
+## 🔧 Scripts de Utilidade
+
+O projeto inclui scripts utilitários para ajudar na manutenção e administração dos dados.
+
+### 📥 Script de Backup do Firebase
+
+O script `firebase-backup.js` permite fazer um backup completo de todos os dados do Firebase Firestore para arquivos JSON locais.
+
+#### Como usar
+
+```bash
+# Instalar dependências (se ainda não tiver)
+npm install firebase
+
+# Executar o script (o backup será salvo na pasta padrão 'firebase-backup')
+node scripts/firebase-backup.js
+
+# Ou especificar uma pasta de destino personalizada
+node scripts/firebase-backup.js ./meu-backup
+```
+
+#### Requisitos e notas
+
+- O script utiliza ES Modules (formato de módulos ECMAScript)
+- É compatível com Node.js versão 14+
+- Requer que o pacote Firebase esteja instalado: `npm install firebase`
+- Todos os dados são armazenados com formatação JSON para fácil leitura
+- **Importante**: A pasta de destino é **completamente removida** antes de cada backup, garantindo que o resultado represente fielmente o estado atual do Firebase sem dados obsoletos
+
+#### O que é feito no backup
+
+O script faz backup de:
+
+1. **Dados do site**:
+
+   - Header, footer e metadata
+
+2. **Dados da viagem (santiago)**:
+
+   - Informações básicas (details, tips)
+   - Coleções completas (itinerary, activities, locations, links)
+
+3. **Estrutura de arquivos gerada**:
+   ```
+   firebase-backup/
+   ├── site/
+   │   ├── header.json
+   │   ├── footer.json
+   │   └── metadata.json
+   ├── site.json  # Agregado de todos os documentos
+   ├── trips/
+   │   └── santiago/
+   │       ├── info/
+   │       │   ├── details.json
+   │       │   └── tips.json
+   │       ├── itinerary/
+   │       │   ├── day-1.json
+   │       │   ├── day-2.json
+   │       │   └── ...
+   │       ├── activities/
+   │       │   ├── activity-1.json
+   │       │   ├── activity-2.json
+   │       │   └── ...
+   │       ├── locations/
+   │       │   ├── location-1.json
+   │       │   ├── location-2.json
+   │       │   └── ...
+   │       └── links/
+   │           ├── link-1.json
+   │           ├── link-2.json
+   │           └── ...
+   ├── trips_santiago_itinerary.json  # Agregado da coleção
+   ├── trips_santiago_activities.json # Agregado da coleção
+   ├── trips_santiago_locations.json  # Agregado da coleção
+   └── trips_santiago_links.json      # Agregado da coleção
    ```
 
-3. **Criar Arquivo de Configuração** (`src/firebase.js`):
+### 🔄 Script de Migração para Firebase
 
-   ```javascript
-   import { initializeApp } from "firebase/app";
-   import { getFirestore } from "firebase/firestore";
-
-   const firebaseConfig = {
-     apiKey: "...",
-     authDomain: "...",
-     projectId: "...",
-     storageBucket: "...",
-     messagingSenderId: "...",
-     appId: "...",
-   };
-
-   const app = initializeApp(firebaseConfig);
-   export const db = getFirestore(app);
-   ```
-
-4. **Implementar Métodos no firebaseDataService.js**:
-
-   - Usar comentários existentes como guia
-   - Implementar todas as funções para buscar dados do Firestore
-
-5. **Atualizar Config**:
-
-   - Alterar `isUsingFirebase = true` no arquivo `config.js`
-
-6. **Testar**:
-   - Verificar se todos os componentes funcionam com dados do Firebase
-
-### 📊 Estrutura do Firestore
-
-```
-📁 site
-  └── 📄 header
-  └── 📄 footer
-  └── 📄 metadata
-
-📁 trips
-  └── 📁 santiago
-       └── 📄 info
-       └── 📁 itinerary (collection)
-            └── 📄 day-1
-            └── 📄 day-2
-            ...
-       └── 📁 activities (collection)
-            └── 📄 activity-1
-            └── 📄 activity-2
-            ...
-       └── 📁 locations (collection)
-            └── 📄 location-1
-            └── 📄 location-2
-            ...
-       └── 📄 tips
-```
+O projeto também inclui o script `migrate-to-firebase.js` que foi utilizado para a migração inicial dos dados de JSON local para o Firebase. Este script pode servir como referência para futuras migrações.
 
 ---
 
@@ -367,13 +443,13 @@ O projeto está preparado para migrar de JSONs locais para o Firebase quando nec
 
 ### Como adicionar uma nova viagem?
 
-1. Criar pasta com estrutura similar a `public/data/trips/santiago/` para a nova viagem
-2. Atualizar `config.js` para incluir caminhos para a nova viagem
+1. Criar uma nova estrutura de coleções no Firebase para a nova viagem
+2. Adicionar os documentos base (info, tips) e as coleções (itinerary, activities, locations)
 3. Usar os serviços existentes passando o novo ID de viagem
 
 ### Como padronizar a estrutura do itinerário?
 
-Todos os dias no arquivo `itinerary.json` devem usar o formato `schedule` para organizar as atividades por períodos do dia:
+Todos os dias na coleção `itinerary` devem usar o formato `schedule` para organizar as atividades por períodos do dia:
 
 ```json
 "schedule": {
@@ -387,19 +463,16 @@ Todos os dias no arquivo `itinerary.json` devem usar o formato `schedule` para o
 
 Cada período (morning, lunch/midDay, afternoon, evening, night) deve conter um array de IDs de atividades ou strings.
 
-### Como modificar a estrutura de um JSON?
-
-1. Atualizar o arquivo JSON
-2. Verificar componentes que usam esse JSON para garantir compatibilidade
-3. Atualizar testes relacionados (se existirem)
-
 ### Erros comuns
 
 **Erro**: `Cannot read properties of null (reading 'find')`  
 **Solução**: Verificar se os dados foram carregados antes de usá-los, adicionando verificações `if (this.data) { ... }`
 
-**Erro**: `Fetch error for JSON file`  
-**Solução**: Verificar caminhos em `localDataPaths` no arquivo `config.js` e garantir que os arquivos existem na pasta `public/data`
+**Erro**: `FirebaseError: Missing or insufficient permissions`  
+**Solução**: Verificar se o token de administração está sendo incluído nas operações de escrita e se as regras de segurança do Firestore estão configuradas corretamente
+
+**Erro**: `FirebaseError: Document does not exist`  
+**Solução**: Garantir que o documento referenciado existe no caminho especificado no Firestore
 
 ---
 
@@ -407,4 +480,4 @@ Cada período (morning, lunch/midDay, afternoon, evening, night) deve conter um 
 
 - [Vue.js Docs](https://vuejs.org/guide/introduction.html)
 - [Firebase Docs](https://firebase.google.com/docs)
-- [JSON Schema Validator](https://www.jsonschemavalidator.net/) - Para validar estrutura dos JSONs
+- [Firestore Security Rules](https://firebase.google.com/docs/firestore/security/get-started)

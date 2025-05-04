@@ -1,0 +1,55 @@
+{
+  "id": "footer",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "copyright": "© 2025 Roteiro de Viagem Chile.",
+  "descricao": "Viagem Chile 2025",
+  "titulo": "Roteiro Santiago",
+  "data": "06 a 13 de Maio de 2025",
+  "contatos_importantes": [
+    {
+      "nome": "Hotel Panamericano",
+      "whatsapp": "+56 9 7462 5021",
+      "rota": "https://maps.app.goo.gl/xgMmdmgWr93wEk3C9",
+      "id": "contato-5",
+      "contato": "",
+      "instagram": "https://www.instagram.com/hotelpanamericano.cl/"
+    },
+    {
+      "id": "contato-6",
+      "instagram": "https://www.instagram.com/viajarchile/",
+      "nome": "Viajar Chile",
+      "rota": "",
+      "whatsapp": "+55 9 61586080",
+      "contato": ""
+    },
+    {
+      "instagram": "",
+      "id": "embaixada",
+      "contato": "+56 2 2360 7500",
+      "nome": "Embaixada do Brasil no Chile",
+      "rota": "https://maps.app.goo.gl/ASkBd8Xfm4Hg1J4j6"
+    },
+    {
+      "id": "policia",
+      "instagram": "",
+      "nome": "Polícia",
+      "rota": "",
+      "contato": "133"
+    },
+    {
+      "rota": "",
+      "instagram": "",
+      "contato": "131",
+      "id": "ambulancia",
+      "nome": "Ambulância"
+    },
+    {
+      "whatsapp": "",
+      "instagram": "",
+      "id": "bombeiros",
+      "rota": "",
+      "nome": "Bombeiros",
+      "contato": "132"
+    }
+  ]
+}

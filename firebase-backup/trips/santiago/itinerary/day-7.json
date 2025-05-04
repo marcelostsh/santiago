@@ -1,0 +1,30 @@
+{
+  "id": "day-7",
+  "title": "Visita ao Betel do Chile",
+  "dayNumber": 7,
+  "transport": "Transporte público / Carro alugado",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "date": "2025-05-12",
+  "schedule": {
+    "afternoon": [
+      {
+        "activityId": "free-time-santiago",
+        "note": ""
+      }
+    ],
+    "morning": [
+      {
+        "note": "",
+        "activityId": "betel-chile-visit"
+      }
+    ],
+    "lunch": [],
+    "night": []
+  },
+  "tips": [
+    "Verifique com antecedência os horários de visita ao Betel e se é necessário agendar.",
+    "A sede do Betel fica em Av. Concha y Toro 3456-3540, Puente Alto, Santiago.",
+    "Para o tempo livre, considere visitar algum dos mercados de artesanato de Santiago para comprar lembranças, como o Centro Artesanal Los Dominicos ou o Patio Bellavista."
+  ],
+  "description": "Visita à sede nacional das Testemunhas de Jeová no Chile"
+}

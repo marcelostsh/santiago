@@ -1,0 +1,17 @@
+{
+  "id": "betel-chile-visit",
+  "withAgency": false,
+  "title": "Visita ao Betel do Chile",
+  "category": "culture",
+  "images": [
+    "https://cms-imgp.jw-cdn.org/img/p/1011232/univ/art/1011232_univ_pnr_md.jpg"
+  ],
+  "links": {
+    "site": "https://www.jw.org/pt/testemunhas-de-jeova/no-mundo-todo/CL/",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=Betel+JW+Santiago+Chile"
+  },
+  "duration": 3,
+  "location": "Betel do Chile",
+  "type": "religious-site",
+  "description": "Visita às instalações administrativas e de impressão das Testemunhas de Jeová no Chile."
+}

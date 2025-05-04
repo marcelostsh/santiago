@@ -1,0 +1,16 @@
+{
+  "id": "wine-tasting-tour",
+  "description": "Uma das vinícolas mais famosas do Chile, com tour guiado e degustação de vinhos premium.",
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "images": [
+    "https://forbes.com.br/wp-content/uploads/2022/11/Life_Concha-y-Toro-Vinicola.jpg",
+    "https://santiagodochile.com/wp-content/uploads/Casillero-del-Diablo.jpg"
+  ],
+  "location": "https://maps.app.goo.gl/BCrfFVDtTHV5NZEY9",
+  "title": "Tour e degustação na Vinícola Concha y Toro",
+  "links": {
+    "site": "https://conchaytoro.com/pt-pt/",
+    "instagram": "https://www.instagram.com/conchaytoro/"
+  },
+  "type": "winery"
+}

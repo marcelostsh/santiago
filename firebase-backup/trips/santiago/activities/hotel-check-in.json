@@ -1,0 +1,14 @@
+{
+  "id": "hotel-check-in",
+  "location": "https://maps.app.goo.gl/8ghHSWapGEvEqQYT6",
+  "images": [
+    "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+  ],
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "links": {
+    "site": "https://www.panamericano.cl/"
+  },
+  "title": "Hotel Panamericano",
+  "description": "Hospedagem em região central de Santiago, próximo a pontos turísticos e com fácil acesso ao transporte público.",
+  "type": "accommodation"
+}

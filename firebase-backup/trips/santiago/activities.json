@@ -1,0 +1,330 @@
+[
+  {
+    "id": "aeroporto-de-brasilia",
+    "description": "Aeroporto Internacional de Brasília - Presidente Juscelino Kubitschek",
+    "title": "Aeroporto de Brasília",
+    "location": "https://maps.app.goo.gl/VadDPDLiZkzCRytXA",
+    "links": {},
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPrJiqbbjKjiWXErY3vlgyxOHPGxTKZKdLprDtL=s1360-w1360-h1020-rw"
+    ],
+    "type": ""
+  },
+  {
+    "id": "aeroporto-santiago-chile",
+    "links": {},
+    "location": "https://maps.app.goo.gl/swjZrpYesuUY9hEMA",
+    "type": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://uploads.grupodicas.com/2024/12/AUjJHEv0-aeroporto-santiago-do-chile-jpeg.webp"
+    ],
+    "description": "Arturo Merino Benitez International Airport",
+    "title": "Aeroporto Santiago Chile"
+  },
+  {
+    "id": "almoco-com-vista---vina-del-mar",
+    "location": "",
+    "links": {
+      "Castillo del mar": "https://maps.app.goo.gl/ff5jbZCDNd1NKnuJ9",
+      "Tierra de Fuego": "https://maps.app.goo.gl/MYfwR3AjUhDxsRFx7",
+      "Cap Ducal": "https://maps.app.goo.gl/qyVuwYwGNakFGyZw8"
+    },
+    "type": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNhcfkg9euMWd2nwhBjIRuuP-13n6i0v-dEMjo=s1360-w1360-h1020-rw",
+      "https://media-cdn.tripadvisor.com/media/photo-s/12/c0/80/7e/hotel-restaurant-cap.jpg",
+      "https://www.tierradefuego.cl/wp-content/themes/tdf/uploads/video-TDF-poster.jpg"
+    ],
+    "description": "Restaurantes com vista com boa avaliação",
+    "title": "Almoço com vista - Viña del Mar"
+  },
+  {
+    "id": "barrio-bellavista",
+    "images": [
+      "https://uploads.dicaschile.com.br/sites/13/2016/06/cores-bellavista-santiago.jpg",
+      "https://thumbs.dreamstime.com/b/p%C3%A1tio-bellavista-na-noite-42419318.jpg"
+    ],
+    "links": {},
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "location": "https://maps.app.goo.gl/kAbPn4N2phewPXJJ7",
+    "type": "",
+    "description": "Bairro alegre e moderno repleto de restaurantes, bares, casas noturnas, casas de shows e arte de rua.",
+    "title": "Barrio Bellavista"
+  },
+  {
+    "id": "betel-chile-visit",
+    "withAgency": false,
+    "title": "Visita ao Betel do Chile",
+    "category": "culture",
+    "images": [
+      "https://cms-imgp.jw-cdn.org/img/p/1011232/univ/art/1011232_univ_pnr_md.jpg"
+    ],
+    "links": {
+      "site": "https://www.jw.org/pt/testemunhas-de-jeova/no-mundo-todo/CL/",
+      "directions": "https://www.google.com/maps/dir/?api=1&destination=Betel+JW+Santiago+Chile"
+    },
+    "duration": 3,
+    "location": "Betel do Chile",
+    "type": "religious-site",
+    "description": "Visita às instalações administrativas e de impressão das Testemunhas de Jeová no Chile."
+  },
+  {
+    "id": "castillo-wulff",
+    "title": "Viña del Mar - Castillo Wulff",
+    "links": {},
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "location": "https://maps.app.goo.gl/5hWU7YQPFQYJqMKG9",
+    "type": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4non1-ECDSz9wxbxm4BwddjM_fd-y6T5WhMyhr2Iircu2JqcktgbEaT_QHL7Sm1idNE3Alx7B1qm9dg1tVVn7yZfO84iISUoNiKcEQTXP9biaCAuPIDDfyRoCRxU4pA1q_RYRE8Psg=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npIQXm2a4FiPjIc3_PobmqIX35_xhKI9GkQfJyx3PTIxgYP7qS-H6Yhq8YyHXu-rHa-vPhFD7N4PibC4h007asXzQillPwY3SsTiaTbnY3Zns6ivrZgix5LdYKs4gYS3_JE4lYf=s1360-w1360-h1020-rw"
+    ],
+    "description": "Ícone de Viña del Mar, fácil de visitar e tirar fotos\nCastelo europeu na beira da costa.\nDá pra ir andando até o Relógio de Flores depois."
+  },
+  {
+    "id": "city-tour---ahumada-e-calle-estado",
+    "images": [
+      "https://urbiviagens.com.br/wp-content/uploads/2022/12/USO-EDITORIALshutterstock_1455925688-1024x696.jpg",
+      "https://uploads.dicaschile.com.br/sites/13/2016/06/paseo-ahumada-santiago.jpg"
+    ],
+    "description": "Ruas de pedestres com lojas, cafés e artistas.\nÓtimo para sentir a vida urbana chilena.",
+    "title": "City Tour - Ahumada e Calle Estado",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "location": "",
+    "links": {},
+    "type": ""
+  },
+  {
+    "id": "city-tour---catedral-metropolitana",
+    "images": [
+      "https://indoprochile.com.br/wp-content/uploads/2021/07/Catedral.jpeg",
+      "https://indoprochile.com.br/wp-content/uploads/2021/07/Catedral_Metropolitana_de_Santiago_01_Chile-scaled.jpeg"
+    ],
+    "description": "Adoração pagã\nVisitar enquanto o fim não vem e quebra tudo\nImponente igreja neoclássica.\nInterior belíssimo, vale a visita.",
+    "location": "https://maps.app.goo.gl/ZMCswTTWE1VKjZoJ7",
+    "links": {},
+    "type": "",
+    "title": "City Tour - Catedral Metropolitana",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+  },
+  {
+    "id": "city-tour---cerro-san-cristobal",
+    "location": "https://maps.app.goo.gl/ic7E4TwwwA6VUuXm6",
+    "title": "City Tour - Cerro San Cristóbal",
+    "type": "",
+    "links": {},
+    "description": "O Cerro San Cristóbal é um dos principais pontos turísticos de Santiago e também um dos principais cartões postais da cidade.\nO Cerro é um dos pontos mais alto da cidade, estando a 880 metros de altitude, de onde é possível ter uma das melhores vistas de Santiago.",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://vamosporai.com/wp-content/uploads/2023/05/pontos-turisticos-de-Santiago-do-Chile.jpg"
+    ]
+  },
+  {
+    "id": "city-tour---cerro-santa-lucia",
+    "location": "https://maps.app.goo.gl/G3MvsiYYnjKoHRWy6",
+    "links": {},
+    "type": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "description": "Morro com escadarias, fontes e mirantes.\nBelíssima vista da cidade e ótimo para fotos.",
+    "title": "City Tour - Cerro Santa Lucía",
+    "images": [
+      "https://zerandoochile.com.br/storage/2022/04/Cerro-Santa-Lucia.jpg",
+      "https://www.umviajante.com.br/wp-content/uploads/2015/02/santa-lucia-santiago-chile-8.jpg"
+    ]
+  },
+  {
+    "id": "city-tour---museu-historico-nacional",
+    "type": "",
+    "links": {},
+    "images": [
+      "https://imgmd.net/images/v1/guia/1561892/museu-historico-nacional.jpg"
+    ],
+    "location": "https://maps.app.goo.gl/44hESWAHv33VNLju6",
+    "title": "City Tour - Museu Histórico Nacional",
+    "description": "Fica na Plaza de Armas.\nConta a história do Chile desde os povos indígenas até os tempos modernos.",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+  },
+  {
+    "id": "city-tour---palacio-de-la-moneda",
+    "location": "https://maps.app.goo.gl/5Re3JoovhWWq3uUk8",
+    "title": "City Tour - Palácio de La Moneda",
+    "links": {},
+    "images": [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/cd/a8/8f/photo2jpg.jpg?w=1200&h=1200&s=1"
+    ],
+    "description": "Sede do governo chileno.\nPossível ver a troca da guarda (em dias específicos).",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "type": ""
+  },
+  {
+    "id": "city-tour---plaza-de-armas",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "links": {
+      "Mais informações": "https://omundoepequenoparamim.com.br/plaza-armas-santiago/?utm_source=chatgpt.com"
+    },
+    "images": [
+      "https://viagemeturismo.abril.com.br/wp-content/uploads/2024/08/plaza-de-armas-santiago-chile.jpg?crop=1&resize=1212,909",
+      "https://travel.usnews.com/images/Plaza_de_Armas_night_Henryk_Sadura_Getty.jpg"
+    ],
+    "type": "",
+    "title": "City Tour - Plaza de Armas",
+    "location": "https://maps.app.goo.gl/vEivpPJKWEbKLvfH9",
+    "description": "Considerada o marco zero de Santiago, a Plaza de Armas é rodeada por edifícios históricos e é um ponto de encontro popular tanto para locais quanto para turistas\n\n"
+  },
+  {
+    "id": "farellones-visit",
+    "category": "nature",
+    "withAgency": false,
+    "location": "Farellones",
+    "images": [
+      "https://i0.wp.com/bhparaomundo.com/wp-content/uploads/2019/09/20190818_094304.jpg?resize=640%2C311",
+      "https://ogimg.infoglobo.com.br/in/23890921-80e-81c/FT1086A/760/84119796_View-of-an-empty-cableway-at-El-Colorado-skiing-centre-in-the-Andes-Mountains-some-30-km-fr.jpg?posicaoFoto8"
+    ],
+    "duration": 6,
+    "links": {
+      "directions": "https://www.google.com/maps/dir/?api=1&destination=Farellones+Chile"
+    },
+    "title": "Passeio a Farellones",
+    "description": "Visita à estância de esqui próxima a Santiago, menos movimentada que Valle Nevado.",
+    "type": "ski-resort"
+  },
+  {
+    "id": "hotel-check-in",
+    "location": "https://maps.app.goo.gl/8ghHSWapGEvEqQYT6",
+    "images": [
+      "https://www.panamericano.cl/wp-content/uploads/2021/12/fachada-hotel-panamericano-home.jpg"
+    ],
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "links": {
+      "site": "https://www.panamericano.cl/"
+    },
+    "title": "Hotel Panamericano",
+    "description": "Hospedagem em região central de Santiago, próximo a pontos turísticos e com fácil acesso ao transporte público.",
+    "type": "accommodation"
+  },
+  {
+    "id": "mirador-cochoa-–-vina-del-mar",
+    "title": "Mirador Cochoa – Viña del Mar",
+    "description": "Segunda chance de ver leões-marinhos com segurança\nEste mirador é um ótimo local para apreciar a paisagem de viña del mar, há Dunas na parte anterior, uma vista magnífica para olhar e sentir o oceano pacífico, principalmente para os que o veem a 1a vez.",
+    "type": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npv4ZHgK1KExmTz-ETTQ9Odo5qGXs4Dg27GXDlx4W2B_8HQhndYth8XfW5whkNJldkKwL2X1I38b5W-hZeDhDe4v2W-OHzuzUEuxL59aMowC7p_1G8r9NxbPca0wmgEhykhIOKQSw=w270-h312-n-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrPvEb1N4mFhL1g3StmHBI28SpjNKzQfdTVCeAWTwXMbxUgYPiPFWixVCjWuzJx8OZrl9PyQcBLBw-eaqk55GufO7JpuLG1iDJ8p_XbwysrxklnrdDM3x5Lkr79tRySjOMUnytvug=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq2E40dOqVJVr_Kby_R6rr7RN66xGrdcmhIgkMK-np7ZAvN7sCpvj1tQwCVC3kdCveZY65wobPSA0bb4ACDMOGT_R1CEVIV0YjSH9y1hTyxOPU8yH4PyGc-VDVpFH0eC1a48EYk=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noNzNcGyanOvktr3--3LvJ8VySZOPUIWhHwvWRjOngDP39LfCDp4l_ba1vRoBNAEJQOAL5CvkcX3M7tEZVvvsRT1RNb3TLxo_Yp2c-wEJOU-u6-5BJUXHAeT9c-XIhg8TwgO3aS=s1360-w1360-h1020-rw"
+    ],
+    "links": {},
+    "location": "https://maps.app.goo.gl/1uTdvGxeAEuvRXa36"
+  },
+  {
+    "id": "paseo-21-de-mayo-de-valparaiso",
+    "title": "Paseo 21 de Mayo de Valparaíso",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npNfJw4d6rYNaMPhG1odFB9UvqZp3V-Gzyv-gT6WiHS9ifh2LgNECUwOWTEPqOKjMykaKywRS2JHSEEkiU3wN1OK-KJ73QGlIKhvXq2o2iia9aX8Mrt8CevpQr-I1UOG2HMqDqI=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noQoL76OpYEAMAwOf22Ay93c6OtIMEJagppBh34GnQBwfCpWTGDz4QARpbfGcTDJohec00xZUqIhvDdIgKTKAE-9EkkPaOGuWIjGk70Aj83nxtStctRSNWhYvImUbMIA6Cki8TLeQ=s1360-w1360-h1020-rw"
+    ],
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "description": "Localizado no Cerro Artillería, em Valparaíso. Este é um dos pontos turísticos mais emblemáticos da cidade, oferecendo uma vista panorâmica deslumbrante do porto e dos cerros coloridos que caracterizam Valparaíso. É um local ideal para apreciar a paisagem e tirar fotos memoráveis.",
+    "links": {},
+    "location": "https://maps.app.goo.gl/xHyPJgX2EQneqSGW9",
+    "type": ""
+  },
+  {
+    "id": "playa-caleta-portales-–-valparaiso",
+    "location": "https://maps.app.goo.gl/h57o3BVVQuBaiqQw8",
+    "title": "Playa Caleta Portales – Valparaíso",
+    "description": "Você chega cedo e vai direto ver os bichões de perto, no mercado de peixes.\nFotos incríveis, experiência diferente e muito autêntica.\nDica: Estacione perto do Mercado Portales e vá caminhando.\n\n",
+    "links": {},
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqfOHA9Q3f2pOlh3EwTd0QZ7z5urrgPkLlJ5AbNBULJVcCWupaue3Qf12tokRJPDg624EyYOfKn7X8WpLISXaFJtoJyX-kP11xfoRU2TrDDG7OT8gjkXQs5NW4PHB3UA9GhcjYWWA=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqAywZky_KGTtebzRgu7cyUWPS7JQt8CIa0MmV_ui0X0QNWZ2xtXzPNSB9r3LuvWk7PRHmUb7qQOvfYrt4VRZadA_zQnd-K2YeyxQTE4PIOmSrNgMvLLRkNWuOTwb3nKk4SsTYY=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npmO8o4f_0BA_sdEyJScmWIGp4QAgN81nCRAHCneQ7ZIKUaWiAzz3KbnuVR3F-ScgyfJQITLApW0gOk7cMtdT3ZpuSphf9toAcneFKOxbxTD0wBvgfwgxArjuOCr328x5817NXPOg=s1360-w1360-h1020-rw"
+    ],
+    "type": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+  },
+  {
+    "id": "portillo-visit",
+    "type": "ski-resort",
+    "links": {
+      "site": "https://www.skiportillo.com/",
+      "instagram": "https://www.instagram.com/explore/locations/3615947/ski-portillo-chile/?locale=pt_PT"
+    },
+    "location": "https://maps.app.goo.gl/9o9oe5vm6UttASPt7",
+    "description": "Visita a um dos centros de esqui mais antigos e prestigiados da América do Sul.",
+    "images": [
+      "https://fulltour.com.br/uploads/blog/23ed0bf666e8dca773fa681f8314dbb4.jpg",
+      "https://dobrasilparaomundo.com/core/uploads/2019/06/passeio-portillo-laguna-del-inca-santiago-4.jpeg",
+      "https://ciaodora.com/wp-content/uploads/2024/04/chile-portillo-1-scaled.webp",
+      "https://www.ruta-patagonia.com/configurador/fotos/Tour_Grande_18112015024413.jpg"
+    ],
+    "title": "Portillo e Laguna Del Inca",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74"
+  },
+  {
+    "id": "sky-costanera-visit",
+    "links": {
+      "site": "https://www.skycostanera.cl/",
+      "instagram": "https://www.instagram.com/skycostanera/"
+    },
+    "images": [
+      "https://www.vounajanela.com/wp-content/uploads/2019/09/santiago.jpg"
+    ],
+    "title": "Sky Costanera",
+    "type": "observation-deck",
+    "location": "https://maps.app.goo.gl/YYAz3TCBD4HjNrmS6",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "description": "Visita ao mirante mais alto da América Latina, com vista 360° da cidade e dos Andes."
+  },
+  {
+    "id": "valle-nevado-sunset",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "title": "Valle Nevado Sunset",
+    "description": "Um belo passeio pelas cordilheiras dos Andes, onde passamos para visitar as regiões de Farellones, Valle Nevado e El Colorado.\nVocê contemplará o pôr do sol mais desejado do Chile, acompanhado de um maravilhoso picnic.",
+    "images": [
+      "https://www.civitatis.com/f/chile/santiago-de-chile/galeria/excursion-valle-nevado-atardecer1.jpg",
+      "https://brasileirosnochile.com/wp-content/uploads/2023/05/b9.webp",
+      "https://static.wixstatic.com/media/87b3ef_39fd98a3d363413aa3256efd53ee6b7d~mv2.jpg/v1/fill/w_556,h_418,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state_edited.jpg"
+    ],
+    "links": {
+      "site": "https://www.vallenevado.com/",
+      "instagram": "https://www.instagram.com/vallenevado/",
+      "directions": "https://www.google.com/maps/dir/?api=1&destination=Valle+Nevado+Ski+Resort"
+    },
+    "type": "ski-resort",
+    "location": "Valle Nevado"
+  },
+  {
+    "id": "vina-del-mar---reloj-de-flores",
+    "type": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqlb_A0OieSxBTGYN_9n1SS-1avhtaHQvVodSWViI2HiGVEB0DMacnt8RVmWxpHLbmynzlfu6mR49ZatjPzJoiYfl7gVtwHnVFh3F8W88eMS2U7apFpnmcztB5lzQytwVQEf2Xv=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np5GJDEAFXCaJbMkbopoSI9fgQyN1EFuQHDPEU7NS8HkBi7xJsVV3uZ0cRm3zSBI5A01A3NSOs5UvsbT_faYrGJQE1Nk7ruvKJGHBzL0JP-8QwVFRfHDGbMTxpnzoWKTOjNF8q2=s1360-w1360-h1020-rw"
+    ],
+    "description": "Um dos cartões-postais de Viña del Mar, este relógio funcional é adornado com flores coloridas e está localizado aos pés do Cerro Castillo, em frente à Playa Caleta Abarca.",
+    "links": {},
+    "location": "",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "title": "Viña del Mar - Reloj de Flores"
+  },
+  {
+    "id": "wine-tasting-tour",
+    "description": "Uma das vinícolas mais famosas do Chile, com tour guiado e degustação de vinhos premium.",
+    "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+    "images": [
+      "https://forbes.com.br/wp-content/uploads/2022/11/Life_Concha-y-Toro-Vinicola.jpg",
+      "https://santiagodochile.com/wp-content/uploads/Casillero-del-Diablo.jpg"
+    ],
+    "location": "https://maps.app.goo.gl/BCrfFVDtTHV5NZEY9",
+    "title": "Tour e degustação na Vinícola Concha y Toro",
+    "links": {
+      "site": "https://conchaytoro.com/pt-pt/",
+      "instagram": "https://www.instagram.com/conchaytoro/"
+    },
+    "type": "winery"
+  }
+]

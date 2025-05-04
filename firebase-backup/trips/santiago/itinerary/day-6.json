@@ -1,0 +1,30 @@
+{
+  "id": "day-6",
+  "tips": [
+    "🧴 Use protetor solar e óculos escuros\nMesmo no frio, o sol na altitude é forte e pode causar queimaduras e desconforto visual.",
+    "🍼 Leve itens para a criança\nLeve trocas de roupa, fraldas, lanches, garrafa d'água, brinquedos pequenos e manta extra.",
+    "📸 Carregue seu celular e leve power bank\nO sinal pode ser instável em alguns trechos, e o frio pode descarregar o celular mais rápido.",
+    "🎟️ Compre ingressos com antecedência\nEvita filas e garante entrada, principalmente em alta temporada ou feriados.",
+    "🚗 Encha o tanque antes de subir\nNão há postos de gasolina após sair da área urbana de Santiago.",
+    "⛓️ Leve correntes para os pneus (por precaução)\nSe houver risco de neve na estrada, as correntes podem ser obrigatórias.",
+    "🧯 Kit de emergência no carro\nInclua lanterna, água, cobertor e primeiros socorros.",
+    "💳 Leve dinheiro e cartão\nAlguns lugares podem não aceitar cartão ou ter sistema fora do ar."
+  ],
+  "transport": "Carro alugado",
+  "dayNumber": 6,
+  "description": "Passeio à estância de esqui de Farellones",
+  "schedule": {
+    "lunch": [],
+    "morning": [
+      {
+        "note": "🕗 Saída de Santiago\nSaia por volta das 7h30 para evitar trânsito e aproveitar bem o dia.\n\n⚠️ Atenção na estrada\nA estrada até Farellones possui mais de 40 curvas acentuadas e é estreita em vários trechos.\nNos fins de semana e feriados, há horários específicos:\n\n⬆️ Subida: das 8h30 às 13h30\n\n⬇️ Descida: das 15h30 às 20h00\n\n🍽️ Alimentação\n\nHá restaurantes e lanchonetes no parque, mas os preços são elevados.\n\n🥪 Dica: leve lanches, frutas e água, especialmente para crianças.\n\n🕓 Retorno a Santiago\n\nHorário sugerido: inicie a descida por volta das 15h30, respeitando o horário permitido.\n\nDuração: cerca de 1h30 a 2h, similar à subida.",
+        "activityId": "farellones-visit"
+      }
+    ],
+    "afternoon": [],
+    "night": []
+  },
+  "adminToken": "Oxd3Xk7F7XTzfELkxS74",
+  "date": "2025-05-11",
+  "title": "Farellones"
+}
