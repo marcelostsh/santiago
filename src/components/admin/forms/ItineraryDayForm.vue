@@ -108,12 +108,21 @@
               </div>
               
               <div class="mt-2">
-                <textarea
-                  v-model="formData.schedule[period.id][index].note"
-                  rows="2"
-                  class="w-full p-2 border border-gray-200 rounded-md text-sm"
-                  placeholder="Anotações sobre esta atividade"
-                ></textarea>
+                <div class="relative">
+                  <div 
+                    class="w-full p-2 border border-gray-200 rounded-md text-sm min-h-[66px] bg-gray-50"
+                    v-html="formData.schedule[period.id][index].note"
+                  ></div>
+                  <button 
+                    type="button"
+                    @click="openNoteEditor(period.id, index)"
+                    class="absolute top-1 right-1 p-1 bg-white rounded-md text-blue-600 hover:text-blue-800 shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
             
@@ -210,6 +219,13 @@
         </div>
       </div>
     </div>
+    
+    <!-- Modal do Editor de Notas -->
+    <NoteEditorModal
+      v-model="showNoteEditor"
+      v-model:content="currentNoteContent"
+      @save="saveNote"
+    />
   </AdminFormLayout>
 </template>
 
@@ -222,6 +238,7 @@ import AdminFormLayout from '../common/AdminFormLayout.vue'
 import FormField from '../common/FormField.vue'
 import FormActions from '../common/FormActions.vue'
 import Multiselect from '@vueform/multiselect'
+import NoteEditorModal from '../common/NoteEditorModal.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -565,6 +582,26 @@ const deleteDay = async () => {
 // Voltar para a listagem
 const goBack = () => {
   router.push('/admin/itinerario')
+}
+
+// Estado para o editor de notas
+const showNoteEditor = ref(false)
+const currentNoteContent = ref('')
+const currentNoteData = ref({ periodId: null, activityIndex: null })
+
+// Abrir o editor de notas
+const openNoteEditor = (periodId, index) => {
+  currentNoteData.value = { periodId, activityIndex: index }
+  currentNoteContent.value = formData.value.schedule[periodId][index].note
+  showNoteEditor.value = true
+}
+
+// Salvar nota editada
+const saveNote = (content) => {
+  const { periodId, activityIndex } = currentNoteData.value
+  if (periodId !== null && activityIndex !== null) {
+    formData.value.schedule[periodId][activityIndex].note = content
+  }
 }
 </script>
 
