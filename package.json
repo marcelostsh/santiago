@@ -12,7 +12,7 @@
   "dependencies": {
     "@tiptap/extension-color": "^2.11.9",
     "@tiptap/extension-font-family": "^2.11.9",
-    "@tobiasafischer/tiptap-extension-font-size": "^1.0.2",
+    "tiptap-extension-font-size": "^1.2.0",
     "@tiptap/extension-heading": "^2.11.9",
     "@tiptap/extension-highlight": "^2.11.9",
     "@tiptap/extension-link": "^2.11.9",
