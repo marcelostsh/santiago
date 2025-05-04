@@ -176,7 +176,7 @@ import TextAlign from '@tiptap/extension-text-align';
 import Link from '@tiptap/extension-link';
 import Color from '@tiptap/extension-color';
 import TextStyle from '@tiptap/extension-text-style';
-import FontSize from '@tiptap/extension-font-size';
+import FontSize from '@tobiasafischer/tiptap-extension-font-size';
 import Highlight from '@tiptap/extension-highlight';
 
 // Criar extensões uma única vez, fora do escopo do componente
