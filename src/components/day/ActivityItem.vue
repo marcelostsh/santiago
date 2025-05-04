@@ -17,23 +17,23 @@ defineProps({
       <div v-html="atividade.note" class="tiptap-content"></div>
     </div>
     
-    <div class="mt-1 flex gap-2 flex-wrap">
+    <div class="mt-2 flex gap-2 flex-wrap">
       <a v-if="atividade.location" 
          :href="atividade.location" 
          target="_blank" 
-         class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+         class="action-button">
         <i class="fas fa-map-marker-alt mr-1"></i> Local
       </a>
       <a v-if="atividade.links && atividade.links.site" 
          :href="atividade.links.site" 
          target="_blank" 
-         class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+         class="action-button">
         <i class="fas fa-globe mr-1"></i> Site
       </a>
       <a v-if="atividade.links && atividade.links.instagram" 
          :href="atividade.links.instagram" 
          target="_blank" 
-         class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+         class="action-button">
         <i class="fab fa-instagram mr-1"></i> Instagram
       </a>
     </div>
@@ -210,4 +210,29 @@ defineProps({
 .tiptap-content :deep(.ql-size-huge) {
   font-size: 1.5em;
 } */
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3182ce;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:hover {
+  background-color: #2c5282;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
 </style> 
