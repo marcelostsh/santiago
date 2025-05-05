@@ -132,7 +132,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from 'swiper/modules';
 import ActivityItem from './ActivityItem.vue';
 import { ref, computed, onMounted } from 'vue';
-import { getActivities } from '../../services';
+import { getActivities, getSiteHeader } from '../../services';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -148,6 +148,7 @@ const activeSlide = ref(0);
 const modules = [Navigation, Pagination];
 const allActivities = ref([]); // Para armazenar TODAS as atividades do JSON
 const isLoading = ref(true);
+const headerData = ref(null); // Adicionar variável para armazenar os dados do header
 
 // Nova computed property para obter imagens das atividades
 const activityImages = computed(() => {
@@ -230,12 +231,18 @@ const formatDate = (dateStr) => {
   // Adicionar dia da semana
   formattedDate += ` - ${diasSemana[date.getDay()]}`;
   
-  // Adicionar número do dia no roteiro (extraído do ID do dia)
-  if (props.day.id && props.day.id.includes('day-')) {
-    const dayNum = props.day.id.replace('day-', '');
-    if (!isNaN(parseInt(dayNum, 10))) {
-      formattedDate += ` - ${dayNum}º dia`;
-    }
+  // Calcular qual dia da viagem é este com base na data de início do header
+  if (headerData.value && headerData.value.period && headerData.value.period.start) {
+    const startDateStr = headerData.value.period.start; // Formato DD/MM/YYYY
+    const [startDay, startMonth, startYear] = startDateStr.split('/');
+    const startDate = new Date(`${startYear}-${startMonth}-${startDay}`);
+    
+    // Calcular a diferença em dias
+    const diffTime = date.getTime() - startDate.getTime();
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    // Adicionar o número do dia (1-indexado)
+    formattedDate += ` - ${diffDays + 1}º dia`;
   }
   
   return formattedDate;
@@ -262,6 +269,13 @@ const loadAllActivities = async () => {
 // Carrega todas as atividades uma vez quando o componente é montado
 onMounted(async () => {
   await loadAllActivities();
+  
+  // Buscar dados do header para obter a data de início da viagem
+  try {
+    headerData.value = await getSiteHeader();
+  } catch (error) {
+    console.error('Erro ao carregar dados do header:', error);
+  }
 });
 
 // Computed property para filtrar e agrupar atividades por período
