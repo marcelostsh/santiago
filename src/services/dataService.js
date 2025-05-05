@@ -39,9 +39,21 @@ export async function getTripInfo(tripId = 'santiago') {
 }
 
 export async function getItinerary(tripId = 'santiago') {
-  return isUsingFirebase
+  // Ordenar registros por data antes de retornar
+  const sortByDate = (data) => {
+    if (!Array.isArray(data)) return data;
+    return [...data].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateA - dateB;
+    });
+  };
+
+  const data = await (isUsingFirebase
     ? firebaseDataService.getItinerary(tripId)
-    : localDataService.getItinerary(tripId);
+    : localDataService.getItinerary(tripId));
+
+  return sortByDate(data);
 }
 
 export async function getActivities(tripId = 'santiago') {
