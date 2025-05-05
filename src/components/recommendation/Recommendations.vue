@@ -28,7 +28,7 @@ defineProps({
 
     <div class="bg-blue-50 rounded-lg shadow-md p-6" v-if="recommendations.observations">
       <h3 class="text-xl font-bold text-blue-700 mb-4">Observações Finais</h3>
-      <p class="text-gray-700 mb-4">{{ recommendations.observations }}</p>
+      <p class="text-gray-700 mb-4 whitespace-pre-line" v-html="recommendations.observations"></p>
     </div>
   </section>
 </template> 
